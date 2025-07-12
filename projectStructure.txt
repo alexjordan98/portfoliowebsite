@@ -1,0 +1,36 @@
+portfoliowebsite/
+├── src/                           # Next.js frontend (existing)
+│   ├── app/
+│   ├── components/
+│   └── ...
+├── backend/                       # Java Spring Boot backend
+│   ├── core/                      # Core entities & database definitions
+│   │   ├── entities/
+│   │   │   └─── Skill.java
+│   │   └── repositories/          # JPA repositories
+│   │       └─── SkillRepository.java
+│   ├── services/                  # Business logic layer
+│   │   └── SkillService.java
+│   ├── controllers/               # REST API controllers
+│   │   └── SkillController.java
+│   ├── config/                    # Spring configuration
+│   │   ├── DatabaseConfig.java
+│   │   ├── CorsConfig.java
+│   │   └── SwaggerConfig.java
+│   ├── src/
+│   │   └── main/
+│   │       ├── java/
+│   │       │   └── com/portfolio/
+│   │       │       └── PortfolioApplication.java
+│   │       └── resources/
+│   │           ├── application.properties
+│   │           ├── application-dev.properties
+│   │           ├── application-prod.properties
+│   │           └── schema.sql
+│   ├── pom.xml                    # Maven dependencies
+│   └── README.md
+├── package.json                   # Next.js dependencies (existing)
+├── tsconfig.json                  # TypeScript config (existing)
+├── next.config.ts                 # Next.js config (existing)
+├── tailwind.config.js             # Tailwind config (existing)
+└── README.md                      # Main project README
