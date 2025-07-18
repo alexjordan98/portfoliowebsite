@@ -18,6 +18,7 @@ import java.time.LocalDateTime;
  */
 @Entity
 @Table(name = "skills", indexes = {
+    @Index(name = "idx_skill_name", columnList = "name"),
     @Index(name = "idx_skill_category", columnList = "category"),
     @Index(name = "idx_skill_proficiency", columnList = "proficiency_level")
 })
