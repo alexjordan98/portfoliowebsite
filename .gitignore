@@ -39,3 +39,16 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Environment files with secrets
+backend/.env
+.env
+*.env
+
+# Only ignore if they contain actual secrets
+# backend/src/main/resources/application-prod.properties
+
+# IDE files
+.vscode/
+.idea/
+*.iml
