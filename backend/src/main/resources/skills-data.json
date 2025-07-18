@@ -1,0 +1,778 @@
+{
+  "skills": [
+    {
+      "name": "Java",
+      "category": "Backend",
+      "proficiencyLevel": 5,
+      "yearsExperience": 6,
+      "description": "Automated Excel report creation, enterprise application development, core programming language",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+      "colorHex": "#f89820"
+    },
+    {
+      "name": "PHP",
+      "category": "Backend",
+      "proficiencyLevel": 5,
+      "yearsExperience": 4,
+      "description": "Built backend services for Forbright bank loan servicing, OWASP security standards implementation",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
+      "colorHex": "#777bb4"
+    },
+    {
+      "name": "Python",
+      "category": "Backend",
+      "proficiencyLevel": 4,
+      "yearsExperience": 5,
+      "description": "Data processing, automation scripts, backend development",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+      "colorHex": "#3776ab"
+    },
+    {
+      "name": "Go",
+      "category": "Backend",
+      "proficiencyLevel": 3,
+      "yearsExperience": 2,
+      "description": "Modern backend development, microservices architecture",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg",
+      "colorHex": "#00add8"
+    },
+    {
+      "name": "C++",
+      "category": "Backend",
+      "proficiencyLevel": 3,
+      "yearsExperience": 3,
+      "description": "Systems programming, performance-critical applications",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
+      "colorHex": "#00599c"
+    },
+    {
+      "name": ".NET",
+      "category": "Backend",
+      "proficiencyLevel": 3,
+      "yearsExperience": 2,
+      "description": "Microsoft ecosystem development, enterprise applications",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg",
+      "colorHex": "#512bd4"
+    },
+    {
+      "name": "Spring Boot",
+      "category": "Backend",
+      "proficiencyLevel": 4,
+      "yearsExperience": 3,
+      "description": "Java web framework, REST API development, current portfolio backend",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg",
+      "colorHex": "#6db33f"
+    },
+    {
+      "name": "Node.js",
+      "category": "Backend",
+      "proficiencyLevel": 4,
+      "yearsExperience": 4,
+      "description": "JavaScript runtime, server-side development, API creation",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+      "colorHex": "#339933"
+    },
+    {
+      "name": "React",
+      "category": "Frontend",
+      "proficiencyLevel": 5,
+      "yearsExperience": 4,
+      "description": "Built frontend for Forbright bank loan servicing, modernized legacy JS/PHP pages to React",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      "colorHex": "#61dafb"
+    },
+    {
+      "name": "Next.js",
+      "category": "Frontend",
+      "proficiencyLevel": 5,
+      "yearsExperience": 4,
+      "description": "React framework used for Forbright bank frontend, current portfolio frontend",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+      "colorHex": "#000000"
+    },
+    {
+      "name": "JavaScript",
+      "category": "Frontend",
+      "proficiencyLevel": 5,
+      "yearsExperience": 6,
+      "description": "Core web development language, frontend and backend applications",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+      "colorHex": "#f7df1e"
+    },
+    {
+      "name": "TypeScript",
+      "category": "Frontend",
+      "proficiencyLevel": 4,
+      "yearsExperience": 3,
+      "description": "Type-safe JavaScript development, used in current portfolio project",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+      "colorHex": "#3178c6"
+    },
+    {
+      "name": "HTML",
+      "category": "Frontend",
+      "proficiencyLevel": 5,
+      "yearsExperience": 7,
+      "description": "Web markup language, semantic HTML, accessibility",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+      "colorHex": "#e34f26"
+    },
+    {
+      "name": "CSS",
+      "category": "Frontend",
+      "proficiencyLevel": 4,
+      "yearsExperience": 6,
+      "description": "Styling, responsive design, modern CSS features",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+      "colorHex": "#1572b6"
+    },
+    {
+      "name": "SCSS",
+      "category": "Frontend",
+      "proficiencyLevel": 4,
+      "yearsExperience": 4,
+      "description": "CSS preprocessor, used in current portfolio for advanced styling",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg",
+      "colorHex": "#cc6699"
+    },
+    {
+      "name": "Tailwind CSS",
+      "category": "Frontend",
+      "proficiencyLevel": 4,
+      "yearsExperience": 2,
+      "description": "Utility-first CSS framework, used in current portfolio project",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg",
+      "colorHex": "#06b6d4"
+    },
+    {
+      "name": "React Native",
+      "category": "Frontend",
+      "proficiencyLevel": 3,
+      "yearsExperience": 2,
+      "description": "Mobile app development using React paradigms",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      "colorHex": "#61dafb"
+    },
+    {
+      "name": "Swift",
+      "category": "Frontend",
+      "proficiencyLevel": 2,
+      "yearsExperience": 1,
+      "description": "iOS native app development",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg",
+      "colorHex": "#fa7343"
+    },
+    {
+      "name": "Liquid",
+      "category": "Frontend",
+      "proficiencyLevel": 3,
+      "yearsExperience": 3,
+      "description": "Shopify templating language used for Azhar Apparel ecommerce site",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/shopify/shopify-original.svg",
+      "colorHex": "#95bf47"
+    },
+    {
+      "name": "SQL",
+      "category": "Database Design",
+      "proficiencyLevel": 5,
+      "yearsExperience": 5,
+      "description": "Designed and created new SQL tables using MariaDB, database optimization",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+      "colorHex": "#4479a1"
+    },
+    {
+      "name": "PostgreSQL",
+      "category": "Database Design",
+      "proficiencyLevel": 4,
+      "yearsExperience": 3,
+      "description": "Advanced relational database, used in current portfolio project with AWS RDS",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+      "colorHex": "#336791"
+    },
+    {
+      "name": "MariaDB",
+      "category": "Database Design",
+      "proficiencyLevel": 4,
+      "yearsExperience": 4,
+      "description": "Used for UIs and services at CABEM, table design and optimization",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+      "colorHex": "#003545"
+    },
+    {
+      "name": "SAP",
+      "category": "Database Design",
+      "proficiencyLevel": 2,
+      "yearsExperience": 1,
+      "description": "Enterprise resource planning database systems",
+      "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg",
+      "colorHex": "#0faaff"
+    },
+    {
+      "name": "Firestore",
+      "category": "Database Design",
+      "proficiencyLevel": 3,
+      "yearsExperience": 2,
+      "description": "NoSQL cloud database, Firebase ecosystem",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
+      "colorHex": "#ffa000"
+    },
+    {
+      "name": "Firebase",
+      "category": "Database Design",
+      "proficiencyLevel": 3,
+      "yearsExperience": 2,
+      "description": "Google's mobile and web development platform",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
+      "colorHex": "#ffca28"
+    },
+    {
+      "name": "REST APIs",
+      "category": "API Calls",
+      "proficiencyLevel": 5,
+      "yearsExperience": 4,
+      "description": "Connected React frontend to PHP backend using AXIOS, RESTful service design",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg",
+      "colorHex": "#009688"
+    },
+    {
+      "name": "AXIOS",
+      "category": "API Calls",
+      "proficiencyLevel": 4,
+      "yearsExperience": 4,
+      "description": "HTTP client for connecting frontend to backend services at CABEM",
+      "iconUrl": "https://axios-http.com/assets/logo.svg",
+      "colorHex": "#5a29e4"
+    },
+    {
+      "name": "GraphQL",
+      "category": "API Calls",
+      "proficiencyLevel": 3,
+      "yearsExperience": 2,
+      "description": "Query language for APIs, efficient data fetching",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg",
+      "colorHex": "#e10098"
+    },
+    {
+      "name": "JWT",
+      "category": "API Calls",
+      "proficiencyLevel": 4,
+      "yearsExperience": 3,
+      "description": "JSON Web Tokens for secure authentication",
+      "iconUrl": "https://jwt.io/img/pic_logo.svg",
+      "colorHex": "#000000"
+    },
+    {
+      "name": "OAuth 2.0",
+      "category": "API Calls",
+      "proficiencyLevel": 3,
+      "yearsExperience": 2,
+      "description": "Authorization framework for secure API access",
+      "iconUrl": "https://oauth.net/images/oauth-2-sm.png",
+      "colorHex": "#3c4043"
+    },
+    {
+      "name": "AWS EC2",
+      "category": "Cloud",
+      "proficiencyLevel": 4,
+      "yearsExperience": 4,
+      "description": "Managed test and production sites on EC2 AWS console for CABEM",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
+      "colorHex": "#ff9900"
+    },
+    {
+      "name": "AWS RDS",
+      "category": "Cloud",
+      "proficiencyLevel": 3,
+      "yearsExperience": 1,
+      "description": "Managed relational database service, used in current portfolio project",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
+      "colorHex": "#ff9900"
+    },
+    {
+      "name": "AWS Lambda",
+      "category": "Cloud",
+      "proficiencyLevel": 2,
+      "yearsExperience": 1,
+      "description": "Serverless computing platform",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
+      "colorHex": "#ff9900"
+    },
+    {
+      "name": "AWS S3",
+      "category": "Cloud",
+      "proficiencyLevel": 3,
+      "yearsExperience": 2,
+      "description": "Object storage service for web applications",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
+      "colorHex": "#ff9900"
+    },
+    {
+      "name": "Git",
+      "category": "DevOps",
+      "proficiencyLevel": 5,
+      "yearsExperience": 6,
+      "description": "Version control, code reviews for team members at CABEM",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+      "colorHex": "#f05032"
+    },
+    {
+      "name": "GitHub",
+      "category": "DevOps",
+      "proficiencyLevel": 5,
+      "yearsExperience": 6,
+      "description": "Code hosting, collaboration, CI/CD workflows",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+      "colorHex": "#181717"
+    },
+    {
+      "name": "Jira",
+      "category": "DevOps",
+      "proficiencyLevel": 4,
+      "yearsExperience": 4,
+      "description": "Used to track and organize tasks at CABEM",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg",
+      "colorHex": "#0052cc"
+    },
+    {
+      "name": "Docker",
+      "category": "DevOps",
+      "proficiencyLevel": 3,
+      "yearsExperience": 2,
+      "description": "Containerization for consistent development environments",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+      "colorHex": "#2496ed"
+    },
+    {
+      "name": "Linux",
+      "category": "DevOps",
+      "proficiencyLevel": 4,
+      "yearsExperience": 5,
+      "description": "Server administration, command line operations, development environment",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg",
+      "colorHex": "#fcc624"
+    },
+    {
+      "name": "Windows",
+      "category": "DevOps",
+      "proficiencyLevel": 5,
+      "yearsExperience": 10,
+      "description": "Imaged and deployed Windows computers/tablets at Fenway Health",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg",
+      "colorHex": "#0078d4"
+    },
+    {
+      "name": "Active Directory",
+      "category": "DevOps",
+      "proficiencyLevel": 3,
+      "yearsExperience": 2,
+      "description": "Added new computers and users to network at Fenway Health",
+      "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
+      "colorHex": "#0078d4"
+    },
+    {
+      "name": "Network Security",
+      "category": "Security",
+      "proficiencyLevel": 4,
+      "yearsExperience": 3,
+      "description": "Configured network switches and firewalls for secure connectivity",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/networkx/networkx-original.svg",
+      "colorHex": "#0066cc"
+    },
+    {
+      "name": "OWASP",
+      "category": "Security",
+      "proficiencyLevel": 4,
+      "yearsExperience": 4,
+      "description": "Implemented latest OWASP cyber security standards in PHP backend services",
+      "iconUrl": "https://owasp.org/assets/images/logo.png",
+      "colorHex": "#000000"
+    },
+    {
+      "name": "PGP Encryption",
+      "category": "Security",
+      "proficiencyLevel": 3,
+      "yearsExperience": 3,
+      "description": "Data encryption and secure communications",
+      "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenPGP_logo.svg",
+      "colorHex": "#1f4788"
+    },
+    {
+      "name": "Sophos",
+      "category": "Security",
+      "proficiencyLevel": 3,
+      "yearsExperience": 2,
+      "description": "Enterprise security and antivirus solutions",
+      "iconUrl": "https://www.sophos.com/sites/default/files/2022-02/sophos-logo-rgb.svg",
+      "colorHex": "#00c0ef"
+    },
+    {
+      "name": "Phishing Testing",
+      "category": "Security",
+      "proficiencyLevel": 3,
+      "yearsExperience": 2,
+      "description": "Wrote mock phishing emails to test employees at Fenway Health",
+      "iconUrl": "https://cdn-icons-png.flaticon.com/512/2092/2092063.png",
+      "colorHex": "#e74c3c"
+    },
+    {
+      "name": "Agile Development",
+      "category": "Project Management",
+      "proficiencyLevel": 4,
+      "yearsExperience": 4,
+      "description": "Used agile methodology for Azhar Apparel Shopify development",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg",
+      "colorHex": "#0052cc"
+    },
+    {
+      "name": "Scrum",
+      "category": "Project Management",
+      "proficiencyLevel": 3,
+      "yearsExperience": 3,
+      "description": "Sprint planning, daily standups, retrospectives",
+      "iconUrl": "https://scrumguides.org/images/scrum-guide-us-2020.png",
+      "colorHex": "#6cb4ee"
+    },
+    {
+      "name": "Code Review",
+      "category": "Project Management",
+      "proficiencyLevel": 4,
+      "yearsExperience": 4,
+      "description": "Reviewed team members' code on git at CABEM",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+      "colorHex": "#f05032"
+    },
+    {
+      "name": "Team Training",
+      "category": "Project Management",
+      "proficiencyLevel": 4,
+      "yearsExperience": 3,
+      "description": "Trained new developers on company procedures and codebase at CABEM",
+      "iconUrl": "https://cdn-icons-png.flaticon.com/512/1995/1995574.png",
+      "colorHex": "#4caf50"
+    },
+    {
+      "name": "Client Communication",
+      "category": "Project Management",
+      "proficiencyLevel": 4,
+      "yearsExperience": 4,
+      "description": "Met with Forbright bank clients for design reviews and bug strategy discussions",
+      "iconUrl": "https://cdn-icons-png.flaticon.com/512/1041/1041916.png",
+      "colorHex": "#2196f3"
+    },
+    {
+      "name": "Shopify",
+      "category": "E-commerce",
+      "proficiencyLevel": 4,
+      "yearsExperience": 3,
+      "description": "Designed company webpage for Azhar Apparel using Shopify",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/shopify/shopify-original.svg",
+      "colorHex": "#95bf47"
+    },
+    {
+      "name": "Facebook Marketing",
+      "category": "E-commerce",
+      "proficiencyLevel": 3,
+      "yearsExperience": 3,
+      "description": "Created Facebook store and developed marketing strategy for Azhar Apparel",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg",
+      "colorHex": "#1877f2"
+    },
+    {
+      "name": "Instagram Marketing",
+      "category": "E-commerce",
+      "proficiencyLevel": 3,
+      "yearsExperience": 3,
+      "description": "Created Instagram store (azhar_apparel_store) and marketing strategy",
+      "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png",
+      "colorHex": "#e4405f"
+    },
+    {
+      "name": "Supply Chain Management",
+      "category": "E-commerce",
+      "proficiencyLevel": 3,
+      "yearsExperience": 3,
+      "description": "Sourced clothes from Kenya and managed supply chain for Azhar Apparel",
+      "iconUrl": "https://cdn-icons-png.flaticon.com/512/3159/3159310.png",
+      "colorHex": "#607d8b"
+    },
+    {
+      "name": "Excel Automation",
+      "category": "Data Processing",
+      "proficiencyLevel": 4,
+      "yearsExperience": 3,
+      "description": "Automated excel report creation using Java at Dell Technologies",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftexcel/microsoftexcel-original.svg",
+      "colorHex": "#217346"
+    },
+    {
+      "name": "Data Analysis",
+      "category": "Data Processing",
+      "proficiencyLevel": 3,
+      "yearsExperience": 3,
+      "description": "Process efficiency analysis and automation opportunities identification",
+      "iconUrl": "https://cdn-icons-png.flaticon.com/512/2920/2920277.png",
+      "colorHex": "#ff9800"
+    },
+    {
+      "name": "Report Generation",
+      "category": "Data Processing",
+      "proficiencyLevel": 4,
+      "yearsExperience": 3,
+      "description": "Automated reporting systems saving 3-5 hours/week at Dell",
+      "iconUrl": "https://cdn-icons-png.flaticon.com/512/2920/2920349.png",
+      "colorHex": "#4caf50"
+    },
+    {
+      "name": "Technical Support",
+      "category": "IT Support",
+      "proficiencyLevel": 4,
+      "yearsExperience": 3,
+      "description": "Assisted employees with technical issues, increased support during pandemic",
+      "iconUrl": "https://cdn-icons-png.flaticon.com/512/1995/1995515.png",
+      "colorHex": "#00bcd4"
+    },
+    {
+      "name": "Hardware Deployment",
+      "category": "IT Support",
+      "proficiencyLevel": 4,
+      "yearsExperience": 2,
+      "description": "Imaged and deployed Windows computers/tablets at Fenway Health",
+      "iconUrl": "https://cdn-icons-png.flaticon.com/512/3004/3004543.png",
+      "colorHex": "#795548"
+    },
+    {
+      "name": "Network Configuration",
+      "category": "IT Support",
+      "proficiencyLevel": 3,
+      "yearsExperience": 2,
+      "description": "Configured and deployed network switches and firewalls",
+      "iconUrl": "https://cdn-icons-png.flaticon.com/512/1995/1995467.png",
+      "colorHex": "#9c27b0"
+    },
+    {
+      "name": "COVID-19 IT Setup",
+      "category": "IT Support",
+      "proficiencyLevel": 3,
+      "yearsExperience": 1,
+      "description": "Setup computers for Fenway's drive through COVID testing tent",
+      "iconUrl": "https://cdn-icons-png.flaticon.com/512/2966/2966327.png",
+      "colorHex": "#f44336"
+    },
+    {
+      "name": "Lisp",
+      "category": "Academic",
+      "proficiencyLevel": 2,
+      "yearsExperience": 1,
+      "description": "Functional programming language learned during Computer Science studies",
+      "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/4/48/Lisp_logo.svg",
+      "colorHex": "#3f51b5"
+    },
+    {
+      "name": "Philosophy",
+      "category": "Academic",
+      "proficiencyLevel": 4,
+      "yearsExperience": 4,
+      "description": "Bachelor's degree in Computer Science and Philosophy, Information Ethics minor",
+      "iconUrl": "https://cdn-icons-png.flaticon.com/512/2436/2436847.png",
+      "colorHex": "#6a1b9a"
+    },
+    {
+      "name": "Mathematics",
+      "category": "Academic",
+      "proficiencyLevel": 4,
+      "yearsExperience": 6,
+      "description": "Mathematics minor, algorithm design, computational thinking",
+      "iconUrl": "https://cdn-icons-png.flaticon.com/512/3655/3655580.png",
+      "colorHex": "#ff5722"
+    },
+    {
+      "name": "Information Ethics",
+      "category": "Academic",
+      "proficiencyLevel": 3,
+      "yearsExperience": 2,
+      "description": "Minor in Information Ethics, understanding of data privacy and digital rights",
+      "iconUrl": "https://cdn-icons-png.flaticon.com/512/2092/2092575.png",
+      "colorHex": "#8bc34a"
+    },
+    {
+      "name": "Spanish",
+      "category": "Languages",
+      "proficiencyLevel": 3,
+      "yearsExperience": 8,
+      "description": "Intermediate level Spanish language skills",
+      "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg",
+      "colorHex": "#c60b1e"
+    },
+    {
+      "name": "Portuguese",
+      "category": "Languages",
+      "proficiencyLevel": 2,
+      "yearsExperience": 2,
+      "description": "Beginner level Portuguese language skills",
+      "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Portugal.svg",
+      "colorHex": "#006600"
+    },
+    {
+      "name": "Swahili",
+      "category": "Languages",
+      "proficiencyLevel": 2,
+      "yearsExperience": 2,
+      "description": "Beginner level Swahili, useful for Kenya supply chain work",
+      "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/4/49/Flag_of_Kenya.svg",
+      "colorHex": "#bb0000"
+    },
+    {
+      "name": "Business Incubation",
+      "category": "Entrepreneurship",
+      "proficiencyLevel": 3,
+      "yearsExperience": 3,
+      "description": "Started Azhar Apparel using Northeastern's IDEA business incubator",
+      "iconUrl": "https://cdn-icons-png.flaticon.com/512/3281/3281289.png",
+      "colorHex": "#ff9800"
+    },
+    {
+      "name": "E-commerce Strategy",
+      "category": "Entrepreneurship",
+      "proficiencyLevel": 3,
+      "yearsExperience": 3,
+      "description": "Developed marketing and business strategy for clothing startup",
+      "iconUrl": "https://cdn-icons-png.flaticon.com/512/3159/3159276.png",
+      "colorHex": "#4caf50"
+    },
+    {
+      "name": "International Sourcing",
+      "category": "Entrepreneurship",
+      "proficiencyLevel": 3,
+      "yearsExperience": 3,
+      "description": "Sourced products internationally from Kenya for e-commerce business",
+      "iconUrl": "https://cdn-icons-png.flaticon.com/512/3159/3159310.png",
+      "colorHex": "#607d8b"
+    },
+    {
+      "name": "AWS Amplify",
+      "category": "Cloud",
+      "proficiencyLevel": 4,
+      "yearsExperience": 1,
+      "description": "Established CI/CD pipelines and environment workflows for automated builds, testing, and deployments at Anteros Bio",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
+      "colorHex": "#ff9900"
+    },
+    {
+      "name": "DynamoDB",
+      "category": "Database Design",
+      "proficiencyLevel": 4,
+      "yearsExperience": 1,
+      "description": "Structured DynamoDB schema and data access patterns for scalable NoSQL interactions in genomics platform",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
+      "colorHex": "#ff9900"
+    },
+    {
+      "name": "NoSQL",
+      "category": "Database Design",
+      "proficiencyLevel": 4,
+      "yearsExperience": 3,
+      "description": "NoSQL database design patterns, DynamoDB schema architecture, Firestore experience",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+      "colorHex": "#47a248"
+    },
+    {
+      "name": "CI/CD Pipelines",
+      "category": "DevOps",
+      "proficiencyLevel": 4,
+      "yearsExperience": 1,
+      "description": "Established automated build, testing, and deployment pipelines using AWS Amplify",
+      "iconUrl": "https://cdn-icons-png.flaticon.com/512/2920/2920277.png",
+      "colorHex": "#4caf50"
+    },
+    {
+      "name": "Software Architecture",
+      "category": "Backend",
+      "proficiencyLevel": 4,
+      "yearsExperience": 2,
+      "description": "Architected client-facing genomics platform application, system design and scalability",
+      "iconUrl": "https://cdn-icons-png.flaticon.com/512/2920/2920349.png",
+      "colorHex": "#3f51b5"
+    },
+    {
+      "name": "Team Leadership",
+      "category": "Project Management",
+      "proficiencyLevel": 4,
+      "yearsExperience": 1,
+      "description": "Lead Developer role directing frontend development practices and team standards at Anteros Bio",
+      "iconUrl": "https://cdn-icons-png.flaticon.com/512/1995/1995574.png",
+      "colorHex": "#e91e63"
+    },
+    {
+      "name": "Code Standards",
+      "category": "Project Management",
+      "proficiencyLevel": 4,
+      "yearsExperience": 2,
+      "description": "Set code standards, component patterns, and Git branching strategies for development team",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+      "colorHex": "#f05032"
+    },
+    {
+      "name": "Cross-functional Collaboration",
+      "category": "Project Management",
+      "proficiencyLevel": 4,
+      "yearsExperience": 2,
+      "description": "Collaborated with scientists and product stakeholders to translate complex requirements into user interfaces",
+      "iconUrl": "https://cdn-icons-png.flaticon.com/512/1041/1041916.png",
+      "colorHex": "#2196f3"
+    },
+    {
+      "name": "Genomics Platform Development",
+      "category": "Domain Expertise",
+      "proficiencyLevel": 3,
+      "yearsExperience": 1,
+      "description": "Built client-facing application for Anteros Bio's genomics platform, bioinformatics domain knowledge",
+      "iconUrl": "https://cdn-icons-png.flaticon.com/512/2920/2920277.png",
+      "colorHex": "#009688"
+    },
+    {
+      "name": "Requirements Analysis",
+      "category": "Domain Expertise",
+      "proficiencyLevel": 4,
+      "yearsExperience": 2,
+      "description": "Translated complex scientific requirements into intuitive user interfaces",
+      "iconUrl": "https://cdn-icons-png.flaticon.com/512/2436/2436847.png",
+      "colorHex": "#6a1b9a"
+    },
+    {
+      "name": "Component Architecture",
+      "category": "Frontend",
+      "proficiencyLevel": 4,
+      "yearsExperience": 2,
+      "description": "Established component patterns and reusable UI architecture for genomics platform",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      "colorHex": "#61dafb"
+    },
+    {
+      "name": "Git Branching Strategies",
+      "category": "DevOps",
+      "proficiencyLevel": 4,
+      "yearsExperience": 3,
+      "description": "Established Git branching strategies and version control workflows for development team",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+      "colorHex": "#f05032"
+    },
+    {
+      "name": "Environment Management",
+      "category": "DevOps",
+      "proficiencyLevel": 4,
+      "yearsExperience": 1,
+      "description": "Environment workflows and deployment strategies using AWS Amplify",
+      "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
+      "colorHex": "#ff9900"
+    },
+    {
+      "name": "Automated Testing",
+      "category": "DevOps",
+      "proficiencyLevel": 3,
+      "yearsExperience": 1,
+      "description": "Automated testing integration within CI/CD pipelines",
+      "iconUrl": "https://cdn-icons-png.flaticon.com/512/2920/2920277.png",
+      "colorHex": "#4caf50"
+    }
+  ]
+}
