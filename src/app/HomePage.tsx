@@ -38,7 +38,7 @@ export default function HomePage() {
             text="I made this website to showcase my skills, but also a how-to for anyone who wants to learn some web development."
             fontSize={24}
           />
-          <SiteButton 
+          <SiteButton
             text="Go to Detailed Resume"
             type="primary-button"
           />
@@ -53,16 +53,16 @@ export default function HomePage() {
 
       {/* Tech Stack Section */}
       <section className="stack-section">
-        <Title 
-            text="My Main Stack"
-            fontSize={48}
+        <Title
+          text="My Main Stack"
+          fontSize={48}
         />
-        <Title 
-            text="TLDR"
-            fontSize={32}
+        <Title
+          text="TLDR"
+          fontSize={32}
         />
-        <TLDRCircle/>
-        <SiteButton 
+        <TLDRCircle />
+        <SiteButton
           text="Click to see the Skill Bubbles"
           type="secondary-button"
         />
@@ -75,95 +75,95 @@ export default function HomePage() {
           fontSize={48}
         />
         <div className="experience-content">
-            <div className="left-experience-home-content">
-              <div className="experience-home-image">
-                <DisplayImage
-                  src={enemiesBefore}
-                  alt="before"
-                  width={1500}
-                  height={15000}
-                />
-              </div>
-              <NumberedList
-                title="Whilst developing software, there are many obstacles one will face such as:"
-                items = {[
-                  "Debugging complex issues",
-                  "Designing scale-able architecture",
-                  "Understanding older code",
-                  "Estimating task duration",
-                  "Avoiding over-engineering"
-                ]}
+          <div className="left-experience-home-content">
+            <div className="experience-home-image">
+              <DisplayImage
+                src={enemiesBefore}
+                alt="before"
+                width={1500}
+                height={15000}
               />
             </div>
-            <div className="middle-experience-home-content">
-              <div className="experience-home-image">
-                <DisplayImage
-                  src={arrow}
-                  alt="arrow"
-                  width={600}
-                  height={600}
-                />
-              </div>
-              <NumberedList
-                title="The best way to overcome these challenges is through hands-on experience.
+            <NumberedList
+              title="Whilst developing software, there are many obstacles one will face such as:"
+              items={[
+                "Debugging complex issues",
+                "Designing scale-able architecture",
+                "Understanding older code",
+                "Estimating task duration",
+                "Avoiding over-engineering"
+              ]}
+            />
+          </div>
+          <div className="middle-experience-home-content">
+            <div className="experience-home-image">
+              <DisplayImage
+                src={arrow}
+                alt="arrow"
+                width={600}
+                height={600}
+              />
+            </div>
+            <NumberedList
+              title="The best way to overcome these challenges is through hands-on experience.
                    I’ve encountered them time and again, and over time, I’ve learned how to navigate 
                     them effectively. Here are a few insights I’ve picked up that are worth keeping in mind."
-                items = {[
-                  {
-                    text: "Debugging",
-                    subItems: ["Use breakpoints, logging, and isolate code blocks to narrow down the" 
-                      + " problem area quickly. also always test your code to avoid debugging!!"
-                    ]
-                  },
-                  {
-                    text: "Designing Scalable Architecture",
-                    subItems: ["Favor modular, loosely coupled components and apply well-known" 
-                      + " design patterns to plan for growth."
-                    ]
-                  }
-                ]}
+              items={[
+                {
+                  text: "Debugging",
+                  subItems: ["Use breakpoints, logging, and isolate code blocks to narrow down the"
+                    + " problem area quickly. also always test your code to avoid debugging!!"
+                  ]
+                },
+                {
+                  text: "Designing Scalable Architecture",
+                  subItems: ["Favor modular, loosely coupled components and apply well-known"
+                    + " design patterns to plan for growth."
+                  ]
+                }
+              ]}
+            />
+          </div>
+          <div className="right-experience-home-content">
+            <div className="experience-home-image">
+              <DisplayImage
+                src={enemiesDefeated}
+                alt="defeated"
+                width={400}
+                height={600}
               />
             </div>
-            <div className="right-experience-home-content">
-              <div className="experience-home-image">
-                <DisplayImage
-                  src={enemiesDefeated}
-                  alt="defeated"
-                  width={400}
-                  height={600}
-                />
-              </div>
-              <NumberedList
-                title=""
-                startNumber={3}
-                items = {[
-                  {
-                    text: "Understanding Older Code",
-                    subItems: ["Start by understanding the inputs and outputs, then trace smaller"
-                       + " functions before tackling the big picture."
-                    ]
-                  },
-                  {
-                    text: "Estimating Task Duration",
-                    subItems: ["Break tasks into smaller parts and reference similar past work to" 
-                      + " set realistic time frames. It’s always better to tell a client that a task will take more time than less time"
-                    ]
-                  },
-                  {
-                    text: "Avoiding Over-engineering",
-                    subItems: ["Focus on meeting the current requirements cleanly, and only abstract when duplication" 
-                      + " or complexity demands it."
-                    ]
-                  }
-                ]}
-              />
-            </div>
+            <NumberedList
+              title=""
+              startNumber={3}
+              items={[
+                {
+                  text: "Understanding Older Code",
+                  subItems: ["Start by understanding the inputs and outputs, then trace smaller"
+                    + " functions before tackling the big picture."
+                  ]
+                },
+                {
+                  text: "Estimating Task Duration",
+                  subItems: ["Break tasks into smaller parts and reference similar past work to"
+                    + " set realistic time frames. It’s always better to tell a client that a task will take more time than less time"
+                  ]
+                },
+                {
+                  text: "Avoiding Over-engineering",
+                  subItems: ["Focus on meeting the current requirements cleanly, and only abstract when duplication"
+                    + " or complexity demands it."
+                  ]
+                }
+              ]}
+            />
+          </div>
         </div>
       </section>
       <section className="recommendations-section">
-        <Title 
-            text="Recommendations"
-            fontSize={40}
+        <Title
+          text="Recommendations"
+          fontSize={40}
         />
         <div className="recommendation-cards">
           <TestimonialCard
