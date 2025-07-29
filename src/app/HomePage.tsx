@@ -3,10 +3,21 @@ import Title from '@/components/Title';
 import Paragraph from '@/components/Paragraph';
 import TLDRCircle from '@/components/TLDRCircle';
 import SiteButton from '@/components/SiteButton';
+import DisplayImage from '@/components/DisplayImage';
+import NumberedList from '@/components/NumberedList';
+
+import pinkAnime from '@/images/pink-anime-flowers.png';
+import enemiesBefore from '@/images/enemies-before.png';
+import enemiesDefeated from '@/images/enemies-defeated.png'
+import arrow from '@/images/arrow.png'
+import TestimonialCard from '@/components/TestimonialCard';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 export default function HomePage() {
   return (
     <main className="home-wrapper">
+      <Navbar currentPage="Home" />
       <section className="intro-section">
         <div className="intro-content">
           <Title
@@ -22,19 +33,22 @@ export default function HomePage() {
           <Paragraph
             text="Hi. I am George Jordan, an American Software developer based out of Washington DC, who focuses on full stack website development."
             fontSize={24}
-            color="#111111"
           />
           <Paragraph
             text="I made this website to showcase my skills, but also a how-to for anyone who wants to learn some web development."
             fontSize={24}
-            color="#111111"
           />
           <SiteButton 
             text="Go to Detailed Resume"
             type="primary-button"
           />
         </div>
-        <div className="image-placeholder" />
+        <DisplayImage
+          src={pinkAnime}
+          alt="flowers"
+          width={600}
+          height={900}
+        />
       </section>
 
       {/* Tech Stack Section */}
@@ -42,12 +56,10 @@ export default function HomePage() {
         <Title 
             text="My Main Stack"
             fontSize={48}
-            color="#000000"
         />
         <Title 
             text="TLDR"
             fontSize={32}
-            color="#000000"
         />
         <TLDRCircle/>
         <SiteButton 
@@ -58,45 +70,115 @@ export default function HomePage() {
 
       {/* Experience Section */}
       <section className="experience-section">
-        <Title 
-            text="Why Hire an Experienced Dev like Me?"
-            fontSize={48}
-            color="#000000"
+        <Title
+          text="Why Hire an Experienced Dev like Me?"
+          fontSize={48}
         />
         <div className="experience-content">
-          <div className="experienced-dev-images">
-            <div className="image-placeholder"/>
-            <div className="experience-arrow">→</div>
-            <div className="image-placeholder"/>
-          </div>
-          <div className="experienced-dev-lists">
-            <ul className="left-list">
-              <li>Debugging Complex Issues</li>
-              <li>Designing Scalable Architecture</li>
-              <li>Understanding Older Code</li>
-              <li>Estimating Task Duration</li>
-              <li>Avoiding Overengineering</li>
-            </ul>
-
-            <ul className="right-list">
-              <li>Use breakpoints, logging, and isolate code paths</li>
-              <li>Use reusable components and well-known design patterns</li>
-              <li>Understand original intent before rewriting</li>
-              <li>Break tasks into subparts and estimate time conservatively</li>
-              <li>Only abstract when truly needed</li>
-            </ul>
-          </div>  
+            <div className="left-experience-home-content">
+              <div className="experience-home-image">
+                <DisplayImage
+                  src={enemiesBefore}
+                  alt="before"
+                  width={1500}
+                  height={15000}
+                />
+              </div>
+              <NumberedList
+                title="Whilst developing software, there are many obstacles one will face such as:"
+                items = {[
+                  "Debugging complex issues",
+                  "Designing scale-able architecture",
+                  "Understanding older code",
+                  "Estimating task duration",
+                  "Avoiding over-engineering"
+                ]}
+              />
+            </div>
+            <div className="middle-experience-home-content">
+              <div className="experience-home-image">
+                <DisplayImage
+                  src={arrow}
+                  alt="arrow"
+                  width={600}
+                  height={600}
+                />
+              </div>
+              <NumberedList
+                title="The best way to overcome these challenges is through hands-on experience.
+                   I’ve encountered them time and again, and over time, I’ve learned how to navigate 
+                    them effectively. Here are a few insights I’ve picked up that are worth keeping in mind."
+                items = {[
+                  {
+                    text: "Debugging",
+                    subItems: ["Use breakpoints, logging, and isolate code blocks to narrow down the" 
+                      + " problem area quickly. also always test your code to avoid debugging!!"
+                    ]
+                  },
+                  {
+                    text: "Designing Scalable Architecture",
+                    subItems: ["Favor modular, loosely coupled components and apply well-known" 
+                      + " design patterns to plan for growth."
+                    ]
+                  }
+                ]}
+              />
+            </div>
+            <div className="right-experience-home-content">
+              <div className="experience-home-image">
+                <DisplayImage
+                  src={enemiesDefeated}
+                  alt="defeated"
+                  width={400}
+                  height={600}
+                />
+              </div>
+              <NumberedList
+                title=""
+                startNumber={3}
+                items = {[
+                  {
+                    text: "Understanding Older Code",
+                    subItems: ["Start by understanding the inputs and outputs, then trace smaller"
+                       + " functions before tackling the big picture."
+                    ]
+                  },
+                  {
+                    text: "Estimating Task Duration",
+                    subItems: ["Break tasks into smaller parts and reference similar past work to" 
+                      + " set realistic time frames. It’s always better to tell a client that a task will take more time than less time"
+                    ]
+                  },
+                  {
+                    text: "Avoiding Over-engineering",
+                    subItems: ["Focus on meeting the current requirements cleanly, and only abstract when duplication" 
+                      + " or complexity demands it."
+                    ]
+                  }
+                ]}
+              />
+            </div>
         </div>
       </section>
-
       <section className="recommendations-section">
-        <h2 className="section-title">Recommendations</h2>
+        <Title 
+            text="Recommendations"
+            fontSize={40}
+        />
         <div className="recommendation-cards">
-          <div className="card">“A Great Guy, my best friend, would recommend 10/10”<br />– Mom</div>
-          <div className="card">“One thing I can say about Alex is he doesn’t quit when he starts something”<br />– Robin Jain, Startup Co-founder</div>
-          <div className="card">“A genuinely glowing review”<br />– Name, Description</div>
+          <TestimonialCard
+            quote="A Great Guy, my best friend, would recommend 10/10"
+            name="Mom"
+            title=""
+          />
+          <TestimonialCard
+            quote="A Great Guy, my best friend, would recommend 10/10"
+            name="Robin Jain, Startup Co-founder"
+            title=""
+          />
         </div>
       </section>
+      <Footer />
     </main>
   );
 }

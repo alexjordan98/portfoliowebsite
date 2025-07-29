@@ -8,14 +8,6 @@ body {
   color: #111;
 }
 
-.home-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem;
-  font-family: 'Jua', sans-serif;
-}
-
 .intro-section {
   display: flex;
   justify-content: space-between;
@@ -31,12 +23,14 @@ body {
   gap: 1rem;
   max-width: 600px;
   flex: 1;
+  margin-right: 30px;
 }
 
 .title {
   font-family: 'Jua', sans-serif;
   text-shadow: 2px 2px #aaa;
   margin: 0.5rem 0;
+  text-align: center;
 }
 
 .paragraph {
@@ -44,6 +38,27 @@ body {
   text-align: center;
   margin: 0.75rem 0;
   line-height: 1.6;
+}
+
+.numbered-list-indices {
+  font-family: 'Jua', sans-serif;
+  text-shadow: 2px 2px #aaa;
+  font-size: 24px;
+}
+
+.numbered-list-items {
+  font-family: 'Jua', sans-serif;
+  text-shadow: 2px 2px #aaa;
+  font-size: 24px;
+}
+
+.numbered-list-titles {
+  margin-bottom: 20px;
+}
+
+.sub-items {
+  margin-left: 1rem;
+  padding-left: 1rem;
 }
 
 .primary-button,
@@ -68,14 +83,6 @@ body {
   border: 2px solid black;
 }
 
-.image-placeholder {
-  width: 300px;
-  height: 300px;
-  background-color: #ccc;
-  flex-shrink: 0;
-  margin-left: 2rem;
-}
-
 .stack-section {
   text-align: center;
   margin-top: 4rem;
@@ -94,10 +101,8 @@ body {
 .stack-circle {
   background-color: #9C71B7;
   border-radius: 50%;
-  width: 90vw;
-  max-width: 1000px;
-  height: 90vw;
-  max-height: 1000px;
+  width: 70vw;
+  height: 60vw;
   margin: 3rem auto;
   padding: 2rem;
   position: relative;
@@ -109,21 +114,21 @@ body {
   color: white;
 
   &.backend {
-    top: 11%;
-    left: 12%;
+    top: 13%;
+    left: 14%;
     text-align: left;
     width: 180px;
   }
 
   &.frontend {
-    top: 11%;
-    right: 12%;
+    top: 13%;
+    right: 14%;
     text-align: right;
     width: 180px;
   }
 
   &.db {
-    bottom: 11%;
+    bottom: 12%;
     left: 14%;
     text-align: left;
     width: 200px;
@@ -137,53 +142,48 @@ body {
   }
 }
 
-
-.stack-image-placeholder {
+.tldr-circle-image {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 300px;
-  height: 300px;
-  background-color: #ccc;
   transform: translate(-50%, -50%);
 }
 
-
 .experience-section {
   margin-top: 4rem;
-  text-align: center;
 }
 
 .experience-content {
   display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+}
+
+.left-experience-home-content {
+  display: flex;
   flex-direction: column;
   align-items: center;
+  margin-left: 100px;
+  margin-right: 50px;
 }
 
-.right-list,
-.left-list {
-  list-style: disc;
-  text-align: left;
-  margin: 1rem;
-}
-
-.experience-arrow {
-  font-size: 2rem;
-  margin: 1rem 0;
-  padding-left: 10%;
-  padding-right: 10%;
-  font-size: 400px;
-  padding-bottom: -30%;
-}
-
-.experienced-dev-images {
+.middle-experience-home-content {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  margin-left: 25px;
+  margin-right: 100px;
 }
 
-.experienced-dev-lists {
+.right-experience-home-content {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-content: center;
+}
+
+.experience-home-image {
+  width: 600px;
+  height: 600px;
+  margin-bottom: 50px;
 }
 
 .color-toggle-section {
@@ -194,6 +194,7 @@ body {
 .recommendations-section {
   text-align: center;
   padding-bottom: 4rem;
+  margin-top: 40px;
 }
 
 .recommendation-cards {
@@ -210,4 +211,59 @@ body {
   border-radius: 1rem;
   max-width: 300px;
   box-shadow: 2px 2px #999;
+}
+
+/* Simple Navbar Styles */
+.navbar {
+  background-color: transparent;
+  position:relative;
+  right: 10%;
+  margin-top: 2%;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+  justify-content: flex-end;
+}
+
+.nav-item {
+  margin: 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #000000;
+  font-family: 'Jua', sans-serif;
+  font-size: 24px;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: transparent;
+  padding: 2rem;
+  text-align: center;
+  margin-top: auto;
+  font-family: 'Jua', sans-serif;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.footer-link {
+  color: #000000;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.footer-copyright {
+  color: #000000;
+  font-size: 14px;
 }
