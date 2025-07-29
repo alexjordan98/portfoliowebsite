@@ -10,7 +10,7 @@ export default function SiteButton({ text, type }: SiteButtonProps) {
     <button 
         className={type}
     >
-        {text}
+      {text}
     </button>
   );
 }

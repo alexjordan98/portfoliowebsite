@@ -3,10 +3,10 @@ import React from 'react';
 interface TitleProps {
   text: string;
   fontSize: number;
-  color: string;
+  color?: string;
 }
 
-export default function Title({ text, fontSize, color }: TitleProps) {
+export default function Title({ text, fontSize, color = "#000000" }: TitleProps) {
   return (
     <h1
       className="title"
