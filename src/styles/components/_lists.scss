@@ -1,0 +1,161 @@
+@import "../variables";
+
+// NumberedList component styles (from your original CSS)
+.numbered-list-indices {
+  font-family: $font-heading;
+  text-shadow: 2px 2px $shadow-medium;
+  font-size: $font-size-2xl;
+  color: $text-primary;
+  list-style-type: decimal;
+  padding-left: $space-6;
+  margin: $space-4 0;
+}
+
+.numbered-list-item {
+  font-family: $font-heading;
+  text-shadow: 2px 2px $shadow-medium;
+  font-size: $font-size-2xl;
+  color: $text-primary;
+  margin-bottom: $space-3;
+  line-height: $line-height-relaxed;
+}
+
+.numbered-list-titles {
+  margin-bottom: 20px;
+  
+  .title {
+    font-family: $font-heading;
+    text-shadow: 2px 2px $shadow-medium;
+    color: $text-primary;
+  }
+}
+
+.sub-items {
+  margin-left: $space-4;
+  padding-left: $space-4;
+  margin-top: $space-2;
+  font-size: $font-size-lg;
+  
+  .numbered-list-item {
+    font-size: $font-size-lg;
+    margin-bottom: $space-2;
+  }
+}
+
+// Enhanced list styles
+.list-unstyled {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.list-inline {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-4;
+}
+
+// Custom bullet lists
+.list-custom {
+  list-style: none;
+  padding-left: 0;
+  
+  li {
+    position: relative;
+    padding-left: $space-6;
+    margin-bottom: $space-2;
+    
+    &::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: $accent;
+      font-weight: $font-weight-bold;
+    }
+  }
+}
+
+.list-checkmark {
+  list-style: none;
+  padding-left: 0;
+  
+  li {
+    position: relative;
+    padding-left: $space-6;
+    margin-bottom: $space-2;
+    
+    &::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: $success;
+      font-weight: $font-weight-bold;
+    }
+  }
+}
+
+// List spacing variants
+.list-tight {
+  li {
+    margin-bottom: $space-1;
+  }
+}
+
+.list-loose {
+  li {
+    margin-bottom: $space-4;
+  }
+}
+
+// Horizontal definition lists
+.definition-list {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: $space-2 $space-4;
+  margin: $space-4 0;
+  
+  dt {
+    font-weight: $font-weight-semibold;
+    color: $text-primary;
+  }
+  
+  dd {
+    color: $text-secondary;
+    margin: 0;
+  }
+}
+
+// Mobile responsive lists
+@media (max-width: $breakpoint-md) {
+  .numbered-list-indices {
+    font-size: $font-size-xl;
+    padding-left: $space-4;
+  }
+  
+  .numbered-list-item {
+    font-size: $font-size-xl;
+    margin-bottom: $space-2;
+  }
+  
+  .sub-items {
+    margin-left: $space-2;
+    padding-left: $space-2;
+    
+    .numbered-list-item {
+      font-size: $font-size-base;
+    }
+  }
+  
+  .list-inline {
+    flex-direction: column;
+    gap: $space-2;
+  }
+  
+  .definition-list {
+    grid-template-columns: 1fr;
+    gap: $space-1;
+  }
+}

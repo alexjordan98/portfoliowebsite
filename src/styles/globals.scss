@@ -1,0 +1,32 @@
+@import "variables";
+
+// Google Fonts Import
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Jua&display=swap');
+
+// Import all component and page styles
+@import "base/reset";
+@import "base/typography";
+@import "base/layout";
+@import "components/buttons";
+@import "components/navbar";
+@import "components/footer";
+@import "components/cards";
+@import "components/images";
+@import "components/lists";
+@import "components/testimonials";
+@import "pages/home";
+@import "utilities/spacing";
+@import "utilities/colors";
+@import "utilities/responsive";
+
+// =============================================================================
+// BASE STYLES ONLY
+// =============================================================================
+
+body {
+  margin: 0;
+  font-family: $font-body;
+  background-color: $background;
+  color: $text-primary;
+  line-height: $line-height-normal;
+}

@@ -1,0 +1,98 @@
+@import "../variables";
+
+.footer {
+  background-color: transparent;
+  padding: $space-8;
+  text-align: center;
+  margin-top: auto;
+  font-family: $font-heading;
+  border-top: 1px solid $border-light;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: $space-8;
+  margin-bottom: $space-4;
+  flex-wrap: wrap;
+}
+
+.footer-link {
+  color: $text-primary;
+  text-decoration: none;
+  font-size: $font-size-lg;
+  transition: color 0.2s ease;
+  padding: $space-2;
+  border-radius: $radius-sm;
+  
+  &:hover {
+    color: $accent;
+  }
+  
+  &:focus {
+    outline: 2px solid $accent;
+    outline-offset: 2px;
+  }
+}
+
+.footer-copyright {
+  color: $text-secondary;
+  font-size: $font-size-sm;
+  margin-top: $space-4;
+}
+
+// Footer variants
+.footer-dark {
+  background-color: $primary-dark;
+  color: $text-inverse;
+  
+  .footer-link {
+    color: $text-inverse;
+    
+    &:hover {
+      color: $accent-light;
+    }
+  }
+  
+  .footer-copyright {
+    color: rgba($text-inverse, 0.8);
+  }
+}
+
+.footer-minimal {
+  padding: $space-4;
+  border-top: none;
+  
+  .footer-links {
+    gap: $space-6;
+    margin-bottom: $space-2;
+  }
+  
+  .footer-link {
+    font-size: $font-size-base;
+  }
+  
+  .footer-copyright {
+    font-size: $font-size-xs;
+    margin-top: $space-2;
+  }
+}
+
+// Mobile responsive footer
+@media (max-width: $breakpoint-md) {
+  .footer {
+    padding: $space-6 $space-4;
+  }
+  
+  .footer-links {
+    flex-direction: column;
+    gap: $space-4;
+    align-items: center;
+  }
+  
+  .footer-link {
+    font-size: $font-size-base;
+    display: block;
+    text-align: center;
+  }
+}

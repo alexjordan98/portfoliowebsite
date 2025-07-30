@@ -1,0 +1,126 @@
+// =============================================================================
+// NAVBAR COMPONENT
+// Navigation specific styles
+// =============================================================================
+
+@import "../variables";
+
+.navbar {
+  background-color: transparent;
+  position: relative;
+  right: 10%;
+  margin-top: 2%;
+  padding: $space-4 0;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: $space-8;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav-item {
+  margin: 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: $text-primary;
+  font-family: $font-heading;
+  font-size: $font-size-2xl;
+  transition: color 0.2s ease;
+  padding: $space-2 $space-3;
+  border-radius: $radius-sm;
+  position: relative;
+  
+  &:hover {
+    color: $accent;
+  }
+  
+  &:focus {
+    outline: 2px solid $accent;
+    outline-offset: 2px;
+  }
+  
+  &.active {
+    color: $primary;
+    font-weight: $font-weight-semibold;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -$space-1;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 2px;
+      background-color: $primary;
+      border-radius: $radius-sm;
+    }
+  }
+}
+
+// Mobile responsive navbar
+@media (max-width: $breakpoint-md) {
+  .navbar {
+    right: 0;
+    margin-top: $space-4;
+    padding: $space-2 $space-4;
+  }
+  
+  .nav-list {
+    flex-direction: column;
+    gap: $space-4;
+    justify-content: center;
+    
+    // Mobile menu toggle (for future implementation)
+    &.nav-mobile-hidden {
+      display: none;
+    }
+  }
+  
+  .nav-link {
+    font-size: $font-size-xl;
+    padding: $space-3 $space-4;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+// Navbar variants
+.navbar-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba($background, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid $border-light;
+  z-index: $z-fixed;
+  margin-top: 0;
+  padding: $space-3 $space-6;
+  
+  .nav-list {
+    justify-content: center;
+  }
+}
+
+.navbar-transparent {
+  background-color: transparent;
+  
+  .nav-link {
+    color: $text-inverse;
+    
+    &:hover {
+      color: $accent-light;
+    }
+    
+    &.active {
+      color: $accent;
+    }
+  }
+}

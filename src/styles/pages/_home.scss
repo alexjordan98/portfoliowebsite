@@ -1,0 +1,252 @@
+@import "../variables";
+
+// =============================================================================
+// INTRO SECTION
+// =============================================================================
+
+.intro-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $space-16 $space-8;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.intro-content {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+  max-width: 600px;
+  flex: 1;
+  margin-right: 30px;
+}
+
+// =============================================================================
+// STACK SECTION (TLDR Circle)
+// =============================================================================
+
+.stack-section {
+  text-align: center;
+  margin-top: $space-16;
+}
+
+.stack-circle {
+  background-color: #9C71B7;
+  border-radius: $radius-full;
+  width: 70vw;
+  height: 60vw;
+  margin: $space-12 auto;
+  padding: $space-8;
+  position: relative;
+}
+
+.stack-column {
+  position: absolute;
+  max-width: 250px;
+  color: $text-inverse;
+
+  &.backend {
+    top: 13%;
+    left: 14%;
+    text-align: left;
+    width: 180px;
+  }
+
+  &.frontend {
+    top: 13%;
+    right: 14%;
+    text-align: right;
+    width: 180px;
+  }
+
+  &.db {
+    bottom: 12%;
+    left: 14%;
+    text-align: left;
+    width: 200px;
+  }
+
+  &.api {
+    bottom: 11%;
+    right: 14%;
+    text-align: right;
+    width: 200px;
+  }
+}
+
+// =============================================================================
+// EXPERIENCE SECTION
+// =============================================================================
+
+.experience-section {
+  margin-top: $space-16;
+}
+
+.experience-content {
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+}
+
+.left-experience-home-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 100px;
+  margin-right: 50px;
+}
+
+.middle-experience-home-content {
+  display: flex;
+  flex-direction: column;
+  margin-left: 25px;
+  margin-right: 100px;
+}
+
+.right-experience-home-content {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+// =============================================================================
+// COLOR TOGGLE SECTION
+// =============================================================================
+
+.color-toggle-section {
+  margin: $space-16 0 $space-8;
+  text-align: center;
+}
+
+// =============================================================================
+// RECOMMENDATIONS SECTION
+// =============================================================================
+
+.recommendations-section {
+  text-align: center;
+  padding-bottom: $space-16;
+  margin-top: 40px;
+}
+
+// Mobile responsive styles for homepage
+@media (max-width: $breakpoint-lg) {
+  .intro-section {
+    flex-direction: column;
+    text-align: center;
+    padding: $space-12 $space-6;
+  }
+
+  .intro-content {
+    margin-right: 0;
+    margin-bottom: $space-8;
+    max-width: none;
+  }
+
+  .stack-circle {
+    width: 90vw;
+    height: 90vw;
+    max-width: 600px;
+    max-height: 600px;
+  }
+
+  .stack-column {
+    max-width: 200px;
+
+    &.backend {
+      top: 8%;
+      left: 8%;
+      width: 150px;
+    }
+
+    &.frontend {
+      top: 8%;
+      right: 8%;
+      width: 150px;
+    }
+
+    &.db {
+      bottom: 8%;
+      left: 8%;
+      width: 150px;
+    }
+
+    &.api {
+      bottom: 8%;
+      right: 8%;
+      width: 150px;
+    }
+  }
+
+  .experience-content {
+    flex-direction: column;
+    margin-top: $space-8;
+    align-items: center;
+  }
+
+  .left-experience-home-content,
+  .middle-experience-home-content,
+  .right-experience-home-content {
+    margin: 0 $space-4 $space-8;
+    align-items: center;
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .intro-section {
+    padding: $space-8 $space-4;
+  }
+
+  .stack-section {
+    margin-top: $space-8;
+  }
+
+  .stack-circle {
+    width: 95vw;
+    height: 95vw;
+    padding: $space-4;
+    margin: $space-8 auto;
+  }
+
+  .stack-column {
+    max-width: 120px;
+    font-size: $font-size-sm;
+
+    &.backend,
+    &.frontend {
+      top: 5%;
+      width: 120px;
+    }
+
+    &.backend {
+      left: 5%;
+    }
+
+    &.frontend {
+      right: 5%;
+    }
+
+    &.db,
+    &.api {
+      bottom: 5%;
+      width: 120px;
+    }
+
+    &.db {
+      left: 5%;
+    }
+
+    &.api {
+      right: 5%;
+    }
+  }
+
+  .experience-section {
+    margin-top: $space-8;
+  }
+
+  .recommendations-section {
+    margin-top: $space-6;
+    padding-bottom: $space-8;
+  }
+}

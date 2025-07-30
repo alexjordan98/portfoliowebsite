@@ -1,0 +1,147 @@
+@import "../variables";
+
+.card {
+  background-color: $background-overlay;
+  padding: $space-4;
+  border-radius: $radius-lg;
+  max-width: 300px;
+  box-shadow: 2px 2px $shadow-medium;
+  border: 1px solid $border-light;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 4px 8px $shadow-dark;
+  }
+}
+
+// Card size variants
+.card-sm {
+  padding: $space-3;
+  max-width: 250px;
+  border-radius: $radius-md;
+}
+
+.card-lg {
+  padding: $space-6;
+  max-width: 400px;
+  border-radius: $radius-xl;
+}
+
+.card-full {
+  max-width: none;
+  width: 100%;
+}
+
+// Card style variants
+.card-primary {
+  background-color: $primary;
+  color: $text-inverse;
+  border-color: $primary-dark;
+}
+
+.card-accent {
+  background-color: $accent-light;
+  color: $text-inverse;
+  border-color: $accent-dark;
+}
+
+.card-outline {
+  background-color: transparent;
+  border: 2px solid $primary;
+  
+  &:hover {
+    background-color: rgba($primary, 0.05);
+  }
+}
+
+.card-glass {
+  background-color: rgba($background-card, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba($border-light, 0.3);
+}
+
+// Card content areas
+.card-header {
+  margin-bottom: $space-4;
+  padding-bottom: $space-3;
+  border-bottom: 1px solid $border-light;
+  
+  .card-title {
+    font-family: $font-heading;
+    font-size: $font-size-xl;
+    font-weight: $font-weight-semibold;
+    margin-bottom: $space-2;
+    color: $text-primary;
+  }
+  
+  .card-subtitle {
+    font-size: $font-size-sm;
+    color: $text-secondary;
+  }
+}
+
+.card-body {
+  margin-bottom: $space-4;
+  
+  p {
+    margin-bottom: $space-3;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.card-footer {
+  margin-top: auto;
+  padding-top: $space-3;
+  border-top: 1px solid $border-light;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: $space-3;
+}
+
+// Card collections
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: $space-6;
+  margin: $space-8 0;
+}
+
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+  margin: $space-6 0;
+}
+
+// Recommendation cards specific styling (from your original CSS)
+.recommendation-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: $space-4;
+  margin-top: $space-4;
+}
+
+// Mobile responsive cards
+@media (max-width: $breakpoint-md) {
+  .card {
+    max-width: none;
+    margin: 0 $space-2;
+  }
+  
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: $space-4;
+    margin: $space-4 0;
+  }
+  
+  .recommendation-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}

@@ -1,0 +1,152 @@
+@import "../variables";
+
+.title {
+  font-family: $font-heading;
+  text-shadow: 2px 2px $shadow-medium;
+  margin: $space-2 0;
+  text-align: center;
+  color: $text-primary;
+}
+
+.paragraph {
+  font-family: $font-body;
+  max-width: 600px;
+  text-align: center;
+  margin: 0.75rem 0;
+  line-height: $line-height-relaxed;
+  color: $text-primary;
+}
+
+// Numbered list typography (for NumberedList component)
+.numbered-list-indices {
+  font-family: $font-heading;
+  text-shadow: 2px 2px $shadow-medium;
+  font-size: $font-size-2xl;
+  color: $text-primary;
+}
+
+.numbered-list-items {
+  font-family: $font-heading;
+  text-shadow: 2px 2px $shadow-medium;
+  font-size: $font-size-2xl;
+  color: $text-primary;
+}
+
+.numbered-list-titles {
+  margin-bottom: 20px;
+}
+
+.sub-items {
+  margin-left: $space-4;
+  padding-left: $space-4;
+}
+
+// Section title classes
+.section-title {
+  font-family: $font-heading;
+  font-size: $font-size-4xl;
+  margin-bottom: $space-2;
+  text-shadow: 2px 2px $shadow-medium;
+  color: $text-primary;
+}
+
+.section-subtitle {
+  font-family: $font-heading;
+  margin-bottom: $space-8;
+  color: $text-primary;
+}
+
+// Base heading styles for semantic HTML
+h1 {
+  font-family: $font-heading;
+  font-size: $font-size-5xl;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+  color: $text-primary;
+}
+
+h2 {
+  font-family: $font-heading;
+  font-size: $font-size-4xl;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-tight;
+  color: $text-primary;
+}
+
+h3 {
+  font-family: $font-heading;
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-normal;
+  color: $text-primary;
+}
+
+h4 {
+  font-family: $font-heading;
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-normal;
+  color: $text-primary;
+}
+
+h5 {
+  font-family: $font-body;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-normal;
+  color: $text-primary;
+}
+
+h6 {
+  font-family: $font-body;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-normal;
+  color: $text-primary;
+}
+
+// Base paragraph and text styles
+p {
+  font-family: $font-body;
+  font-size: $font-size-base;
+  line-height: $line-height-relaxed;
+  color: $text-primary;
+}
+
+// Text utility classes
+.text-small {
+  font-size: $font-size-sm;
+}
+
+.text-large {
+  font-size: $font-size-lg;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+// Text color utilities
+.text-primary {
+  color: $text-primary;
+}
+
+.text-secondary {
+  color: $text-secondary;
+}
+
+.text-muted {
+  color: $text-muted;
+}
+
+.text-inverse {
+  color: $text-inverse;
+}
