@@ -34,3 +34,30 @@ portfoliowebsite/
 ├── next.config.ts                 # Next.js config (existing)
 ├── tailwind.config.js             # Tailwind config (existing)
 └── README.md                      # Main project README
+
+styles - 
+
+src/styles/
+├── globals.scss                    # Main entry point, imports everything
+├── _variables.scss                 # All CSS custom properties and variables
+├── base/
+│   ├── _reset.scss                # CSS reset/normalize
+│   ├── _typography.scss           # Base typography rules
+│   └── _layout.scss               # Base layout and container styles
+├── components/
+│   ├── _buttons.scss              # All button styles
+│   ├── _navbar.scss               # Navbar specific styles
+│   ├── _footer.scss               # Footer specific styles
+│   ├── _cards.scss                # Card components
+│   ├── _images.scss               # DisplayImage component styles
+│   ├── _lists.scss                # NumberedList component styles
+│   └── _testimonials.scss         # TestimonialCard component styles
+├── pages/
+│   ├── _home.scss                 # All homepage sections (intro, stack, experience, recommendations)
+│   ├── _resume.scss               # Future: resume page styles
+│   ├── _contact.scss              # Future: contact page styles
+│   └── _how-site-created.scss     # Future: how the site was created page styles
+└── utilities/
+    ├── _spacing.scss              # Margin/padding utilities
+    ├── _colors.scss               # Color utility classes
+    └── _responsive.scss           # Responsive utilities and breakpoints
