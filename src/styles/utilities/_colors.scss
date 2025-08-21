@@ -1,0 +1,184 @@
+@import "../variables";
+
+// =============================================================================
+// TEXT COLOR UTILITIES
+// =============================================================================
+
+// Primary colors
+.text-primary { color: $text-primary; }
+.text-secondary { color: $text-secondary; }
+.text-muted { color: $text-muted; }
+.text-inverse { color: $text-inverse; }
+
+// Brand colors
+.text-brand-primary { color: $primary; }
+.text-brand-primary-light { color: $primary-light; }
+.text-brand-primary-dark { color: $primary-dark; }
+.text-brand-accent { color: $accent; }
+.text-brand-accent-light { color: $accent-light; }
+.text-brand-accent-dark { color: $accent-dark; }
+
+// State colors
+.text-success { color: $success; }
+.text-warning { color: $warning; }
+.text-error { color: $error; }
+.text-info { color: $info; }
+
+// Background-based text colors
+.text-on-background { color: $text-primary; }
+.text-on-card { color: $text-primary; }
+.text-on-primary { color: $text-inverse; }
+.text-on-accent { color: $text-inverse; }
+
+// =============================================================================
+// BACKGROUND COLOR UTILITIES
+// =============================================================================
+
+// Background colors
+.bg-primary { background-color: $background; }
+.bg-secondary { background-color: $background-alt; }
+.bg-card { background-color: $background-card; }
+.bg-overlay { background-color: $background-overlay; }
+
+// Brand background colors
+.bg-brand-primary { 
+  background-color: $primary; 
+  color: $text-inverse;
+}
+.bg-brand-primary-light { 
+  background-color: $primary-light; 
+  color: $text-inverse;
+}
+.bg-brand-primary-dark { 
+  background-color: $primary-dark; 
+  color: $text-inverse;
+}
+.bg-brand-accent { 
+  background-color: $accent; 
+  color: $text-inverse;
+}
+.bg-brand-accent-light { 
+  background-color: $accent-light; 
+  color: $text-inverse;
+}
+.bg-brand-accent-dark { 
+  background-color: $accent-dark; 
+  color: $text-inverse;
+}
+
+// State background colors
+.bg-success { 
+  background-color: $success; 
+  color: $text-inverse;
+}
+.bg-warning { 
+  background-color: $warning; 
+  color: $text-inverse;
+}
+.bg-error { 
+  background-color: $error; 
+  color: $text-inverse;
+}
+.bg-info { 
+  background-color: $info; 
+  color: $text-inverse;
+}
+
+// Transparent backgrounds
+.bg-transparent { background-color: transparent; }
+.bg-white { background-color: #ffffff; }
+.bg-black { background-color: #000000; }
+
+// Gradient backgrounds
+.bg-gradient-primary {
+  background: linear-gradient(135deg, $primary, $primary-light);
+  color: $text-inverse;
+}
+
+.bg-gradient-accent {
+  background: linear-gradient(135deg, $accent, $accent-light);
+  color: $text-inverse;
+}
+
+.bg-gradient-warm {
+  background: linear-gradient(135deg, $primary-light, $accent-light);
+  color: $text-inverse;
+}
+
+// =============================================================================
+// BORDER COLOR UTILITIES
+// =============================================================================
+
+// Border colors
+.border-light { border-color: $border-light; }
+.border-medium { border-color: $border-medium; }
+.border-dark { border-color: $border-dark; }
+
+// Brand border colors
+.border-primary { border-color: $primary; }
+.border-primary-light { border-color: $primary-light; }
+.border-primary-dark { border-color: $primary-dark; }
+.border-accent { border-color: $accent; }
+.border-accent-light { border-color: $accent-light; }
+.border-accent-dark { border-color: $accent-dark; }
+
+// State border colors
+.border-success { border-color: $success; }
+.border-warning { border-color: $warning; }
+.border-error { border-color: $error; }
+.border-info { border-color: $info; }
+
+// Border styles
+.border { border: 1px solid $border-light; }
+.border-2 { border: 2px solid $border-light; }
+.border-3 { border: 3px solid $border-light; }
+.border-none { border: none; }
+
+.border-t { border-top: 1px solid $border-light; }
+.border-r { border-right: 1px solid $border-light; }
+.border-b { border-bottom: 1px solid $border-light; }
+.border-l { border-left: 1px solid $border-light; }
+
+// =============================================================================
+// OPACITY UTILITIES
+// =============================================================================
+
+.opacity-0 { opacity: 0; }
+.opacity-25 { opacity: 0.25; }
+.opacity-50 { opacity: 0.5; }
+.opacity-75 { opacity: 0.75; }
+.opacity-100 { opacity: 1; }
+
+// =============================================================================
+// SHADOW UTILITIES
+// =============================================================================
+
+.shadow-none { box-shadow: none; }
+.shadow-light { box-shadow: 0 1px 3px $shadow-light; }
+.shadow-medium { box-shadow: 0 4px 6px $shadow-medium; }
+.shadow-dark { box-shadow: 0 10px 25px $shadow-dark; }
+
+// Custom shadows
+.shadow-inset { box-shadow: inset 0 2px 4px $shadow-light; }
+.shadow-outline { box-shadow: 0 0 0 3px rgba($accent, 0.3); }
+
+// Text shadows
+.text-shadow-sm { text-shadow: 1px 1px 2px $shadow-light; }
+.text-shadow { text-shadow: 2px 2px 4px $shadow-medium; }
+.text-shadow-lg { text-shadow: 3px 3px 6px $shadow-dark; }
+.text-shadow-none { text-shadow: none; }
+
+// =============================================================================
+// HOVER STATE UTILITIES
+// =============================================================================
+
+.hover-text-primary:hover { color: $text-primary; }
+.hover-text-accent:hover { color: $accent; }
+.hover-text-primary-brand:hover { color: $primary; }
+
+.hover-bg-primary:hover { background-color: $primary; }
+.hover-bg-accent:hover { background-color: $accent; }
+.hover-bg-overlay:hover { background-color: $background-overlay; }
+
+.hover-shadow:hover { box-shadow: 0 4px 12px $shadow-medium; }
+.hover-shadow-lg:hover { box-shadow: 0 8px 25px $shadow-dark; }

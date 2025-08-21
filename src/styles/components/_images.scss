@@ -1,0 +1,158 @@
+@import "../variables";
+
+// Base image styles for DisplayImage component
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// TLDR Circle image positioning (from your original CSS)
+.tldr-circle-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Experience section images (from your original CSS)
+.experience-home-image {
+  width: 600px;
+  height: 600px;
+  margin-bottom: 50px;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+// Image variants
+.image-rounded {
+  border-radius: $radius-lg;
+  overflow: hidden;
+}
+
+.image-circle {
+  border-radius: $radius-full;
+  overflow: hidden;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.image-shadow {
+  box-shadow: 2px 4px $shadow-medium;
+  transition: box-shadow 0.3s ease;
+  
+  &:hover {
+    box-shadow: 4px 8px $shadow-dark;
+  }
+}
+
+// Image containers
+.image-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  
+  &.image-hover-zoom {
+    img {
+      transition: transform 0.3s ease;
+    }
+    
+    &:hover img {
+      transform: scale(1.05);
+    }
+  }
+  
+  &.image-hover-fade {
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba($primary, 0.2);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    &:hover::after {
+      opacity: 1;
+    }
+  }
+}
+
+// Image sizes
+.image-sm {
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.image-md {
+  max-width: 400px;
+  max-height: 400px;
+}
+
+.image-lg {
+  max-width: 600px;
+  max-height: 600px;
+}
+
+.image-xl {
+  max-width: 800px;
+  max-height: 800px;
+}
+
+.image-full {
+  width: 100%;
+  height: auto;
+}
+
+// Responsive image classes
+.image-responsive {
+  width: 100%;
+  height: auto;
+}
+
+// Image with caption
+.image-with-caption {
+  text-align: center;
+  
+  .image-caption {
+    margin-top: $space-2;
+    font-size: $font-size-sm;
+    color: $text-secondary;
+    font-style: italic;
+  }
+}
+
+// Mobile responsive images
+@media (max-width: $breakpoint-md) {
+  .experience-home-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin-bottom: $space-6;
+    
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+  .image-lg,
+  .image-xl {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .tldr-circle-image {
+    position: static;
+    transform: none;
+    margin: $space-4 auto;
+    max-width: 300px;
+  }
+}

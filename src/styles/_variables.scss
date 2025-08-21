@@ -1,0 +1,190 @@
+// =============================================================================
+// PORTFOLIO WEBSITE VARIABLES
+// =============================================================================
+
+// Brand Colors
+$primary: #8B4513; 
+$primary-light: #A0522D;
+$primary-dark: #654321;
+
+$accent: #D2691E;
+$accent-light: #E6824B;
+$accent-dark: #B8621A;
+
+// Background Colors
+$background: #FDF5E6;
+$background-alt: #FAF0E6;
+$background-card: #FFFFFF;
+$background-overlay: rgba(255, 255, 255, 0.7);
+
+// Text Colors
+$text-primary: #2C1810;
+$text-secondary: #5D4037;
+$text-muted: #8D6E63;
+$text-inverse: #FFFFFF;
+
+// Border Colors
+$border-light: #E0E0E0;
+$border-medium: #BDBDBD;
+$border-dark: #757575;
+
+// Shadow Colors
+$shadow-light: rgba(0, 0, 0, 0.1);
+$shadow-medium: rgba(0, 0, 0, 0.15);
+$shadow-dark: rgba(0, 0, 0, 0.25);
+
+// State Colors
+$success: #4CAF50;
+$warning: #FF9800;
+$error: #F44336;
+$info: #2196F3;
+
+// TYPOGRAPHY VARIABLES
+
+// Font Families
+$font-heading: 'Jua', sans-serif;
+$font-body: 'Inter', sans-serif;
+$font-mono: 'Monaco', 'Menlo', monospace;
+
+// Font Sizes (using rem for scalability)
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.875rem;
+$font-size-base: 1rem;
+$font-size-lg: 1.125rem;
+$font-size-xl: 1.25rem;
+$font-size-2xl: 1.5rem;
+$font-size-3xl: 2rem;
+$font-size-4xl: 3rem;
+$font-size-5xl: 4rem;
+
+// Line Heights
+$line-height-tight: 1.2;
+$line-height-normal: 1.5;
+$line-height-relaxed: 1.6;
+$line-height-loose: 1.8;
+
+// Font Weights
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// SPACING VARIABLES
+
+// Base spacing unit (0.25rem = 4px)
+$space-1: 0.25rem;
+$space-2: 0.5rem;
+$space-3: 0.75rem;
+$space-4: 1rem;
+$space-5: 1.25rem;
+$space-6: 1.5rem;
+$space-8: 2rem;
+$space-10: 2.5rem;
+$space-12: 3rem;
+$space-16: 4rem;
+$space-20: 5rem;
+$space-24: 6rem;
+
+// BORDER RADIUS VARIABLES
+$radius-sm: 0.25rem;
+$radius-md: 0.5rem;
+$radius-lg: 1rem;
+$radius-xl: 1.5rem;
+$radius-full: 50%;
+
+// BREAKPOINT VARIABLES
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+$breakpoint-2xl: 1536px;
+
+// Z-INDEX VARIABLES
+$z-dropdown: 1000;
+$z-sticky: 1020;
+$z-fixed: 1030;
+$z-modal-backdrop: 1040;
+$z-modal: 1050;
+$z-popover: 1060;
+$z-tooltip: 1070;
+$z-toast: 1080;
+
+// TYPOGRAPHY VARIABLES
+:root {
+  // Font Families
+  --font-heading: 'Jua', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'Monaco', 'Menlo', monospace;
+  
+  // Font Sizes (using rem for scalability)
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2rem;
+  --font-size-4xl: 3rem;
+  --font-size-5xl: 4rem;
+  
+  // Line Heights
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.6;
+  --line-height-loose: 1.8;
+  
+  // Font Weights
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+}
+
+// SPACING VARIABLES
+:root {
+  // Base spacing unit (0.25rem = 4px)
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+}
+
+// BORDER RADIUS VARIABLES
+:root {
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 50%;
+}
+
+// BREAKPOINT VARIABLES
+:root {
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+}
+
+// Z-INDEX VARIABLES
+:root {
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+  --z-toast: 1080;
+}

@@ -1,0 +1,353 @@
+@import "../variables";
+
+// =============================================================================
+// BREAKPOINT MIXINS
+// =============================================================================
+
+// Mobile first approach
+@mixin mobile-up {
+  @media (min-width: $breakpoint-sm) {
+    @content;
+  }
+}
+
+@mixin tablet-up {
+  @media (min-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin desktop-up {
+  @media (min-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+@mixin large-desktop-up {
+  @media (min-width: $breakpoint-xl) {
+    @content;
+  }
+}
+
+@mixin extra-large-up {
+  @media (min-width: $breakpoint-2xl) {
+    @content;
+  }
+}
+
+// Desktop first approach (for specific cases)
+@mixin tablet-down {
+  @media (max-width: calc(#{$breakpoint-md} - 1px)) {
+    @content;
+  }
+}
+
+@mixin mobile-down {
+  @media (max-width: calc(#{$breakpoint-sm} - 1px)) {
+    @content;
+  }
+}
+
+// Specific range mixins
+@mixin tablet-only {
+  @media (min-width: $breakpoint-sm) and (max-width: calc(#{$breakpoint-lg} - 1px)) {
+    @content;
+  }
+}
+
+@mixin desktop-only {
+  @media (min-width: $breakpoint-lg) and (max-width: calc(#{$breakpoint-xl} - 1px)) {
+    @content;
+  }
+}
+
+// =============================================================================
+// RESPONSIVE DISPLAY UTILITIES
+// =============================================================================
+
+// Hide/show on mobile
+.hidden-mobile {
+  @include mobile-down {
+    display: none !important;
+  }
+}
+
+.show-mobile {
+  display: none !important;
+  
+  @include mobile-down {
+    display: block !important;
+  }
+}
+
+.show-mobile-flex {
+  display: none !important;
+  
+  @include mobile-down {
+    display: flex !important;
+  }
+}
+
+// Hide/show on tablet
+.hidden-tablet {
+  @include tablet-only {
+    display: none !important;
+  }
+}
+
+.show-tablet {
+  display: none !important;
+  
+  @include tablet-only {
+    display: block !important;
+  }
+}
+
+// Hide/show on desktop
+.hidden-desktop {
+  @include desktop-up {
+    display: none !important;
+  }
+}
+
+.show-desktop {
+  display: none !important;
+  
+  @include desktop-up {
+    display: block !important;
+  }
+}
+
+// =============================================================================
+// RESPONSIVE TEXT UTILITIES
+// =============================================================================
+
+// Text alignment
+.text-center-mobile {
+  @include mobile-down {
+    text-align: center !important;
+  }
+}
+
+.text-left-mobile {
+  @include mobile-down {
+    text-align: left !important;
+  }
+}
+
+.text-center-tablet {
+  @include tablet-only {
+    text-align: center !important;
+  }
+}
+
+// Font sizes
+.text-sm-mobile {
+  @include mobile-down {
+    font-size: $font-size-sm !important;
+  }
+}
+
+.text-base-mobile {
+  @include mobile-down {
+    font-size: $font-size-base !important;
+  }
+}
+
+.text-lg-mobile {
+  @include mobile-down {
+    font-size: $font-size-lg !important;
+  }
+}
+
+// =============================================================================
+// RESPONSIVE LAYOUT UTILITIES
+// =============================================================================
+
+// Flexbox direction
+.flex-col-mobile {
+  @include mobile-down {
+    flex-direction: column !important;
+  }
+}
+
+.flex-row-mobile {
+  @include mobile-down {
+    flex-direction: row !important;
+  }
+}
+
+.flex-col-tablet {
+  @include tablet-only {
+    flex-direction: column !important;
+  }
+}
+
+// Grid columns
+.grid-1-mobile {
+  @include mobile-down {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.grid-2-tablet {
+  @include tablet-only {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+.grid-3-desktop {
+  @include desktop-up {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+// Width utilities
+.w-full-mobile {
+  @include mobile-down {
+    width: 100% !important;
+  }
+}
+
+.w-auto-mobile {
+  @include mobile-down {
+    width: auto !important;
+  }
+}
+
+.w-half-tablet {
+  @include tablet-only {
+    width: 50% !important;
+  }
+}
+
+// =============================================================================
+// RESPONSIVE SPACING UTILITIES
+// =============================================================================
+
+// Responsive margins
+.m-2-mobile {
+  @include mobile-down {
+    margin: $space-2 !important;
+  }
+}
+
+.m-4-mobile {
+  @include mobile-down {
+    margin: $space-4 !important;
+  }
+}
+
+.mt-4-mobile {
+  @include mobile-down {
+    margin-top: $space-4 !important;
+  }
+}
+
+.mb-4-mobile {
+  @include mobile-down {
+    margin-bottom: $space-4 !important;
+  }
+}
+
+.mx-2-mobile {
+  @include mobile-down {
+    margin-left: $space-2 !important;
+    margin-right: $space-2 !important;
+  }
+}
+
+.my-4-mobile {
+  @include mobile-down {
+    margin-top: $space-4 !important;
+    margin-bottom: $space-4 !important;
+  }
+}
+
+// Responsive padding
+.p-2-mobile {
+  @include mobile-down {
+    padding: $space-2 !important;
+  }
+}
+
+.p-4-mobile {
+  @include mobile-down {
+    padding: $space-4 !important;
+  }
+}
+
+.px-2-mobile {
+  @include mobile-down {
+    padding-left: $space-2 !important;
+    padding-right: $space-2 !important;
+  }
+}
+
+.py-4-mobile {
+  @include mobile-down {
+    padding-top: $space-4 !important;
+    padding-bottom: $space-4 !important;
+  }
+}
+
+// =============================================================================
+// RESPONSIVE CONTAINER UTILITIES
+// =============================================================================
+
+.container-responsive {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $space-4;
+  
+  @include tablet-up {
+    padding: 0 $space-6;
+  }
+  
+  @include desktop-up {
+    padding: 0 $space-8;
+  }
+  
+  @include large-desktop-up {
+    max-width: 1400px;
+  }
+}
+
+// =============================================================================
+// RESPONSIVE POSITION UTILITIES
+// =============================================================================
+
+.relative-mobile {
+  @include mobile-down {
+    position: relative !important;
+  }
+}
+
+.absolute-mobile {
+  @include mobile-down {
+    position: absolute !important;
+  }
+}
+
+.static-mobile {
+  @include mobile-down {
+    position: static !important;
+  }
+}
+
+// =============================================================================
+// RESPONSIVE OVERFLOW UTILITIES
+// =============================================================================
+
+.overflow-x-auto-mobile {
+  @include mobile-down {
+    overflow-x: auto !important;
+  }
+}
+
+.overflow-hidden-mobile {
+  @include mobile-down {
+    overflow: hidden !important;
+  }
+}
