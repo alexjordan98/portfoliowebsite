@@ -1,0 +1,282 @@
+@import "../variables";
+
+// =============================================================================
+// SECTION COMPONENT STYLES
+// =============================================================================
+
+// Base section styles with warm professional aesthetic
+.section {
+  padding: $space-16 0;
+  position: relative;
+
+  // Subtle background texture
+  background-color: rgba($background, 0.5);
+
+  // Soft transitions for smooth scrolling experience
+  transition: background-color 0.3s ease;
+
+  // Add subtle visual separation between sections
+  &:not(:first-child) {
+    border-top: 1px solid rgba($border-light, 0.5);
+  }
+
+  // Gentle hover effect for interactive sections
+  &[role="button"],
+  &.section-interactive {
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba($background-alt, 0.6);
+    }
+  }
+}
+
+// Section spacing variants
+.section-sm {
+  padding: $space-8 0;
+  background-color: rgba($background, 0.3);
+
+  &:not(:first-child) {
+    border-top: 1px solid rgba($border-light, 0.3);
+  }
+}
+
+.section-lg {
+  padding: $space-24 0;
+  background-color: rgba($background, 0.7);
+
+  &:not(:first-child) {
+    border-top: 1px solid rgba($border-light, 0.7);
+  }
+}
+
+// Section background variants that match the warm theme
+.section.bg-default {
+  background-color: $background;
+}
+
+.section.bg-alt {
+  background-color: $background-alt;
+  border-top: 1px solid rgba($primary, 0.1);
+  border-bottom: 1px solid rgba($primary, 0.1);
+}
+
+.section.bg-card {
+  background-color: $background-card;
+  box-shadow: inset 0 0 20px rgba($shadow-light, 0.3);
+  border-top: 1px solid $border-light;
+  border-bottom: 1px solid $border-light;
+}
+
+.section.bg-primary {
+  background: linear-gradient(135deg, $primary, $primary-light);
+  color: $text-inverse;
+  border-top: 3px solid $primary-dark;
+  border-bottom: 3px solid $primary-dark;
+
+  // Override text colors for inverse background
+  h1, h2, h3, h4, h5, h6 {
+    color: $text-inverse;
+    text-shadow: 2px 2px 4px rgba($shadow-dark, 0.5);
+  }
+
+  p {
+    color: rgba($text-inverse, 0.9);
+  }
+}
+
+.section.bg-accent {
+  background: linear-gradient(135deg, $accent, $accent-light);
+  color: $text-inverse;
+  border-top: 3px solid $accent-dark;
+  border-bottom: 3px solid $accent-dark;
+
+  // Override text colors for inverse background
+  h1, h2, h3, h4, h5, h6 {
+    color: $text-inverse;
+    text-shadow: 2px 2px 4px rgba($shadow-dark, 0.5);
+  }
+
+  p {
+    color: rgba($text-inverse, 0.9);
+  }
+}
+
+// Special section styles to match homepage sections
+
+// Hero/Intro section styling
+.section-hero {
+  background: linear-gradient(135deg,
+    rgba($background-card, 0.9),
+    rgba($primary-light, 0.1),
+    rgba($accent-light, 0.1)
+  );
+  border: none;
+  padding: $space-20 0;
+  position: relative;
+  overflow: hidden;
+
+  // Subtle pattern overlay
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%,
+      rgba($accent, 0.05) 0%,
+      transparent 50%
+    ),
+    radial-gradient(circle at 80% 20%,
+      rgba($primary, 0.05) 0%,
+      transparent 50%
+    );
+    pointer-events: none;
+  }
+
+  // Content should appear above the overlay
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+// Feature/highlight section
+.section-feature {
+  background: linear-gradient(to bottom,
+    rgba($background-alt, 0.8),
+    rgba($background-card, 0.6)
+  );
+  border-top: 2px solid rgba($accent, 0.3);
+  border-bottom: 2px solid rgba($accent, 0.3);
+  box-shadow: 0 4px 20px rgba($shadow-light, 0.4);
+
+  &:hover {
+    background: linear-gradient(to bottom,
+      rgba($background-alt, 0.9),
+      rgba($background-card, 0.8)
+    );
+    box-shadow: 0 6px 25px rgba($shadow-light, 0.5);
+  }
+}
+
+// Testimonial/recommendation section
+.section-testimonials {
+  background: linear-gradient(135deg,
+    rgba($background-card, 0.8),
+    rgba($primary-light, 0.05)
+  );
+  border-top: 1px solid rgba($primary, 0.2);
+  border-bottom: 1px solid rgba($primary, 0.2);
+
+  // Special styling for testimonial cards within
+  .testimonial-card,
+  .recommendation-cards .card {
+    background-color: rgba($background-card, 0.9);
+    border: 1px solid rgba($accent, 0.2);
+
+    &:hover {
+      border-color: rgba($accent, 0.4);
+      box-shadow: 0 6px 20px rgba($shadow-medium, 0.3);
+    }
+  }
+}
+
+// Experience section (matching your current layout)
+.section-experience {
+  background: linear-gradient(to bottom,
+    rgba($background, 0.9),
+    rgba($background-alt, 0.7),
+    rgba($background, 0.9)
+  );
+  border-top: 2px solid rgba($primary-dark, 0.2);
+  border-bottom: 2px solid rgba($primary-dark, 0.2);
+
+  // Make the experience content area stand out
+  .experience-content {
+    background-color: rgba($background-card, 0.4);
+    border-radius: $radius-lg;
+    padding: $space-6;
+    box-shadow: 0 4px 16px rgba($shadow-light, 0.3);
+  }
+}
+
+// Tech stack section (for the TLDR circle)
+.section-stack {
+  background: radial-gradient(ellipse at center,
+    rgba($background-alt, 0.8) 0%,
+    rgba($background, 0.9) 70%,
+    $background 100%
+  );
+  padding: $space-20 0;
+
+  // Ensure the stack circle has proper contrast
+  .stack-circle {
+    box-shadow: 0 8px 32px rgba($shadow-medium, 0.4);
+    border: 2px solid rgba($text-inverse, 0.1);
+  }
+}
+
+// Section with contained content gets subtle padding
+.section-contained {
+  padding: $space-12 $space-6;
+
+  @media (min-width: $breakpoint-md) {
+    padding: $space-16 $space-8;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    padding: $space-20 $space-10;
+  }
+}
+
+// Mobile responsive adjustments
+@media (max-width: $breakpoint-md) {
+  .section {
+    padding: $space-12 0;
+  }
+
+  .section-sm {
+    padding: $space-6 0;
+  }
+
+  .section-lg {
+    padding: $space-16 0;
+  }
+
+  .section-hero {
+    padding: $space-16 0;
+  }
+
+  .section-stack {
+    padding: $space-16 0;
+  }
+
+  .section-experience .experience-content {
+    padding: $space-4;
+    margin: 0 $space-2;
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .section {
+    padding: $space-8 0;
+  }
+
+  .section-sm {
+    padding: $space-4 0;
+  }
+
+  .section-lg {
+    padding: $space-12 0;
+  }
+
+  .section-hero {
+    padding: $space-12 0;
+  }
+
+  .section-contained {
+    padding: $space-8 $space-3;
+  }
+}
