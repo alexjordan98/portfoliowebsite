@@ -1,0 +1,225 @@
+@import "../variables";
+
+// =============================================================================
+// CONTAINER COMPONENT STYLES
+// =============================================================================
+
+// Base container styles
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $space-8;
+  width: 100%;
+  
+  // Subtle background for definition
+  background-color: rgba($background-card, 0.3);
+  border-radius: $radius-lg;
+  
+  // Soft shadow to match site aesthetic
+  box-shadow: 0 2px 8px rgba($shadow-light, 0.5);
+  
+  // Smooth transitions for any hover states
+  transition: all 0.3s ease;
+}
+
+// Container size variants
+.container-sm {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 $space-6;
+  width: 100%;
+  background-color: rgba($background-card, 0.4);
+  border-radius: $radius-md;
+  box-shadow: 0 1px 4px rgba($shadow-light, 0.4);
+  transition: all 0.3s ease;
+}
+
+.container-lg {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 $space-10;
+  width: 100%;
+  background-color: rgba($background-card, 0.25);
+  border-radius: $radius-xl;
+  box-shadow: 0 3px 12px rgba($shadow-light, 0.6);
+  transition: all 0.3s ease;
+}
+
+.container-xl {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 $space-12;
+  width: 100%;
+  background-color: rgba($background-card, 0.2);
+  border-radius: $radius-xl;
+  box-shadow: 0 4px 16px rgba($shadow-light, 0.7);
+  transition: all 0.3s ease;
+}
+
+.container-full {
+  max-width: none;
+  width: 100%;
+  padding: 0 $space-6;
+  margin: 0;
+  background-color: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+// Responsive container with smart padding and backgrounds
+.container-responsive {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $space-4;
+  background-color: rgba($background-card, 0.3);
+  border-radius: $radius-lg;
+  box-shadow: 0 2px 8px rgba($shadow-light, 0.5);
+  transition: all 0.3s ease;
+  
+  @media (min-width: $breakpoint-sm) {
+    padding: 0 $space-6;
+    background-color: rgba($background-card, 0.35);
+  }
+  
+  @media (min-width: $breakpoint-md) {
+    padding: 0 $space-8;
+    background-color: rgba($background-card, 0.4);
+    box-shadow: 0 3px 10px rgba($shadow-light, 0.6);
+  }
+  
+  @media (min-width: $breakpoint-lg) {
+    padding: 0 $space-10;
+    max-width: 1400px;
+    background-color: rgba($background-card, 0.3);
+  }
+  
+  @media (min-width: $breakpoint-xl) {
+    padding: 0 $space-12;
+    max-width: 1600px;
+  }
+}
+
+// Container style variants to match site aesthetic
+.container-warm {
+  background: linear-gradient(135deg, 
+    rgba($primary-light, 0.1), 
+    rgba($accent-light, 0.1)
+  );
+  border: 1px solid rgba($primary, 0.2);
+  
+  &:hover {
+    background: linear-gradient(135deg, 
+      rgba($primary-light, 0.15), 
+      rgba($accent-light, 0.15)
+    );
+    border-color: rgba($primary, 0.3);
+    box-shadow: 0 4px 12px rgba($shadow-medium, 0.4);
+  }
+}
+
+.container-minimal {
+  background-color: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  
+  &:hover {
+    background-color: rgba($background-card, 0.1);
+    border-radius: $radius-sm;
+    box-shadow: 0 1px 3px rgba($shadow-light, 0.3);
+  }
+}
+
+.container-elevated {
+  background-color: $background-card;
+  border: 1px solid $border-light;
+  box-shadow: 0 6px 20px rgba($shadow-medium, 0.3);
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba($shadow-medium, 0.4);
+    border-color: $border-medium;
+  }
+}
+
+// Container with accent border (matching site's warm theme)
+.container-accent-border {
+  border-left: 4px solid $accent;
+  background: linear-gradient(to right, 
+    rgba($accent-light, 0.1), 
+    rgba($background-card, 0.3)
+  );
+  
+  &:hover {
+    border-left-color: $accent-dark;
+    background: linear-gradient(to right, 
+      rgba($accent-light, 0.15), 
+      rgba($background-card, 0.4)
+    );
+  }
+}
+
+// Special container for intro/hero sections
+.container-hero {
+  max-width: 1400px;
+  background: linear-gradient(135deg, 
+    rgba($background-card, 0.8), 
+    rgba($primary-light, 0.1),
+    rgba($accent-light, 0.1)
+  );
+  border-radius: $radius-xl;
+  box-shadow: 0 8px 32px rgba($shadow-medium, 0.2);
+  border: 1px solid rgba($primary, 0.15);
+  
+  &:hover {
+    box-shadow: 0 12px 40px rgba($shadow-medium, 0.25);
+    border-color: rgba($primary, 0.2);
+  }
+}
+
+// Mobile responsive adjustments
+@media (max-width: $breakpoint-md) {
+  .container,
+  .container-sm,
+  .container-lg,
+  .container-xl {
+    padding: 0 $space-4;
+    margin: 0 $space-2;
+    width: calc(100% - #{$space-4});
+    border-radius: $radius-md;
+  }
+  
+  .container-hero {
+    padding: 0 $space-4;
+    border-radius: $radius-lg;
+    box-shadow: 0 4px 16px rgba($shadow-medium, 0.2);
+  }
+  
+  .container-elevated {
+    box-shadow: 0 3px 10px rgba($shadow-medium, 0.3);
+    
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba($shadow-medium, 0.4);
+    }
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .container,
+  .container-sm,
+  .container-lg,
+  .container-xl,
+  .container-responsive {
+    padding: 0 $space-3;
+    margin: 0 $space-1;
+    width: calc(100% - #{$space-2});
+    border-radius: $radius-sm;
+  }
+  
+  .container-hero {
+    padding: 0 $space-3;
+    margin: 0 $space-1;
+    width: calc(100% - #{$space-2});
+  }
+}
