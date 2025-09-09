@@ -8,7 +8,7 @@ interface SiteButtonProps {
   /** Button text content */
   text: string;
 
-  /** Button type/variant (backward compatibility) */
+  /** Button type/variant */
   type?: 'primary-button' | 'secondary-button';
 
   /** Modern button variant with warm professional styling */

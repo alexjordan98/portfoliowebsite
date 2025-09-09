@@ -145,3 +145,49 @@
     align-items: center;
   }
 }
+
+.intro-content-card {
+  max-width: none !important;
+  width: 100%;
+  padding: 0 !important;
+  background: rgba($background-card, 0.95);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba($border-light, 0.6);
+  box-shadow: 0 8px 32px rgba($shadow-light, 0.3),
+              0 4px 16px rgba($primary, 0.1),
+              0 0 0 1px rgba($accent, 0.05);
+  border-radius: $radius-xl;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+
+  // Subtle gradient overlay for depth
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg,
+      rgba($primary, 0.03) 0%,
+      transparent 40%,
+      rgba($accent, 0.02) 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .card-body {
+    position: relative;
+    z-index: 2;
+    padding: $space-8;
+  }
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 48px rgba($shadow-light, 0.4),
+                0 6px 24px rgba($primary, 0.15),
+                0 0 0 1px rgba($accent, 0.08);
+  }
+}

@@ -1,3 +1,4 @@
+"use client"
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 
@@ -244,45 +245,13 @@ export default function Navbar({
 
   return (
     <nav className={navbarClasses} role="navigation" aria-label="Main navigation">
-      <div className="navbar-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="navbar-content flex items-center justify-between h-16">
-          <div className="navbar-brand flex items-center">
-            <BrandComponent />
-          </div>
-
-          <div className="navbar-nav hidden md:block">
-            <ul className="nav-list flex items-center space-x-6">
-              {navigationItems.map((item, index) => (
-                <li key={index} className="nav-item">
-                  <NavLink item={item} />
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="navbar-actions flex items-center space-x-4">
-            {actions && <div className="hidden md:flex">{actions}</div>}
-            {showMobileMenu && <MobileMenuButton />}
-          </div>
-        </div>
-
-        {showMobileMenu && (
-          <div className={`mobile-nav md:hidden ${mobileMenuOpen ? 'mobile-nav-open' : 'mobile-nav-closed'}`}>
-            <ul className="mobile-nav-list py-4 space-y-2">
-              {navigationItems.map((item, index) => (
-                <li key={index} className="mobile-nav-item">
-                  <NavLink item={item} mobile />
-                </li>
-              ))}
-              {actions && (
-                <li className="mobile-nav-item pt-4 border-t border-gray-200">
-                  <div className="mobile-actions">{actions}</div>
-                </li>
-              )}
-            </ul>
-          </div>
-        )}
-      </div>
+      <ul className="nav-list">
+        {navigationItems.map((item, index) => (
+          <li key={index} className="nav-item">
+            <NavLink item={item} />
+          </li>
+        ))}
+      </ul>
     </nav>
   );
 }

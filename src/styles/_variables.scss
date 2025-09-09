@@ -3,25 +3,24 @@
 // =============================================================================
 
 // Brand Colors
-$primary: #8B4513; 
-$primary-light: #A0522D;
-$primary-dark: #654321;
+$primary:       #006D77; // deep teal
+$primary-light: #83C5BE; // aqua
+$primary-dark:  #004D4F; // dark teal
 
-$accent: #D2691E;
-$accent-light: #E6824B;
-$accent-dark: #B8621A;
+$accent:        #6D597A; // muted plum
+$accent-light:  #B5838D; // rose-plum
+$accent-dark:   #4A3C54; // deep eggplant
 
 // Background Colors
 $background: #FDF5E6;
 $background-alt: #FAF0E6;
-$background-card: #FFFFFF;
+$background-card: hsl(0, 44%, 90%);
 $background-overlay: rgba(255, 255, 255, 0.7);
 
-// Text Colors
-$text-primary: #2C1810;
-$text-secondary: #5D4037;
-$text-muted: #8D6E63;
-$text-inverse: #FFFFFF;
+$text-primary:   #1C1C1E; // nearly-black neutral (not brown)
+$text-secondary: #374151; // slate gray
+$text-muted:     #6B7280; // cool gray
+$text-inverse:   #FFFFFF; // for buttons/dark backgrounds
 
 // Border Colors
 $border-light: #E0E0E0;
@@ -116,7 +115,7 @@ $z-toast: 1080;
   --font-heading: 'Jua', sans-serif;
   --font-body: 'Inter', sans-serif;
   --font-mono: 'Monaco', 'Menlo', monospace;
-  
+
   // Font Sizes (using rem for scalability)
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem
@@ -127,13 +126,13 @@ $z-toast: 1080;
   --font-size-3xl: 2rem;
   --font-size-4xl: 3rem;
   --font-size-5xl: 4rem;
-  
+
   // Line Heights
   --line-height-tight: 1.2;
   --line-height-normal: 1.5;
   --line-height-relaxed: 1.6;
   --line-height-loose: 1.8;
-  
+
   // Font Weights
   --font-weight-light: 300;
   --font-weight-normal: 400;

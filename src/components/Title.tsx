@@ -8,7 +8,7 @@ interface TitleProps {
   /** The text content of the title */
   text: string;
 
-  /** Font size in pixels (for backward compatibility) */
+  /** Font size in pixels */
   fontSize?: number;
 
   /** Text color (CSS color value) */
@@ -88,7 +88,7 @@ export default function Title({
   size,
   variant = 'default',
   align = 'center',
-  shadow = true,
+  shadow = false,
   className = '',
   style = {},
   id,

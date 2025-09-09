@@ -10,14 +10,14 @@
   margin: 0 auto;
   padding: 0 $space-8;
   width: 100%;
-  
+
   // Subtle background for definition
   background-color: rgba($background-card, 0.3);
   border-radius: $radius-lg;
-  
+
   // Soft shadow to match site aesthetic
   box-shadow: 0 2px 8px rgba($shadow-light, 0.5);
-  
+
   // Smooth transitions for any hover states
   transition: all 0.3s ease;
 }
@@ -76,24 +76,24 @@
   border-radius: $radius-lg;
   box-shadow: 0 2px 8px rgba($shadow-light, 0.5);
   transition: all 0.3s ease;
-  
+
   @media (min-width: $breakpoint-sm) {
     padding: 0 $space-6;
     background-color: rgba($background-card, 0.35);
   }
-  
+
   @media (min-width: $breakpoint-md) {
     padding: 0 $space-8;
     background-color: rgba($background-card, 0.4);
     box-shadow: 0 3px 10px rgba($shadow-light, 0.6);
   }
-  
+
   @media (min-width: $breakpoint-lg) {
     padding: 0 $space-10;
     max-width: 1400px;
     background-color: rgba($background-card, 0.3);
   }
-  
+
   @media (min-width: $breakpoint-xl) {
     padding: 0 $space-12;
     max-width: 1600px;
@@ -102,15 +102,15 @@
 
 // Container style variants to match site aesthetic
 .container-warm {
-  background: linear-gradient(135deg, 
-    rgba($primary-light, 0.1), 
+  background: linear-gradient(135deg,
+    rgba($primary-light, 0.1),
     rgba($accent-light, 0.1)
   );
   border: 1px solid rgba($primary, 0.2);
-  
+
   &:hover {
-    background: linear-gradient(135deg, 
-      rgba($primary-light, 0.15), 
+    background: linear-gradient(135deg,
+      rgba($primary-light, 0.15),
       rgba($accent-light, 0.15)
     );
     border-color: rgba($primary, 0.3);
@@ -122,7 +122,7 @@
   background-color: transparent;
   box-shadow: none;
   border-radius: 0;
-  
+
   &:hover {
     background-color: rgba($background-card, 0.1);
     border-radius: $radius-sm;
@@ -134,7 +134,7 @@
   background-color: $background-card;
   border: 1px solid $border-light;
   box-shadow: 0 6px 20px rgba($shadow-medium, 0.3);
-  
+
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba($shadow-medium, 0.4);
@@ -145,15 +145,15 @@
 // Container with accent border (matching site's warm theme)
 .container-accent-border {
   border-left: 4px solid $accent;
-  background: linear-gradient(to right, 
-    rgba($accent-light, 0.1), 
+  background: linear-gradient(to right,
+    rgba($accent-light, 0.1),
     rgba($background-card, 0.3)
   );
-  
+
   &:hover {
     border-left-color: $accent-dark;
-    background: linear-gradient(to right, 
-      rgba($accent-light, 0.15), 
+    background: linear-gradient(to right,
+      rgba($accent-light, 0.15),
       rgba($background-card, 0.4)
     );
   }
@@ -162,15 +162,15 @@
 // Special container for intro/hero sections
 .container-hero {
   max-width: 1400px;
-  background: linear-gradient(135deg, 
-    rgba($background-card, 0.8), 
+  background: linear-gradient(135deg,
+    rgba($background-card, 0.8),
     rgba($primary-light, 0.1),
     rgba($accent-light, 0.1)
   );
   border-radius: $radius-xl;
   box-shadow: 0 8px 32px rgba($shadow-medium, 0.2);
   border: 1px solid rgba($primary, 0.15);
-  
+
   &:hover {
     box-shadow: 0 12px 40px rgba($shadow-medium, 0.25);
     border-color: rgba($primary, 0.2);
@@ -188,16 +188,16 @@
     width: calc(100% - #{$space-4});
     border-radius: $radius-md;
   }
-  
+
   .container-hero {
     padding: 0 $space-4;
     border-radius: $radius-lg;
     box-shadow: 0 4px 16px rgba($shadow-medium, 0.2);
   }
-  
+
   .container-elevated {
     box-shadow: 0 3px 10px rgba($shadow-medium, 0.3);
-    
+
     &:hover {
       transform: translateY(-1px);
       box-shadow: 0 4px 12px rgba($shadow-medium, 0.4);
@@ -216,7 +216,7 @@
     width: calc(100% - #{$space-2});
     border-radius: $radius-sm;
   }
-  
+
   .container-hero {
     padding: 0 $space-3;
     margin: 0 $space-1;

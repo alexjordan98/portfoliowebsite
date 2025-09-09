@@ -36,20 +36,20 @@
   padding: $space-2 $space-3;
   border-radius: $radius-sm;
   position: relative;
-  
+
   &:hover {
-    color: $accent;
+    color: $primary-light;
   }
-  
+
   &:focus {
-    outline: 2px solid $accent;
+    outline: 2px solid $primary-light;
     outline-offset: 2px;
   }
-  
+
   &.active {
     color: $primary;
     font-weight: $font-weight-semibold;
-    
+
     &::after {
       content: '';
       position: absolute;
@@ -71,18 +71,18 @@
     margin-top: $space-4;
     padding: $space-2 $space-4;
   }
-  
+
   .nav-list {
     flex-direction: column;
     gap: $space-4;
     justify-content: center;
-    
+
     // Mobile menu toggle (for future implementation)
     &.nav-mobile-hidden {
       display: none;
     }
   }
-  
+
   .nav-link {
     font-size: $font-size-xl;
     padding: $space-3 $space-4;
@@ -103,7 +103,7 @@
   z-index: $z-fixed;
   margin-top: 0;
   padding: $space-3 $space-6;
-  
+
   .nav-list {
     justify-content: center;
   }
@@ -111,14 +111,14 @@
 
 .navbar-transparent {
   background-color: transparent;
-  
+
   .nav-link {
     color: $text-inverse;
-    
+
     &:hover {
       color: $accent-light;
     }
-    
+
     &.active {
       color: $accent;
     }
