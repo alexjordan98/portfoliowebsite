@@ -24,22 +24,6 @@
   }
 }
 
-// Title variants for different contexts
-.title-hero {
-  font-size: $font-size-5xl;
-  font-weight: $font-weight-bold;
-  background: linear-gradient(135deg, $primary, $accent);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: none;
-  margin: $space-4 0;
-
-  @media (max-width: $breakpoint-md) {
-    font-size: $font-size-4xl;
-  }
-}
-
 .title-display {
   font-size: $font-size-4xl;
   font-weight: $font-weight-bold;

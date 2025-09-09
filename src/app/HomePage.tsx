@@ -1,3 +1,4 @@
+"use client"
 import React from 'react';
 import Title from '@/components/Title';
 import Paragraph from '@/components/Paragraph';
@@ -13,45 +14,79 @@ import arrow from '@/images/arrow.png'
 import TestimonialCard from '@/components/TestimonialCard';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Container from '@/components/Container';
+import Section from '@/components/Section';
+import Card from '@/components/Card';
+import AnimatedSection from '@/components/AnimatedSection';
 
 export default function HomePage() {
   return (
     <main className="home-wrapper">
       <Navbar currentPage="Home" />
-      <section className="intro-section">
-        <div className="intro-content">
-          <Title
-            text="George Jordan"
-            fontSize={64}
-            color="#000000"
-          />
-          <Title
-            text="Software Developer"
-            fontSize={32}
-            color="#000000"
-          />
-          <Paragraph
-            text="Hi. I am George Jordan, an American Software developer based out of Washington DC, who focuses on full stack website development."
-            fontSize={24}
-          />
-          <Paragraph
-            text="I made this website to showcase my skills, but also a how-to for anyone who wants to learn some web development."
-            fontSize={24}
-          />
-          <SiteButton
-            text="Go to Detailed Resume"
-            type="primary-button"
-          />
-        </div>
-        <DisplayImage
-          src={pinkAnime}
-          alt="flowers"
-          width={600}
-          height={900}
-        />
-      </section>
+     <AnimatedSection animation="fadeUp" delay={100}>
+        <Section spacing="lg" contained={false}>
+          <Container size="full">
+            <div className="intro-asymmetrical-grid">
+              <Card
+                size="lg"
+                variant="glass"
+                className="intro-content-card"
+                hoverable={false}
+              >
+                <div className="card-body">
+                  <Title
+                    text="George Jordan"
+                    level={1}
+                    variant="hero"
+                    color="#000000"
+                    align="center"
+                    shadow={true}
+                  />
+                  <Title
+                    text="Software Developer"
+                    level={3}
+                    variant="hero"
+                    color="#000000"
+                    align="center"
+                    shadow={true}
+                  />
+                  <Paragraph
+                    text="Hi. I am George Jordan, an American Software developer based out of Washington DC, who focuses on full stack website development."
+                    size="2xl"
+                    align="center"
+                    variant="default"
+                    className="mx-auto"
+                  />
+                  <Paragraph
+                    text="I made this website to showcase my skills, but also a how-to for anyone who wants to learn some web development."
+                    size="2xl"
+                    align="center"
+                    variant="default"
+                    className="mx-auto"
+                  />
+                  <div className="flex justify-center align-center">
+                    <SiteButton
+                      text="Go to Detailed Resume"
+                      variant="primary"
+                    />
+                  </div>
+                </div>
+              </Card>
 
-      {/* Tech Stack Section */}
+              <div className="intro-image-container">
+                <DisplayImage
+                  src={pinkAnime}
+                  alt="flowers"
+                  width={600}
+                  height={900}
+                  className="intro-hero-image"
+                />
+              </div>
+            </div>
+          </Container>
+        </Section>
+      </AnimatedSection>
+
       <section className="stack-section">
         <Title
           text="My Main Stack"
@@ -68,7 +103,6 @@ export default function HomePage() {
         />
       </section>
 
-      {/* Experience Section */}
       <section className="experience-section">
         <Title
           text="Why Hire an Experienced Dev like Me?"
@@ -106,7 +140,7 @@ export default function HomePage() {
             </div>
             <NumberedList
               title="The best way to overcome these challenges is through hands-on experience.
-                   I’ve encountered them time and again, and over time, I’ve learned how to navigate 
+                   I’ve encountered them time and again, and over time, I’ve learned how to navigate
                     them effectively. Here are a few insights I’ve picked up that are worth keeping in mind."
               items={[
                 {

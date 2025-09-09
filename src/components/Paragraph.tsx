@@ -15,7 +15,7 @@ interface ParagraphProps {
   color?: string;
 
   /** Whether to show text shadow (default: true for backward compatibility) */
-  hasShadow?: boolean;
+  shadow?: boolean;
 
   /** Typography size variant */
   size?: 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl';
@@ -110,7 +110,7 @@ export default function Paragraph({
   text,
   fontSize,
   color = "#000000",
-  hasShadow = true,
+  shadow = false,
   size = 'base',
   variant = 'default',
   align = 'center',
@@ -145,7 +145,7 @@ export default function Paragraph({
 
   const paragraphStyles: React.CSSProperties = {
     color,
-    textShadow: hasShadow ? '2px 2px #aaa' : 'none',
+    textShadow: shadow ? '2px 2px #aaa' : 'none',
     userSelect: selectable ? 'text' : 'none',
     ...(fontSize && { fontSize: `${fontSize}px` }),
     ...(maxWidth === 'prose' && { maxWidth: '65ch' }),
