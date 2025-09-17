@@ -1,77 +1,37 @@
 @import "../variables";
 
-// Main wrapper for pages
-.home-wrapper {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-// Container utilities for consistent max-widths and centering
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 $space-8;
-  
-  &.container-sm {
-    max-width: 800px;
-  }
-  
-  &.container-lg {
-    max-width: 1400px;
-  }
-  
-  &.container-full {
-    max-width: none;
-    width: 100%;
-  }
-}
-
-// Section spacing utilities
-.section {
-  padding: $space-16 0;
-  
-  &.section-sm {
-    padding: $space-8 0;
-  }
-  
-  &.section-lg {
-    padding: $space-24 0;
-  }
-}
-
 // Flexbox utilities
 .flex {
   display: flex;
-  
+
   &.flex-col {
     flex-direction: column;
   }
-  
+
   &.flex-row {
     flex-direction: row;
   }
-  
+
   &.justify-center {
     justify-content: center;
   }
-  
+
   &.justify-between {
     justify-content: space-between;
   }
-  
+
   &.justify-around {
     justify-content: space-around;
   }
-  
+
   &.align-center {
     align-items: center;
   }
-  
+
   &.align-start {
     align-items: flex-start;
   }
-  
+
   &.align-end {
     align-items: flex-end;
   }
@@ -80,17 +40,17 @@
 // Grid utilities
 .grid {
   display: grid;
-  
+
   &.grid-2 {
     grid-template-columns: repeat(2, 1fr);
     gap: $space-6;
   }
-  
+
   &.grid-3 {
     grid-template-columns: repeat(3, 1fr);
     gap: $space-6;
   }
-  
+
   &.grid-4 {
     grid-template-columns: repeat(4, 1fr);
     gap: $space-6;
@@ -183,13 +143,13 @@
   .container {
     padding: 0 $space-4;
   }
-  
+
   .grid-2,
   .grid-3,
   .grid-4 {
     grid-template-columns: 1fr;
   }
-  
+
   .flex-row {
     &.responsive {
       flex-direction: column;

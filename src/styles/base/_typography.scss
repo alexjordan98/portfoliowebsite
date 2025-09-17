@@ -1,15 +1,25 @@
 @import "../variables";
 
+/**
+ * Typography Component Styles
+ *
+ * Styles for Title and Paragraph components with clean, simplified structure.
+ * No legacy compatibility - designed for new component architecture.
+ */
+
+// =============================================================================
+// TITLE COMPONENT STYLES
+// =============================================================================
+
 .title {
   font-family: $font-heading;
-  text-shadow: 2px 2px $shadow-medium;
-  margin: $space-2 0;
-  text-align: center;
   color: $text-primary;
+  margin: $space-2 0;
   transition: color 0.2s ease, transform 0.2s ease;
+  text-align: center;
 
   // Interactive title styles
-  &[role="button"] {
+  &.cursor-pointer {
     cursor: pointer;
 
     &:hover {
@@ -17,148 +27,243 @@
       transform: translateY(-1px);
     }
 
-    &:focus {
-      outline: 2px solid $accent;
+    &:focus-visible {
+      outline: 2px solid $primary;
       outline-offset: 2px;
     }
+
+    &:active {
+      transform: translateY(0);
+    }
   }
+
 }
 
-.title-display {
+// =============================================================================
+// SEMANTIC HEADING LEVELS
+// =============================================================================
+
+h1.title {
   font-size: $font-size-4xl;
   font-weight: $font-weight-bold;
-  color: $primary-dark;
-  text-shadow: 3px 3px $shadow-dark;
-  margin: $space-3 0;
+  line-height: $line-height-tight;
+  margin: $space-4 0 $space-3;
 
   @media (max-width: $breakpoint-md) {
     font-size: $font-size-3xl;
   }
 }
 
-.title-section {
+h2.title {
   font-size: $font-size-3xl;
   font-weight: $font-weight-semibold;
-  color: $primary;
-  border-bottom: 2px solid $accent-light;
-  padding-bottom: $space-2;
-  margin: $space-4 0;
-  display: inline-block;
+  line-height: $line-height-tight;
+  margin: $space-3 0 $space-2;
 
   @media (max-width: $breakpoint-md) {
     font-size: $font-size-2xl;
   }
 }
 
-.title-card {
+h3.title {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-normal;
+  margin: $space-3 0 $space-2;
+
+  @media (max-width: $breakpoint-md) {
+    font-size: $font-size-xl;
+  }
+}
+
+h4.title {
   font-size: $font-size-xl;
   font-weight: $font-weight-medium;
+  line-height: $line-height-normal;
+  margin: $space-2 0;
+}
+
+h5.title {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-normal;
+  margin: $space-2 0;
+}
+
+h6.title {
+  font-size: $font-size-base;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-normal;
+  margin: $space-2 0;
+}
+
+// =============================================================================
+// TITLE VARIANT STYLES
+// =============================================================================
+
+.title-card {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-medium;
   color: $text-primary;
-  text-shadow: 1px 1px $shadow-light;
-  margin: 0 0 $space-3;
+  margin: 0 0 $space-2;
   line-height: $line-height-tight;
 }
 
-.title-subtle {
-  font-size: $font-size-lg;
-  font-weight: $font-weight-normal;
-  color: $text-secondary;
-  text-shadow: none;
-  margin: $space-1 0;
-  opacity: 0.8;
+// =============================================================================
+// TITLE ALIGNMENT STYLES
+// =============================================================================
+
+.title-left {
+  text-align: left;
 }
 
-// Enhanced paragraph styles (maintains backward compatibility)
+.title-center {
+  text-align: center;
+}
+
+.title-right {
+  text-align: right;
+}
+
+// =============================================================================
+// TITLE DECORATIVE STYLES
+// =============================================================================
+
+.title-underlined {
+  position: relative;
+  width: fit-content; // This makes the element exactly as wide as its content
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%; // Now 100% matches exactly the text width
+    height: 2px;
+    background-color: $primary;
+    border-radius: 1px;
+  }
+
+  // For center alignment, we need to center the whole title element
+  &.title-center {
+    margin: 0 auto; // Centers the fit-content element
+  }
+
+  &.title-left {
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  &.title-right {
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
+
+.title-shadow {
+  text-shadow: 2px 2px 4px rgba($shadow-medium, 0.3);
+}
+
+// =============================================================================
+// PARAGRAPH COMPONENT STYLES
+// =============================================================================
+
 .paragraph {
   font-family: $font-body;
-  max-width: 600px;
-  text-align: center;
-  margin: 0.75rem 0;
-  line-height: $line-height-relaxed;
   color: $text-primary;
+  line-height: $line-height-relaxed;
+  margin: $space-3 0;
   transition: color 0.2s ease;
 
   // Interactive paragraph styles
-  &[role="button"] {
+  &.cursor-pointer {
     cursor: pointer;
 
     &:hover {
       color: $primary;
     }
 
-    &:focus {
-      outline: 2px solid $accent;
+    &:focus-visible {
+      outline: 2px solid $primary;
       outline-offset: 2px;
     }
   }
 }
 
-// Paragraph variants for different contexts
-.text-lead {
-  font-size: $font-size-xl;
-  font-weight: $font-weight-medium;
-  line-height: $line-height-relaxed;
-  color: $primary-dark;
-  max-width: 70ch;
+// =============================================================================
+// PARAGRAPH VARIANT STYLES
+// =============================================================================
+
+.text-card {
+  font-size: $font-size-sm;
+  color: $text-secondary;
+  line-height: $line-height-normal;
+  margin: $space-2 0;
 }
 
-.text-body {
+.text-modal {
   font-size: $font-size-base;
+  color: $text-primary;
   line-height: $line-height-relaxed;
-  max-width: 65ch;
+  margin: $space-2 0;
 }
 
 .text-caption {
-  font-size: $font-size-sm;
-  line-height: $line-height-normal;
-  color: $text-secondary;
-  font-style: italic;
-}
-
-.text-muted {
+  font-size: $font-size-xs;
   color: $text-muted;
-  opacity: 0.8;
+  line-height: $line-height-normal;
+  font-style: italic;
+  margin: $space-1 0;
 }
 
-.text-inverse {
-  color: $text-inverse;
-}
+// =============================================================================
+// TEXT SIZE UTILITIES
+// =============================================================================
 
-// Font weight utilities
-.font-light { font-weight: $font-weight-light; }
-.font-normal { font-weight: $font-weight-normal; }
-.font-medium { font-weight: $font-weight-medium; }
-.font-semibold { font-weight: $font-weight-semibold; }
-.font-bold { font-weight: $font-weight-bold; }
-
-// Line height utilities
-.leading-tight { line-height: $line-height-tight; }
-.leading-normal { line-height: $line-height-normal; }
-.leading-relaxed { line-height: $line-height-relaxed; }
-.leading-loose { line-height: $line-height-loose; }
-
-// Text size utilities (enhanced)
 .text-xs { font-size: $font-size-xs; }
 .text-sm { font-size: $font-size-sm; }
 .text-base { font-size: $font-size-base; }
 .text-lg { font-size: $font-size-lg; }
 .text-xl { font-size: $font-size-xl; }
 .text-2xl { font-size: $font-size-2xl; }
-.text-3xl { font-size: $font-size-3xl; }
-.text-4xl { font-size: $font-size-4xl; }
-.text-5xl { font-size: $font-size-5xl; }
 
-// Max width utilities for optimal readability
-.max-w-xs { max-width: 20rem; }
-.max-w-sm { max-width: 24rem; }
-.max-w-md { max-width: 28rem; }
-.max-w-lg { max-width: 32rem; }
-.max-w-xl { max-width: 36rem; }
-.max-w-2xl { max-width: 42rem; }
-.max-w-prose { max-width: 65ch; }
-.max-w-none { max-width: none; }
+// =============================================================================
+// TEXT ALIGNMENT UTILITIES
+// =============================================================================
 
-// Text truncation utilities
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-justify { text-align: justify; }
+
+// =============================================================================
+// TEXT SHADOW UTILITIES
+// =============================================================================
+
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba($shadow-medium, 0.3);
+}
+
+.text-true {
+  text-shadow: 2px 2px 4px rgba($shadow-medium, 0.3);
+}
+
+// =============================================================================
+// TEXT SELECTION UTILITIES
+// =============================================================================
+
+.select-none {
+  user-select: none;
+}
+
+.select-text {
+  user-select: text;
+}
+
+// =============================================================================
+// TEXT TRUNCATION UTILITIES
+// =============================================================================
+
 .truncate {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -170,6 +275,7 @@
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
+  line-clamp: 1;
 }
 
 .line-clamp-2 {
@@ -177,6 +283,7 @@
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
 }
 
 .line-clamp-3 {
@@ -184,133 +291,92 @@
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
 }
 
-// Text selection utilities
-.select-none {
-  user-select: none;
+.line-clamp-4 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
 }
 
-.select-text {
-  user-select: text;
+.line-clamp-5 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
 }
 
-.select-all {
-  user-select: all;
+// =============================================================================
+// HOVER UTILITIES
+// =============================================================================
+
+.hover-opacity-80:hover {
+  opacity: 0.8;
 }
 
-// Numbered list typography (enhanced)
-.numbered-list-indices {
-  font-family: $font-heading;
-  text-shadow: 2px 2px $shadow-medium;
-  font-size: $font-size-2xl;
-  color: $text-primary;
-  transition: color 0.2s ease;
+.hover-opacity-70:hover {
+  opacity: 0.7;
 }
 
-.numbered-list-items {
-  font-family: $font-heading;
-  text-shadow: 2px 2px $shadow-medium;
-  font-size: $font-size-2xl;
-  color: $text-primary;
-  line-height: $line-height-relaxed;
+// =============================================================================
+// RESPONSIVE TYPOGRAPHY
+// =============================================================================
 
-  &:hover {
-    color: $primary-dark;
+@media (max-width: $breakpoint-md) {
+  .paragraph {
+    font-size: $font-size-sm;
+    margin: $space-2 0;
+  }
+
+  .text-lg { font-size: $font-size-base; }
+  .text-xl { font-size: $font-size-lg; }
+  .text-2xl { font-size: $font-size-xl; }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .paragraph {
+    font-size: $font-size-xs;
+    line-height: $line-height-normal;
+  }
+
+  .text-base { font-size: $font-size-sm; }
+  .text-lg { font-size: $font-size-sm; }
+  .text-xl { font-size: $font-size-base; }
+  .text-2xl { font-size: $font-size-lg; }
+}
+
+// =============================================================================
+// ACCESSIBILITY ENHANCEMENTS
+// =============================================================================
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  .title,
+  .paragraph {
+    &.cursor-pointer:hover {
+      color: $primary-dark;
+    }
+  }
+
+  .title-shadow,
+  .text-shadow,
+  .text-true {
+    text-shadow: none;
   }
 }
 
-.numbered-list-titles {
-  margin-bottom: 20px;
-}
-
-.sub-items {
-  margin-left: $space-4;
-  padding-left: $space-4;
-  font-size: $font-size-lg;
-  color: $text-secondary;
-}
-
-// Enhanced heading styles for semantic HTML
-h1 {
-  font-family: $font-heading;
-  font-size: $font-size-5xl;
-  font-weight: $font-weight-bold;
-  line-height: $line-height-tight;
-  color: $text-primary;
-  margin: $space-4 0 $space-3;
-
-  @media (max-width: $breakpoint-md) {
-    font-size: $font-size-4xl;
-  }
-}
-
-h2 {
-  font-family: $font-heading;
-  font-size: $font-size-4xl;
-  font-weight: $font-weight-semibold;
-  line-height: $line-height-tight;
-  color: $text-primary;
-  margin: $space-3 0 $space-2;
-
-  @media (max-width: $breakpoint-md) {
-    font-size: $font-size-3xl;
-  }
-}
-
-h3 {
-  font-family: $font-heading;
-  font-size: $font-size-3xl;
-  font-weight: $font-weight-medium;
-  line-height: $line-height-normal;
-  color: $text-primary;
-  margin: $space-3 0 $space-2;
-
-  @media (max-width: $breakpoint-md) {
-    font-size: $font-size-2xl;
-  }
-}
-
-h4 {
-  font-family: $font-heading;
-  font-size: $font-size-2xl;
-  font-weight: $font-weight-medium;
-  line-height: $line-height-normal;
-  color: $text-primary;
-  margin: $space-2 0;
-}
-
-h5 {
-  font-family: $font-body;
-  font-size: $font-size-xl;
-  font-weight: $font-weight-semibold;
-  line-height: $line-height-normal;
-  color: $text-primary;
-  margin: $space-2 0;
-}
-
-h6 {
-  font-family: $font-body;
-  font-size: $font-size-lg;
-  font-weight: $font-weight-semibold;
-  line-height: $line-height-normal;
-  color: $text-primary;
-  margin: $space-2 0;
-}
-
-// Enhanced paragraph styles
-p {
-  font-family: $font-body;
-  font-size: $font-size-base;
-  line-height: $line-height-relaxed;
-  color: $text-primary;
-  margin: $space-3 0;
-
-  &:first-child {
-    margin-top: 0;
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  .title,
+  .paragraph {
+    transition: none;
   }
 
-  &:last-child {
-    margin-bottom: 0;
+  .title.cursor-pointer:hover {
+    transform: none;
   }
 }

@@ -2,87 +2,84 @@ import React from 'react';
 
 /**
  * Container component props interface
- * Provides consistent max-width and centering for page content
+ * Provides flexible container wrapper with multiple sizing and alignment options
  */
 interface ContainerProps {
-  /** Content to be contained and centered */
-  children: React.ReactNode;
+    /** HTML id attribute */
+    id?: string;
 
-  /** Additional CSS classes to apply to the container */
-  className?: string;
+    /** Additional CSS classes to apply to the container */
+    className?: string;
 
-  /** Container size variant - affects max-width */
-  size?: 'sm' | 'md' | 'lg' | 'xl' | 'full';
+    /** Main content of the container */
+    children: React.ReactNode;
 
-  /** Additional inline styles */
-  style?: React.CSSProperties;
+    /** Container size variant - affects max-width and padding */
+    size?: 'sm' | 'md' | 'lg' | 'xl' | 'full';
 
-  /** HTML id attribute */
-  id?: string;
+    /** Where the content inside the container will be aligned */
+    childAlignment?: 'child-left' | 'child-right' | 'child-center';
 
-  /** HTML element tag to use (div, main, section, etc.) */
-  as?: keyof JSX.IntrinsicElements;
+    /** Where the container itself will be aligned in its surrounding component */
+    selfAlignment?: 'self-left' | 'self-right' | 'self-center';
+
+    /** Whether the children in the container will be side by side or on top of each other */
+    childLayout?: 'horizontal' | 'vertical';
+
+    /** Click handler for the entire container */
+    onClick?: () => void;
 }
 
 /**
- * Container component for consistent page layout and content centering
+ * Container component for wrapping and constraining content width
  *
- * Compatible with styles/base/_layout.scss classes:
- * - .container (base container with max-width 1200px)
- * - .container-sm (max-width 800px)
- * - .container-lg (max-width 1400px)
- * - .container-full (full width, no max-width)
- * - .container-responsive (responsive container with smart padding)
- *
- * Provides consistent horizontal padding and centers content within max-width boundaries.
- * Works with the responsive utilities for different screen sizes.
  *
  * @example
  * ```tsx
- * // Default container (1200px max-width)
- * <Container>
- *   <h1>Page Content</h1>
- * </Container>
- *
- * // Small container for focused content
- * <Container size="sm">
- *   <article>Blog post content</article>
- * </Container>
- *
- * // Full width container
- * <Container size="full" as="section">
- *   <div>Full width section</div>
- * </Container>
- *
- * // Responsive container with smart padding
- * <Container className="container-responsive">
- *   <div>Responsive content</div>
+ * // Basic container
+ * <Container size="lg" childAlignment="child-center">
+ *   Content
  * </Container>
  * ```
  *
  * @param props - Container component props
- * @returns JSX element representing a content container
+ * @returns JSX element representing a styled container wrapper
  */
 export default function Container({
-  children,
-  className = '',
-  size = 'md',
-  style,
-  id,
-  as: Element = 'div'
+    id,
+    className = '',
+    children,
+    size = 'md',
+    childAlignment = 'child-center',
+    selfAlignment = 'self-center',
+    childLayout = 'vertical',
+    onClick,
 }: ContainerProps) {
-  const containerClasses = [
-    size === 'md' ? 'container' : `container-${size}`,
-    className
-  ].filter(Boolean).join(' ');
+    const containerClasses = [
+        'container',
+        `container-${size}`,
+        childAlignment !== 'child-center' ? `container-${childAlignment}` : '',
+        selfAlignment !== 'self-center' ? `container-${selfAlignment}` : '',
+        childLayout !== 'vertical' ? `container-${childLayout}` : '',
+        onClick ? 'cursor-pointer' : '',
+        className
+    ].filter(Boolean).join(' ');
 
-  return (
-    <Element
-      className={containerClasses}
-      style={style}
-      id={id}
-    >
-      {children}
-    </Element>
-  );
+    const handleKeyDown = (event: React.KeyboardEvent) => {
+        if (onClick && (event.key === 'Enter' || event.key === ' ')) {
+            event.preventDefault();
+            onClick();
+        }
+    };
+
+    return (
+        <div
+            className={containerClasses}
+            onClick={onClick}
+            onKeyDown={handleKeyDown}
+            id={id}
+        >
+            {children}
+        </div>
+    );
 }

@@ -1,282 +1,257 @@
 @import "../variables";
 
+/**
+ * Section Component Styles
+ *
+ * Base section styles with spacing, background, alignment, and layout options.
+ * Provides page-level content sectioning with optional backgrounds.
+ */
+
 // =============================================================================
-// SECTION COMPONENT STYLES
+// BASE SECTION STYLES
 // =============================================================================
 
-// Base section styles with warm professional aesthetic
 .section {
-  padding: $space-16 0;
+  width: 100%;
   position: relative;
 
-  // Subtle background texture
-  background-color: rgba($background, 0.5);
-
-  // Soft transitions for smooth scrolling experience
-  transition: background-color 0.3s ease;
-
-  // Add subtle visual separation between sections
-  &:not(:first-child) {
-    border-top: 1px solid rgba($border-light, 0.5);
+  // Focus state for accessibility
+  &:focus-visible {
+    outline: 2px solid $primary;
+    outline-offset: 2px;
   }
 
-  // Gentle hover effect for interactive sections
-  &[role="button"],
-  &.section-interactive {
+  // Clickable sections
+  &.cursor-pointer {
     cursor: pointer;
+    transition: background-color 0.3s ease;
 
     &:hover {
-      background-color: rgba($background-alt, 0.6);
+      background-color: rgba($background-alt, 0.5);
+    }
+
+    &:active {
+      background-color: rgba($background-alt, 0.7);
     }
   }
 }
 
-// Section spacing variants
+// =============================================================================
+// SPACING VARIANTS
+// =============================================================================
+
 .section-sm {
   padding: $space-8 0;
-  background-color: rgba($background, 0.3);
+}
 
-  &:not(:first-child) {
-    border-top: 1px solid rgba($border-light, 0.3);
-  }
+.section-md {
+  padding: $space-8 0;
 }
 
 .section-lg {
-  padding: $space-24 0;
-  background-color: rgba($background, 0.7);
-
-  &:not(:first-child) {
-    border-top: 1px solid rgba($border-light, 0.7);
-  }
+  padding: $space-8 0;
 }
 
-// Section background variants that match the warm theme
-.section.bg-default {
+// =============================================================================
+// BACKGROUND VARIANTS
+// =============================================================================
+
+.section-bg-default {
   background-color: $background;
 }
 
-.section.bg-alt {
-  background-color: $background-alt;
-  border-top: 1px solid rgba($primary, 0.1);
-  border-bottom: 1px solid rgba($primary, 0.1);
-}
-
-.section.bg-card {
+.section-bg-card {
   background-color: $background-card;
-  box-shadow: inset 0 0 20px rgba($shadow-light, 0.3);
-  border-top: 1px solid $border-light;
-  border-bottom: 1px solid $border-light;
-}
 
-.section.bg-primary {
-  background: linear-gradient(135deg, $primary, $primary-light);
-  color: $text-inverse;
-  border-top: 3px solid $primary-dark;
-  border-bottom: 3px solid $primary-dark;
-
-  // Override text colors for inverse background
-  h1, h2, h3, h4, h5, h6 {
-    color: $text-inverse;
-    text-shadow: 2px 2px 4px rgba($shadow-dark, 0.5);
+  // Add subtle visual separation
+  &:not(:first-child) {
+    border-top: 1px solid rgba($border-light, 0.3);
   }
 
-  p {
-    color: rgba($text-inverse, 0.9);
+  &:not(:last-child) {
+    border-bottom: 1px solid rgba($border-light, 0.3);
   }
 }
 
-.section.bg-accent {
-  background: linear-gradient(135deg, $accent, $accent-light);
-  color: $text-inverse;
-  border-top: 3px solid $accent-dark;
-  border-bottom: 3px solid $accent-dark;
+// =============================================================================
+// CHILD ALIGNMENT STYLES
+// =============================================================================
 
-  // Override text colors for inverse background
-  h1, h2, h3, h4, h5, h6 {
-    color: $text-inverse;
-    text-shadow: 2px 2px 4px rgba($shadow-dark, 0.5);
-  }
+.section-child-left {
+  text-align: left;
 
-  p {
-    color: rgba($text-inverse, 0.9);
-  }
-}
-
-// Special section styles to match homepage sections
-
-// Hero/Intro section styling
-.section-hero {
-  background: linear-gradient(135deg,
-    rgba($background-card, 0.9),
-    rgba($primary-light, 0.1),
-    rgba($accent-light, 0.1)
-  );
-  border: none;
-  padding: $space-20 0;
-  position: relative;
-  overflow: hidden;
-
-  // Subtle pattern overlay
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at 20% 50%,
-      rgba($accent, 0.05) 0%,
-      transparent 50%
-    ),
-    radial-gradient(circle at 80% 20%,
-      rgba($primary, 0.05) 0%,
-      transparent 50%
-    );
-    pointer-events: none;
-  }
-
-  // Content should appear above the overlay
-  > * {
-    position: relative;
-    z-index: 1;
-  }
-}
-
-// Feature/highlight section
-.section-feature {
-  background: linear-gradient(to bottom,
-    rgba($background-alt, 0.8),
-    rgba($background-card, 0.6)
-  );
-  border-top: 2px solid rgba($accent, 0.3);
-  border-bottom: 2px solid rgba($accent, 0.3);
-  box-shadow: 0 4px 20px rgba($shadow-light, 0.4);
-
-  &:hover {
-    background: linear-gradient(to bottom,
-      rgba($background-alt, 0.9),
-      rgba($background-card, 0.8)
-    );
-    box-shadow: 0 6px 25px rgba($shadow-light, 0.5);
-  }
-}
-
-// Testimonial/recommendation section
-.section-testimonials {
-  background: linear-gradient(135deg,
-    rgba($background-card, 0.8),
-    rgba($primary-light, 0.05)
-  );
-  border-top: 1px solid rgba($primary, 0.2);
-  border-bottom: 1px solid rgba($primary, 0.2);
-
-  // Special styling for testimonial cards within
-  .testimonial-card,
-  .recommendation-cards .card {
-    background-color: rgba($background-card, 0.9);
-    border: 1px solid rgba($accent, 0.2);
-
-    &:hover {
-      border-color: rgba($accent, 0.4);
-      box-shadow: 0 6px 20px rgba($shadow-medium, 0.3);
+  // When section doesn't have a container, apply to direct children
+  &:not(:has(.container)) {
+    > * {
+      text-align: left;
     }
   }
 }
 
-// Experience section (matching your current layout)
-.section-experience {
-  background: linear-gradient(to bottom,
-    rgba($background, 0.9),
-    rgba($background-alt, 0.7),
-    rgba($background, 0.9)
-  );
-  border-top: 2px solid rgba($primary-dark, 0.2);
-  border-bottom: 2px solid rgba($primary-dark, 0.2);
+.section-child-center {
+  text-align: center;
 
-  // Make the experience content area stand out
-  .experience-content {
-    background-color: rgba($background-card, 0.4);
-    border-radius: $radius-lg;
-    padding: $space-6;
-    box-shadow: 0 4px 16px rgba($shadow-light, 0.3);
+  // When section doesn't have a container, apply to direct children
+  &:not(:has(.container)) {
+    > * {
+      text-align: center;
+    }
   }
 }
 
-// Tech stack section (for the TLDR circle)
-.section-stack {
-  background: radial-gradient(ellipse at center,
-    rgba($background-alt, 0.8) 0%,
-    rgba($background, 0.9) 70%,
-    $background 100%
-  );
-  padding: $space-20 0;
+.section-child-right {
+  text-align: right;
 
-  // Ensure the stack circle has proper contrast
-  .stack-circle {
-    box-shadow: 0 8px 32px rgba($shadow-medium, 0.4);
-    border: 2px solid rgba($text-inverse, 0.1);
+  // When section doesn't have a container, apply to direct children
+  &:not(:has(.container)) {
+    > * {
+      text-align: right;
+    }
   }
 }
 
-// Section with contained content gets subtle padding
-.section-contained {
-  padding: $space-12 $space-6;
+// =============================================================================
+// SELF ALIGNMENT STYLES
+// =============================================================================
 
-  @media (min-width: $breakpoint-md) {
-    padding: $space-16 $space-8;
-  }
+.section-self-left {
+  margin-left: 0;
+  margin-right: auto;
+}
 
-  @media (min-width: $breakpoint-lg) {
-    padding: $space-20 $space-10;
+.section-self-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-self-right {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+// =============================================================================
+// CHILD LAYOUT STYLES
+// =============================================================================
+
+.section-horizontal {
+  // When section doesn't have a container, apply flexbox directly
+  &:not(:has(.container)) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: $space-6;
+    flex-wrap: wrap;
+    padding-left: $space-4;
+    padding-right: $space-4;
+
+    > * {
+      flex: 1;
+      min-width: 0;
+    }
   }
 }
 
-// Mobile responsive adjustments
+.section-vertical {
+  // When section doesn't have a container, apply flexbox directly
+  &:not(:has(.container)) {
+    display: flex;
+    flex-direction: column;
+    gap: $space-6;
+    padding-left: $space-4;
+    padding-right: $space-4;
+  }
+}
+
+// =============================================================================
+// RESPONSIVE BEHAVIOR
+// =============================================================================
+
+@media (max-width: $breakpoint-lg) {
+  .section-lg {
+    padding: $space-20 0;
+  }
+}
+
 @media (max-width: $breakpoint-md) {
-  .section {
-    padding: $space-12 0;
-  }
-
   .section-sm {
     padding: $space-6 0;
   }
 
+  .section-md {
+    padding: $space-12 0;
+  }
+
   .section-lg {
     padding: $space-16 0;
   }
 
-  .section-hero {
-    padding: $space-16 0;
-  }
-
-  .section-stack {
-    padding: $space-16 0;
-  }
-
-  .section-experience .experience-content {
-    padding: $space-4;
-    margin: 0 $space-2;
+  // Force vertical layout on mobile for horizontal sections
+  .section-horizontal:not(:has(.container)) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: $space-4;
   }
 }
 
 @media (max-width: $breakpoint-sm) {
-  .section {
-    padding: $space-8 0;
-  }
-
   .section-sm {
     padding: $space-4 0;
+  }
+
+  .section-md {
+    padding: $space-8 0;
   }
 
   .section-lg {
     padding: $space-12 0;
   }
 
-  .section-hero {
-    padding: $space-12 0;
+  .section-horizontal:not(:has(.container)),
+  .section-vertical:not(:has(.container)) {
+    padding-left: $space-2;
+    padding-right: $space-2;
+    gap: $space-3;
+  }
+}
+
+// =============================================================================
+// SECTION COMBINATIONS AND SPECIAL CASES
+// =============================================================================
+
+// When section contains a container, let the container handle horizontal padding
+.section:has(.container) {
+  .section-horizontal,
+  .section-vertical {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+// Adjacent sections with card backgrounds
+.section-bg-card + .section-bg-card {
+  border-top: none;
+}
+
+// =============================================================================
+// ACCESSIBILITY ENHANCEMENTS
+// =============================================================================
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  .section-bg-card {
+    border-color: $border-dark;
+    border-width: 2px;
   }
 
-  .section-contained {
-    padding: $space-8 $space-3;
+  .section.cursor-pointer:hover {
+    background-color: rgba($background-alt, 0.8);
+    border: 1px solid $border-dark;
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  .section.cursor-pointer {
+    transition: none;
   }
 }

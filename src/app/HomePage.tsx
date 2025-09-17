@@ -11,6 +11,8 @@ import pinkAnime from '@/images/pink-anime-flowers.png';
 import enemiesBefore from '@/images/enemies-before.png';
 import enemiesDefeated from '@/images/enemies-defeated.png'
 import arrow from '@/images/arrow.png'
+import lookingAtComputer from '@/images/looking-at-computer.png';
+
 import TestimonialCard from '@/components/TestimonialCard';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -23,86 +25,195 @@ export default function HomePage() {
   return (
     <main className="home-wrapper">
       <Navbar currentPage="Home" />
-     <AnimatedSection animation="fadeUp" delay={100}>
-        <Section spacing="lg" contained={false}>
-          <Container size="full">
-            <div className="intro-asymmetrical-grid">
-              <Card
-                size="lg"
-                variant="glass"
-                className="intro-content-card"
-                hoverable={false}
-              >
-                <div className="card-body">
-                  <Title
-                    text="George Jordan"
-                    level={1}
-                    variant="hero"
-                    color="#000000"
-                    align="center"
-                    shadow={true}
-                  />
-                  <Title
-                    text="Software Developer"
-                    level={3}
-                    variant="hero"
-                    color="#000000"
-                    align="center"
-                    shadow={true}
-                  />
-                  <Paragraph
-                    text="Hi. I am George Jordan, an American Software developer based out of Washington DC, who focuses on full stack website development."
-                    size="2xl"
-                    align="center"
-                    variant="default"
-                    className="mx-auto"
-                  />
-                  <Paragraph
-                    text="I made this website to showcase my skills, but also a how-to for anyone who wants to learn some web development."
-                    size="2xl"
-                    align="center"
-                    variant="default"
-                    className="mx-auto"
-                  />
-                  <div className="flex justify-center align-center">
-                    <SiteButton
-                      text="Go to Detailed Resume"
-                      variant="primary"
-                    />
-                  </div>
-                </div>
-              </Card>
+      <AnimatedSection animation="fadeUp" delay={100}>
+        <Section
+          spacing="lg"
+          containerSize="xl"
+          childAlignment="child-center"
+          contained={true}
+        >
+          <Title
+            text="A Brief Introduction"
+            level={1}
+            shadow={true}
+            align='center'
+            underlined={true}
+          />
 
-              <div className="intro-image-container">
-                <DisplayImage
-                  src={pinkAnime}
-                  alt="flowers"
-                  width={600}
-                  height={900}
-                  className="intro-hero-image"
+          <Container
+            size="full"
+            childLayout="horizontal"
+            childAlignment="child-center"
+            className="intro-grid"
+          >
+            <Card
+              size="xl"
+              variant="default"
+              className="intro-content-card"
+              childAlignment='child-center'
+            >
+              <Title
+                text="George Jordan"
+                level={1}
+                shadow={true}
+              />
+              <Title
+                text="Software Developer"
+                level={3}
+                variant="card"
+                shadow={true}
+              />
+              <Paragraph
+                text="Hi. I my name is George Jordan. I am an American Software developer based out of Washington DC, who focuses on full stack website development."
+                size="xl"
+                variant="card"
+              />
+              <Paragraph
+                text="I made this website to showcase my skills, but also a how-to for anyone who wants to learn some web development."
+                size="xl"
+                variant="card"
+              />
+              <SiteButton
+                text="Go to Detailed Resume"
+                size="md"
+                className="intro-resume-button"
+                variant="card"
+              />
+            </Card>
+
+            <div className="intro-image-section">
+              <DisplayImage
+                src={pinkAnime}
+                alt="Decorative flowers illustration"
+                width={600}
+                height={900}
+                className="intro-hero-image"
+              />
+            </div>
+          </Container>
+
+          {/* <SiteButton
+          text="Click to see the Skill Bubbles"
+          variant="default"
+          size="lg"
+          className="intro-skills-button"
+        /> */}
+        </Section>
+      </AnimatedSection>
+
+      <AnimatedSection animation="fadeUp" delay={200}>
+        <Section spacing="lg" contained={true} containerSize='xl'>
+          <Container size="full">
+            <div className="stack-section-content">
+              <div className="stack-header">
+                <Title
+                  text="My Main Stack"
+                  level={1}
+                  variant="section"
+                  align="center"
+                  shadow={true}
                 />
+                <Title
+                  text="TLDR"
+                  level={3}
+                  variant="default"
+                  align="center"
+                  shadow={true}
+                />
+              </div>
+              <div className="stack-layout">
+                <AnimatedSection
+                  animation="fadeRight"
+                  delay={400}
+                  className="stack-image-container"
+                >
+                  <DisplayImage
+                    src={lookingAtComputer}
+                    alt="Developer working at computer"
+                    width={550}
+                    height={550}
+                    className="stack-hero-image"
+                  />
+                </AnimatedSection>
+                <div className="stack-cards-container">
+                  <AnimatedSection animation="fadeUp" delay={600}>
+                    <div className='stack-row'>
+                      <Card size="lg" variant="default" className="stack-card">
+                        <div className="card-body">
+                          <Title
+                            text="Backend"
+                            level={4}
+                            variant="card"
+                            fontSize={24}
+                            color="#000000"
+                            align="center"
+                          />
+                          <Paragraph
+                            text="I develop scalable and secure backend systems that smoothly interact with frontend code and external services. Tech I use includes PHP, Java, Python, Go, .NET, and AWS EC2."
+                            fontSize={18}
+                          />
+                        </div>
+                      </Card>
+                      <Card size="lg" variant="default" className="stack-card">
+                        <div className="card-body">
+                          <Title
+                            text="Frontend"
+                            level={4}
+                            variant="card"
+                            fontSize={24}
+                            color="#000000"
+                            align="center"
+                          />
+                          <Paragraph
+                            text="I build modern responsive interfaces with excellent user experience using React, Next.js, and TypeScript. I work with modern styling tools like Tailwind, SCSS, LQIP, and Svelte."
+                            fontSize={18}
+                          />
+                        </div>
+                      </Card>
+                    </div>
+                  </AnimatedSection>
+                  <AnimatedSection animation="fadeUp" delay={700}>
+                    <div className='stack-row'>
+                      <Card size="lg" variant="default" className="stack-card">
+                        <div className="card-body">
+                          <Title
+                            text="API Calls"
+                            level={4}
+                            variant="card"
+                            fontSize={24}
+                            color="#000000"
+                            align="left"
+                          />
+                          <Paragraph
+                            text="I create and consume APIs to connect frontend and backend, using REST principles and modern auth layers. I work with REST APIs, Firewalls, and OAuth 2.0, JWT."
+                            fontSize={18}
+                          />
+                        </div>
+                      </Card>
+                      <Card size="lg" variant="default" className="stack-card">
+                        <div className="card-body">
+                          <Title
+                            text="Database Design"
+                            level={4}
+                            variant="card"
+                            fontSize={24}
+                            color="#000000"
+                            align="left"
+                          />
+                          <Paragraph
+                            text="I design efficient and reliable schemas tailored to complex models and relational legacy systems. I work with PostgreSQL, MySQL, Firestore, and SAP."
+                            fontSize={18}
+                          />
+                        </div>
+                      </Card>
+                    </div>
+                  </AnimatedSection>
+                </div>
               </div>
             </div>
           </Container>
         </Section>
       </AnimatedSection>
-
-      <section className="stack-section">
-        <Title
-          text="My Main Stack"
-          fontSize={48}
-        />
-        <Title
-          text="TLDR"
-          fontSize={32}
-        />
-        <TLDRCircle />
-        <SiteButton
-          text="Click to see the Skill Bubbles"
-          type="secondary-button"
-        />
-      </section>
-
       <section className="experience-section">
         <Title
           text="Why Hire an Experienced Dev like Me?"
