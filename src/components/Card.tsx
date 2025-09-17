@@ -5,35 +5,32 @@ import React from 'react';
  * Provides flexible card container with multiple styling variants
  */
 interface CardProps {
-    /** Main content of the card */
-    children: React.ReactNode;
+    /** HTML id attribute */
+    id?: string;
 
     /** Additional CSS classes to apply to the card */
     className?: string;
 
+    /** Main content of the card */
+    children: React.ReactNode;
+
     /** Card size variant - affects padding and max-width */
-    size?: 'sm' | 'md' | 'lg' | 'full';
+    size?: 'sm' | 'md' | 'lg' | 'xl';
 
     /** Card style variant - affects background and styling */
-    variant?: 'default' | 'primary' | 'accent' | 'outline' | 'glass';
+    variant?: 'default' | 'inModal' | 'openModal' | 'list' ;
 
-    /** Whether card should have hover effects */
-    hoverable?: boolean;
+    /** Where the things inside the card like the tiltle and body will be aligned */
+    childAlignment?: 'child-left' | 'child-right' | 'child-center';
+
+    /** Where the card itself will be aligned in its surrounding component */
+    selfAlignment?: 'self-left' | 'self-right' | 'self-center';
+
+    /** Whether the children in the card will be side by side or on top of each other  */
+    childLayoutt?: 'horizontal' | 'vertical';
 
     /** Click handler for the entire card */
     onClick?: () => void;
-
-    /** Additional inline styles */
-    style?: React.CSSProperties;
-
-    /** HTML id attribute */
-    id?: string;
-
-    /** Accessibility role */
-    role?: string;
-
-    /** Tab index for keyboard navigation */
-    tabIndex?: number;
 }
 
 /**
@@ -41,29 +38,13 @@ interface CardProps {
  *
  * Compatible with styles/components/_cards.scss classes:
  * - .card (base styles)
- * - .card-sm, .card-lg, .card-full (size variants)
- * - .card-primary, .card-accent, .card-outline, .card-glass (style variants)
+ * - .card-sm, .card-lg, .card-xl (size variants)
  *
- * Use with existing SCSS classes for card content areas:
- * - .card-header (for headers with titles)
- * - .card-body (for main content)
- * - .card-footer (for actions/metadata)
- * - .card-title, .card-subtitle (for typography)
  *
  * @example
  * ```tsx
- * // Basic card
- * <Card>
- *   <div className="card-header">
- *     <h3 className="card-title">Card Title</h3>
- *   </div>
- *   <div className="card-body">
- *     <p>Card content goes here</p>
- *   </div>
- * </Card>
- *
- * // Card with variants
- * <Card size="lg" variant="primary" hoverable onClick={handleClick}>
+ * // Card
+ * <Card size="lg" variant="default">
  *   Content
  * </Card>
  * ```
@@ -72,21 +53,23 @@ interface CardProps {
  * @returns JSX element representing a styled card container
  */
 export default function Card({
-    children,
+    id,
     className = '',
+    children,
     size = 'md',
     variant = 'default',
-    hoverable = true,
+    childAlignment ='child-center',
+    selfAlignment = 'self-center',
+    childLayoutt = 'vertical',
     onClick,
-    style,
-    id,
-    role,
-    tabIndex
 }: CardProps) {
     const cardClasses = [
         'card',
-        size !== 'md' ? `card-${size}` : '',
+        `card-${size}`,
         variant !== 'default' ? `card-${variant}` : '',
+        `card-${childAlignment}`,
+        `card-${selfAlignment}`,
+        childLayoutt !== 'vertical' ? `card-${childLayoutt}` : '',
         onClick ? 'cursor-pointer' : '',
         className
     ].filter(Boolean).join(' ');
@@ -103,10 +86,7 @@ export default function Card({
             className={cardClasses}
             onClick={onClick}
             onKeyDown={handleKeyDown}
-            style={style}
             id={id}
-            role={role || (onClick ? 'button' : undefined)}
-            tabIndex={onClick ? (tabIndex ?? 0) : tabIndex}
         >
             {children}
         </div>

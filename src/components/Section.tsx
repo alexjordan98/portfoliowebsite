@@ -1,118 +1,120 @@
 import React from 'react';
+import Container from './Container';
 
 /**
  * Section component props interface
- * Provides consistent vertical spacing and semantic sectioning for page content
+ * Provides flexible section wrapper with spacing, background, and container options
  */
 interface SectionProps {
-  /** Content of the section */
-  children: React.ReactNode;
+    /** HTML id attribute */
+    id?: string;
 
-  /** Additional CSS classes to apply to the section */
-  className?: string;
+    /** Additional CSS classes to apply to the section */
+    className?: string;
 
-  /** Section padding size variant */
-  spacing?: 'sm' | 'md' | 'lg';
+    /** Main content of the section */
+    children: React.ReactNode;
 
-  /** Background variant for the section */
-  background?: 'default' | 'alt' | 'card' | 'primary' | 'accent';
+    /** Section padding size variant */
+    spacing?: 'sm' | 'md' | 'lg';
 
-  /** Whether to apply a Container wrapper inside the section */
-  contained?: boolean;
+    /** Background variant for the section */
+    background?: 'default' | 'card';
 
-  /** Container size when contained=true */
-  containerSize?: 'sm' | 'md' | 'lg' | 'xl' | 'full';
+    /** Whether to apply a Container wrapper inside the section */
+    contained?: boolean;
 
-  /** Additional inline styles */
-  style?: React.CSSProperties;
+    /** Container size when contained=true */
+    containerSize?: 'sm' | 'md' | 'lg' | 'xl' | 'full';
 
-  /** HTML id attribute */
-  id?: string;
+    /** Where the content inside the section will be aligned */
+    childAlignment?: 'child-left' | 'child-right' | 'child-center';
 
-  /** Accessibility label for screen readers */
-  'aria-label'?: string;
+    /** Where the section itself will be aligned in its surrounding component */
+    selfAlignment?: 'self-left' | 'self-right' | 'self-center';
 
-  /** Accessibility labelledby reference */
-  'aria-labelledby'?: string;
+    /** Whether the children in the section will be side by side or on top of each other */
+    childLayout?: 'horizontal' | 'vertical';
+
+    /** Click handler for the entire section */
+    onClick?: () => void;
 }
 
 /**
- * Section component for semantic page sections with consistent spacing
+ * Section component for creating page sections with optional container wrapping
  *
- * Compatible with styles/base/_layout.scss classes:
- * - .section (base section with standard vertical padding)
- * - .section-sm (smaller vertical padding)
- * - .section-lg (larger vertical padding)
- *
- * Also works with background color utilities from styles/utilities/_colors.scss:
- * - .bg-primary, .bg-secondary, .bg-card, etc.
- *
- * Can optionally wrap content in a Container component for consistent max-width.
+ * Compatible with styles/components/_section.scss classes:
+ * - .section (base styles)
+ * - .section-sm, .section-lg (spacing variants)
+ * - .section-bg-default, .section-bg-card (background variants)
  *
  * @example
  * ```tsx
- * // Basic section with default spacing
- * <Section>
- *   <h2>Section Title</h2>
- *   <p>Section content</p>
+ * // Basic section with container
+ * <Section spacing="lg" background="card" contained containerSize="md">
+ *   Content
  * </Section>
  *
- * // Section with contained content and custom background
- * <Section contained background="alt" spacing="lg">
- *   <h2>Contained Section</h2>
- *   <p>This content will be contained within max-width</p>
- * </Section>
- *
- * // Section with custom container size and accessibility
- * <Section
- *   contained
- *   containerSize="sm"
- *   aria-label="Feature highlights section"
- * >
- *   <div>Focused content area</div>
+ * // Section without container
+ * <Section spacing="md" childAlignment="child-left">
+ *   Content
  * </Section>
  * ```
  *
  * @param props - Section component props
- * @returns JSX element representing a semantic section with consistent spacing
+ * @returns JSX element representing a styled section wrapper
  */
 export default function Section({
-  children,
-  className = '',
-  spacing = 'md',
-  background = 'default',
-  contained = false,
-  containerSize = 'md',
-  style,
-  id,
-  'aria-label': ariaLabel,
-  'aria-labelledby': ariaLabelledBy
+    id,
+    className = '',
+    children,
+    spacing = 'md',
+    background = 'default',
+    contained = false,
+    containerSize = 'md',
+    childAlignment = 'child-center',
+    selfAlignment = 'self-center',
+    childLayout = 'vertical',
+    onClick,
 }: SectionProps) {
-  const Container = React.lazy(() => import('./Container'));
+    const sectionClasses = [
+        'section',
+        `section-${spacing}`,
+        background !== 'default' ? `section-bg-${background}` : '',
+        childAlignment !== 'child-center' ? `section-${childAlignment}` : '',
+        selfAlignment !== 'self-center' ? `section-${selfAlignment}` : '',
+        childLayout !== 'vertical' ? `section-${childLayout}` : '',
+        onClick ? 'cursor-pointer' : '',
+        className
+    ].filter(Boolean).join(' ');
 
-  const sectionClasses = [
-    spacing === 'md' ? 'section' : `section-${spacing}`,
-    background !== 'default' ? `bg-${background}` : '',
-    className
-  ].filter(Boolean).join(' ');
+    const handleKeyDown = (event: React.KeyboardEvent) => {
+        if (onClick && (event.key === 'Enter' || event.key === ' ')) {
+            event.preventDefault();
+            onClick();
+        }
+    };
 
-  const content = contained ? (
-    <React.Suspense fallback={<div>{children}</div>}>
-      <Container size={containerSize}>
-        {children}
-      </Container>
-    </React.Suspense>
-  ) : children;
+    const content = contained ? (
+        <Container
+            size={containerSize}
+            childAlignment={childAlignment}
+            childLayout={childLayout}
+        >
+            {children}
+        </Container>
+    ) : (
+        children
+    );
 
-  return (
-    <section
-      className={sectionClasses}
-      style={style}
-      id={id}
-      aria-label={ariaLabel}
-      aria-labelledby={ariaLabelledBy}
-    >
-      {content}
-    </section>
-  );
+    return (
+        <section
+            className={sectionClasses}
+            onClick={onClick}
+            onKeyDown={handleKeyDown}
+            id={id}
+        >
+            {content}
+        </section>
+    );
 }

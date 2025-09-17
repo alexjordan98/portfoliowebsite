@@ -3,130 +3,106 @@
 // =============================================================================
 // INTRO SECTION
 // =============================================================================
-.intro-asymmetrical-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: $space-12;
-  align-items: center;
-  min-height: 70vh;
-  padding: $space-8 0;
-}
-
-.intro-content-card {
-  background: rgba($background-card, 0.95) !important;
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba($border-light, 0.6);
-  box-shadow: 0 8px 32px rgba($shadow-light, 0.3),
-              0 4px 16px rgba($primary, 0.1);
-
-  .card-body {
-    padding: $space-8;
-
-    .title {
-      margin-bottom: $space-4;
-      text-shadow: 2px 2px 4px rgba($shadow-light, 0.8);
-
-      &:first-child {
-        margin-bottom: $space-3;
-      }
-
-      &:nth-child(2) {
-        margin-bottom: $space-6;
-      }
-    }
-
-    p {
-      margin-bottom: $space-4;
-      line-height: $line-height-relaxed;
-
-      &:last-of-type {
-        margin-bottom: $space-6;
-      }
-    }
-  }
-}
-
-.intro-image-container {
+.intro-grid {
   display: flex;
-  justify-content: center;
   align-items: center;
-  position: relative;
-
-  .intro-hero-image {
-    border-radius: $radius-xl;
-    box-shadow: 0 12px 40px rgba($shadow-medium, 0.4),
-                0 6px 20px rgba($accent, 0.2);
-    transition: transform 0.3s ease;
-
-    &:hover {
-      transform: scale(1.02);
-    }
-  }
-}
-
-// Mobile responsive styles for new intro layout
-@media (max-width: $breakpoint-lg) {
-  .intro-asymmetrical-grid {
-    grid-template-columns: 1fr;
-    gap: $space-8;
-    min-height: auto;
-    text-align: center;
-    padding: $space-6 0;
-  }
+  gap: $space-8;
+  min-height: 600px;
+  padding-top: 4rem;
 
   .intro-content-card {
-    .card-body {
-      padding: $space-6;
+    .paragraph {
+      margin-bottom: $space-4;
+    }
 
-      .title {
-        text-align: center;
-      }
+    .title:last-of-type {
+      margin-bottom: $space-6;
     }
   }
 
-  .intro-image-container {
-    order: -1;
-    margin-bottom: $space-6;
+  .intro-image-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
 
-    .intro-hero-image {
-      max-width: 300px;
-      height: auto;
+
+.intro-hero-image {
+  border-radius: $radius-xl;
+  box-shadow: 0 8px 32px rgba($shadow-light, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 40px rgba($shadow-light, 0.4);
+  }
+}
+
+
+.intro-resume-button {
+  margin-top: $space-6;
+  align-self: center;
+}
+
+.intro-skills-button {
+  margin-top: $space-8;
+}
+
+
+@media (max-width: $breakpoint-lg) {
+  .intro-grid {
+    flex-direction: column;
+    gap: $space-6;
+    text-align: center;
+
+    .intro-content-card {
+      order: 1;
+      max-width: 600px;
     }
+
+    .intro-image-section {
+      order: 2;
+    }
+  }
+
+  .intro-hero-image {
+    max-width: 350px;
   }
 }
 
 @media (max-width: $breakpoint-md) {
-  .intro-asymmetrical-grid {
-    gap: $space-6;
-    padding: $space-4 0;
+  .intro-grid {
+    gap: $space-4;
+    min-height: auto;
+  }
+
+  .intro-hero-image {
+    max-width: 300px;
   }
 
   .intro-content-card {
-    margin: 0 $space-2;
-
-    .card-body {
-      padding: $space-4;
-
-      .title {
-        &:first-child {
-          font-size: 2.5rem;
-        }
-
-        &:nth-child(2) {
-          font-size: 1.5rem;
-        }
-      }
-
-      p {
-        font-size: 1.1rem;
-      }
-    }
+    max-width: none;
   }
 
-  .intro-image-container {
-    .intro-hero-image {
-      max-width: 250px;
-    }
+  .intro-skills-button {
+    margin-top: $space-6;
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .intro-grid {
+    gap: $space-3;
+  }
+
+  .intro-hero-image {
+    max-width: 250px;
+  }
+
+  .intro-resume-button {
+    width: 100%;
+    margin-top: $space-4;
   }
 }
 
@@ -134,52 +110,177 @@
 // STACK SECTION (TLDR Circle)
 // =============================================================================
 
-.stack-section {
+.stack-section-content {
+  padding: $space-8 0;
+}
+
+.stack-header {
   text-align: center;
-  margin-top: $space-16;
+  margin-bottom: $space-12;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+  .title:first-child {
+    margin-bottom: $space-4;
+  }
+
+  .title:last-child {
+    margin-bottom: 0;
+    color: $text-secondary;
+  }
 }
 
-.stack-circle {
-  background-color: #9C71B7;
-  border-radius: $radius-full;
-  width: 70vw;
-  height: 60vw;
-  margin: $space-12 auto;
-  padding: $space-8;
-  position: relative;
+.stack-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: $space-16;
+  align-items: flex-start;
+  margin-bottom: $space-12;
 }
 
-.stack-column {
-  position: absolute;
-  max-width: 250px;
-  color: $text-inverse;
+.stack-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: sticky;
+  top: $space-20;
 
-  &.backend {
-    top: 13%;
-    left: 14%;
-    text-align: left;
-    width: 180px;
+  .stack-hero-image {
+    border-radius: $radius-xl;
+    box-shadow: 0 12px 40px rgba($shadow-medium, 0.3),
+                0 6px 20px rgba($primary, 0.2);
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: 0 16px 50px rgba($shadow-medium, 0.4),
+                  0 8px 25px rgba($primary, 0.3);
+    }
+  }
+}
+
+.stack-cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: $space-6;
+}
+.stack-row {
+  display: flex;
+  flex-direction: row;
+  gap: $space-6;
+}
+.stack-card {
+  background: rgba($background-card, 0.95) !important;
+  border: 1px solid rgba($border-light, 0.6);
+  box-shadow: 0 4px 16px rgba($shadow-light, 0.2),
+              0 2px 8px rgba($primary, 0.1);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba($shadow-light, 0.3),
+                0 4px 15px rgba($primary, 0.15);
+    border-color: rgba($accent, 0.4);
   }
 
-  &.frontend {
-    top: 13%;
-    right: 14%;
-    text-align: right;
-    width: 180px;
+  .card-body {
+    padding: $space-6;
+
+    .title {
+      margin-bottom: $space-3;
+      color: $primary-dark;
+    }
+
+    p {
+      margin-bottom: 0;
+      line-height: $line-height-relaxed;
+      color: $text-primary;
+    }
+  }
+}
+
+.stack-cta-container {
+  text-align: center;
+  margin-top: $space-8;
+
+  .secondary-button {
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba($accent, 0.3);
+    }
+  }
+}
+
+// Mobile responsive styles for new stack layout
+@media (max-width: $breakpoint-lg) {
+  .stack-layout {
+    grid-template-columns: 1fr;
+    gap: $space-8;
+    text-align: center;
   }
 
-  &.db {
-    bottom: 12%;
-    left: 14%;
-    text-align: left;
-    width: 200px;
+  .stack-image-container {
+    position: static;
+    order: -1;
+    margin-bottom: $space-6;
+
+    .stack-hero-image {
+      max-width: 400px;
+      width: 100%;
+      height: auto;
+    }
   }
 
-  &.api {
-    bottom: 11%;
-    right: 14%;
-    text-align: right;
-    width: 200px;
+  .stack-cards-container {
+    gap: $space-4;
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .stack-section-content {
+    padding: $space-6 0;
+  }
+
+  .stack-header {
+    margin-bottom: $space-8;
+
+    .title:first-child {
+      font-size: 2.5rem;
+    }
+
+    .title:last-child {
+      font-size: 1.5rem;
+    }
+  }
+
+  .stack-layout {
+    gap: $space-6;
+  }
+
+  .stack-image-container {
+    .stack-hero-image {
+      max-width: 300px;
+    }
+  }
+
+  .stack-card {
+    margin: 0 $space-2;
+
+    .card-body {
+      padding: $space-4;
+
+      .title {
+        font-size: 1.25rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
   }
 }
 

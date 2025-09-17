@@ -1,193 +1,296 @@
 @import "../variables";
 
-.card {
-  background-color: $background-overlay;
-  padding: $space-4;
-  border-radius: $radius-lg;
-  max-width: 300px;
-  box-shadow: 2px 2px $shadow-medium;
-  border: 1px solid $border-light;
-  transition: all 0.3s ease;
+/**
+ * Card Component Styles
+ *
+ * Base card styles with size, variant, alignment, and layout options.
+ */
 
+// =============================================================================
+// BASE CARD STYLES
+// =============================================================================
+
+.card {
+  background-color: $background-card;
+  border-radius: $radius-lg;
+  border: 1px solid $border-light;
+  box-shadow: 0 2px 8px rgba($shadow-light, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+
+  // Default hover effect for all cards
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 4px 8px $shadow-dark;
-  }
-}
-
-// Card size variants
-.card-sm {
-  padding: $space-3;
-  max-width: 250px;
-  border-radius: $radius-md;
-}
-
-.card-lg {
-  padding: $space-6;
-  max-width: 400px;
-  border-radius: $radius-xl;
-}
-
-.card-full {
-  max-width: none;
-  width: 100%;
-}
-
-// Card style variants
-.card-primary {
-  background-color: $primary;
-  color: $text-inverse;
-  border-color: $primary-dark;
-}
-
-.card-accent {
-  background-color: $accent-light;
-  color: $text-inverse;
-  border-color: $accent-dark;
-}
-
-.card-outline {
-  background-color: transparent;
-  border: 2px solid $primary;
-
-  &:hover {
-    background-color: rgba($primary, 0.05);
-  }
-}
-
-.card-glass {
-  background-color: rgba($background-card, 0.8);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba($border-light, 0.3);
-}
-
-// Card content areas
-.card-header {
-  margin-bottom: $space-4;
-  padding-bottom: $space-3;
-  border-bottom: 1px solid $border-light;
-
-  .card-title {
-    font-family: $font-heading;
-    font-size: $font-size-xl;
-    font-weight: $font-weight-semibold;
-    margin-bottom: $space-2;
-    color: $text-primary;
+    box-shadow: 0 4px 16px rgba($shadow-medium, 0.4);
+    border-color: rgba($primary, 0.3);
   }
 
-  .card-subtitle {
-    font-size: $font-size-sm;
-    color: $text-secondary;
+  // Focus state for accessibility
+  &:focus-visible {
+    outline: 2px solid $primary;
+    outline-offset: 2px;
   }
-}
 
-.card-body {
-  margin-bottom: $space-4;
+  // Clickable cards
+  &.cursor-pointer {
+    cursor: pointer;
 
-  p {
-    margin-bottom: $space-3;
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba($shadow-medium, 0.5);
+    }
 
-    &:last-child {
-      margin-bottom: 0;
+    &:active {
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba($shadow-medium, 0.3);
     }
   }
 }
 
-.card-footer {
-  margin-top: auto;
-  padding-top: $space-3;
-  border-top: 1px solid $border-light;
+// =============================================================================
+// SIZE VARIANTS
+// =============================================================================
+
+.card-sm {
+  padding: $space-3;
+  max-width: 250px;
+  border-radius: $radius-md;
+  font-size: $font-size-sm;
+}
+
+.card-md {
+  padding: $space-4;
+  max-width: 300px;
+  border-radius: $radius-lg;
+  font-size: $font-size-base;
+}
+
+.card-lg {
+  padding: $space-6;
+  max-width: 450px;
+  border-radius: $radius-xl;
+  font-size: $font-size-lg;
+}
+
+.card-xl {
+  padding: $space-8;
+  max-width: 50rem;
+  border-radius: $radius-xl;
+  font-size: $font-size-xl;
+}
+
+// =============================================================================
+// VARIANT STYLES
+// =============================================================================
+
+// Default variant (no additional styles needed - base styles apply)
+.card-default {
+  // Inherits base card styles
+}
+
+// Card inside a modal
+.card-inModal {
+  background-color: rgba($background-card, 0.95);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba($border-light, 0.6);
+  box-shadow: 0 4px 20px rgba($shadow-light, 0.2);
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 24px rgba($shadow-light, 0.3);
+  }
+}
+
+// Card with modal trigger (will have + icon added via JSX)
+.card-openModal {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: $space-3;
+    right: $space-3;
+    width: 24px;
+    height: 24px;
+    background-color: $primary;
+    border-radius: $radius-full;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+}
+
+// List style card
+.card-list {
+  border-radius: $radius-md;
+  box-shadow: 0 1px 4px rgba($shadow-light, 0.2);
+  border-left: 4px solid $primary;
+
+  &:hover {
+    transform: translateX(2px);
+    border-left-color: $primary-dark;
+    box-shadow: 0 2px 8px rgba($shadow-light, 0.3);
+  }
+}
+
+// =============================================================================
+// CHILD ALIGNMENT STYLES
+// =============================================================================
+
+.card-child-left {
+  text-align: left;
+
+  * {
+    text-align: left;
+  }
+}
+
+.card-child-center {
+  text-align: center;
+
+  * {
+    text-align: center;
+  }
+}
+
+.card-child-right {
+  text-align: right;
+
+  * {
+    text-align: right;
+  }
+}
+
+// =============================================================================
+// SELF ALIGNMENT STYLES
+// =============================================================================
+
+.card-self-left {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.card-self-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card-self-right {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+// =============================================================================
+// CHILD LAYOUT STYLES
+// =============================================================================
+
+.card-horizontal {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
   align-items: center;
+  gap: $space-4;
+
+  // Ensure text doesn't get cramped in horizontal layout
+  > * {
+    flex: 1;
+    min-width: 0; // Prevents flex items from overflowing
+  }
+}
+
+.card-vertical {
+  display: flex;
+  flex-direction: column;
   gap: $space-3;
 }
 
-// Card collections
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: $space-6;
-  margin: $space-8 0;
-}
+// =============================================================================
+// RESPONSIVE BEHAVIOR
+// =============================================================================
 
-.card-list {
-  display: flex;
-  flex-direction: column;
-  gap: $space-4;
-  margin: $space-6 0;
-}
-
-// Recommendation cards specific styling (from your original CSS)
-.recommendation-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: $space-4;
-  margin-top: $space-4;
-}
-
-// Mobile responsive cards
 @media (max-width: $breakpoint-md) {
   .card {
     max-width: none;
     margin: 0 $space-2;
   }
 
-  .card-grid {
-    grid-template-columns: 1fr;
-    gap: $space-4;
-    margin: $space-4 0;
+  .card-sm {
+    max-width: none;
+    padding: $space-2;
   }
 
-  .recommendation-cards {
+  .card-md {
+    max-width: none;
+    padding: $space-3;
+  }
+
+  .card-lg {
+    max-width: none;
+    padding: $space-4;
+  }
+
+  .card-xl {
+    max-width: none;
+    padding: $space-6;
+  }
+
+  // Force vertical layout on mobile for horizontal cards
+  .card-horizontal {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
   }
 }
 
-.intro-content-card {
-  max-width: none !important;
-  width: 100%;
-  padding: 0 !important;
-  background: rgba($background-card, 0.95);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba($border-light, 0.6);
-  box-shadow: 0 8px 32px rgba($shadow-light, 0.3),
-              0 4px 16px rgba($primary, 0.1),
-              0 0 0 1px rgba($accent, 0.05);
-  border-radius: $radius-xl;
-  transition: all 0.4s ease;
-  position: relative;
-  overflow: hidden;
-
-  // Subtle gradient overlay for depth
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg,
-      rgba($primary, 0.03) 0%,
-      transparent 40%,
-      rgba($accent, 0.02) 100%
-    );
-    pointer-events: none;
-    z-index: 1;
+@media (max-width: $breakpoint-sm) {
+  .card {
+    border-radius: $radius-md;
   }
 
-  .card-body {
-    position: relative;
-    z-index: 2;
-    padding: $space-8;
+  .card-sm,
+  .card-md {
+    border-radius: $radius-sm;
   }
 
-  &:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 12px 48px rgba($shadow-light, 0.4),
-                0 6px 24px rgba($primary, 0.15),
-                0 0 0 1px rgba($accent, 0.08);
+  .card-lg,
+  .card-xl {
+    border-radius: $radius-md;
+  }
+}
+
+// =============================================================================
+// ACCESSIBILITY ENHANCEMENTS
+// =============================================================================
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  .card {
+    border-width: 2px;
+    border-color: $border-dark;
+  }
+
+  .card:hover {
+    border-color: $primary-dark;
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+
+  .card.cursor-pointer:hover {
+    transform: none;
+  }
+
+  .card-list:hover {
+    transform: none;
   }
 }
