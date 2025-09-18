@@ -43,25 +43,25 @@
 // =============================================================================
 
 .container-sm {
-  max-width: 800px;
+  max-width: 50%;
   margin: 0 auto;
   padding: 0 $space-3;
 }
 
 .container-md {
-  max-width: 1200px;
+  max-width: 65%;
   margin: 0 auto;
   padding: 0 $space-4;
 }
 
 .container-lg {
-  max-width: 1400px;
+  max-width: 80%;
   margin: 0 auto;
   padding: 0 $space-6;
 }
 
 .container-xl {
-  max-width: 1800px;
+  max-width: 95%;
   margin: 0 auto;
   padding: 0 $space-8;
 }
