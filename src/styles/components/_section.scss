@@ -14,6 +14,7 @@
 .section {
   width: 100%;
   position: relative;
+  margin: 0 auto;
 
   // Focus state for accessibility
   &:focus-visible {
@@ -42,14 +43,17 @@
 
 .section-sm {
   padding: $space-8 0;
+  max-width: 60%;
 }
 
 .section-md {
   padding: $space-8 0;
+  max-width: 75%;
 }
 
 .section-lg {
   padding: $space-8 0;
+  max-width: 95%;
 }
 
 // =============================================================================

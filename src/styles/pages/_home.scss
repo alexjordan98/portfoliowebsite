@@ -11,6 +11,7 @@
   padding-top: 4rem;
 
   .intro-content-card {
+    flex: 2;
     .paragraph {
       margin-bottom: $space-4;
     }
@@ -128,7 +129,6 @@
 
   .title:last-child {
     margin-bottom: 0;
-    color: $text-secondary;
   }
 }
 
@@ -166,38 +166,19 @@
   flex-direction: column;
   gap: $space-6;
 }
+
 .stack-row {
   display: flex;
   flex-direction: row;
   gap: $space-6;
 }
-.stack-card {
-  background: rgba($background-card, 0.95) !important;
-  border: 1px solid rgba($border-light, 0.6);
-  box-shadow: 0 4px 16px rgba($shadow-light, 0.2),
-              0 2px 8px rgba($primary, 0.1);
-  transition: all 0.3s ease;
 
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba($shadow-light, 0.3),
-                0 4px 15px rgba($primary, 0.15);
-    border-color: rgba($accent, 0.4);
-  }
+.stack-card {
+  transition: all 0.3s ease;
+  width: 500px;
 
   .card-body {
     padding: $space-6;
-
-    .title {
-      margin-bottom: $space-3;
-      color: $primary-dark;
-    }
-
-    p {
-      margin-bottom: 0;
-      line-height: $line-height-relaxed;
-      color: $text-primary;
-    }
   }
 }
 
@@ -284,39 +265,143 @@
   }
 }
 
+
 // =============================================================================
-// EXPERIENCE SECTION
+// Experience section
 // =============================================================================
 
-.experience-section {
-  margin-top: $space-16;
+.experience-section-outline {
+  border: 2px solid rgba($primary, 0.2);
+  border-radius: $radius-xl;
+  background-color: rgba($background-card, 0.3);
+  margin-bottom: $space-8;
+
+  &:hover {
+    border-color: rgba($primary, 0.4);
+    background-color: rgba($background-card, 0.5);
+  }
 }
 
-.experience-content {
-  display: flex;
-  flex-direction: row;
-  margin-top: 50px;
+.experience-image {
+  border-radius: $radius-xl;
+  box-shadow: 0 8px 32px rgba($shadow-light, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 40px rgba($shadow-light, 0.4);
+  }
 }
 
-.left-experience-home-content {
+.experience-image-section {
+  flex: 1;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin-left: 100px;
-  margin-right: 50px;
+  padding: $space-4;
 }
 
-.middle-experience-home-content {
-  display: flex;
-  flex-direction: column;
-  margin-left: 25px;
-  margin-right: 100px;
+.experience-content-section {
+  flex: 2;
+  padding: $space-4;
 }
 
-.right-experience-home-content {
+.experience-cards-grid {
+  margin-top: $space-6;
+}
+
+.experience-cards-row {
   display: flex;
-  flex-direction: column;
-  align-content: center;
+  gap: $space-4;
+  margin-bottom: $space-4;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.experience-section-card-animation {
+  width: 350px;
+  flex-shrink: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+.experience-section-card {
+  width: 350px;
+  height: 300px;
+}
+
+@media (max-width: $breakpoint-lg) {
+  .experience-section-outline .container-horizontal {
+    flex-direction: column;
+    gap: $space-6;
+  }
+
+  .experience-image {
+    max-width: 350px;
+  }
+
+  .experience-cards-row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .experience-section-card {
+    width: 280px;
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .experience-section-outline {
+    margin-bottom: $space-6;
+    border-radius: $radius-lg;
+  }
+
+  .experience-image {
+    max-width: 300px;
+  }
+
+  .experience-cards-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .experience-section-card {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .experience-image-section,
+  .experience-content-section {
+    padding: $space-3;
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .experience-section-outline {
+    margin-bottom: $space-4;
+    border-radius: $radius-md;
+    border-width: 1px;
+  }
+
+  .experience-image {
+    max-width: 250px;
+  }
+
+  .experience-cards-grid {
+    margin-top: $space-4;
+  }
+
+  .experience-cards-row {
+    gap: $space-3;
+    margin-bottom: $space-3;
+  }
+
+  .experience-section-card {
+    max-width: none;
+  }
 }
 
 // =============================================================================
@@ -328,134 +413,92 @@
   text-align: center;
 }
 
-// =============================================================================
-// RECOMMENDATIONS SECTION
-// =============================================================================
+/**
+ * Testimonial Section Styles
+ *
+ * Transparent cards with borders for client testimonials.
+ * Clean, professional styling for bottom-of-page placement.
+ */
 
-.recommendations-section {
-  text-align: center;
-  padding-bottom: $space-16;
-  margin-top: 40px;
+
+.testimonial-section-title {
+  margin-bottom: $space-16 !important;
 }
 
-// Mobile responsive styles for homepage
+.testimonial-cards-container {
+  gap: $space-6;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.testimonial-card {
+  background-color: $background;
+  border: 2px solid rgba($primary, 0.2);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+  max-width: 350px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &:hover {
+    background-color: rgba($background-card, 0.5);
+    border-color: rgba($primary, 0.4);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba($shadow-light, 0.3);
+  }
+}
+
+.testimonial-quote {
+  font-style: italic;
+  margin-bottom: $space-4;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.testimonial-author {
+  margin-top: auto;
+  font-weight: $font-weight-semibold;
+  color: $primary;
+  position: relative;
+}
+
+
 @media (max-width: $breakpoint-lg) {
-  .intro-section {
-    flex-direction: column;
-    text-align: center;
-    padding: $space-12 $space-6;
+  .testimonial-cards-container {
+    gap: $space-4;
   }
 
-  .intro-content {
-    margin-right: 0;
-    margin-bottom: $space-8;
-    max-width: none;
-  }
-
-  .stack-circle {
-    width: 90vw;
-    height: 90vw;
-    max-width: 600px;
-    max-height: 600px;
-  }
-
-  .stack-column {
-    max-width: 200px;
-
-    &.backend {
-      top: 8%;
-      left: 8%;
-      width: 150px;
-    }
-
-    &.frontend {
-      top: 8%;
-      right: 8%;
-      width: 150px;
-    }
-
-    &.db {
-      bottom: 8%;
-      left: 8%;
-      width: 150px;
-    }
-
-    &.api {
-      bottom: 8%;
-      right: 8%;
-      width: 150px;
-    }
-  }
-
-  .experience-content {
-    flex-direction: column;
-    margin-top: $space-8;
-    align-items: center;
-  }
-
-  .left-experience-home-content,
-  .middle-experience-home-content,
-  .right-experience-home-content {
-    margin: 0 $space-4 $space-8;
-    align-items: center;
+  .testimonial-card {
+    max-width: 300px;
   }
 }
 
 @media (max-width: $breakpoint-md) {
-  .intro-section {
-    padding: $space-8 $space-4;
+  .testimonial-cards-container {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .stack-section {
-    margin-top: $space-8;
+  .testimonial-card {
+    max-width: 400px;
+    width: 100%;
   }
 
-  .stack-circle {
-    width: 95vw;
-    height: 95vw;
-    padding: $space-4;
-    margin: $space-8 auto;
+  .testimonial-section-title {
+    margin-bottom: $space-6;
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .testimonial-card {
+    max-width: none;
+    min-height: auto;
   }
 
-  .stack-column {
-    max-width: 120px;
-    font-size: $font-size-sm;
-
-    &.backend,
-    &.frontend {
-      top: 5%;
-      width: 120px;
-    }
-
-    &.backend {
-      left: 5%;
-    }
-
-    &.frontend {
-      right: 5%;
-    }
-
-    &.db,
-    &.api {
-      bottom: 5%;
-      width: 120px;
-    }
-
-    &.db {
-      left: 5%;
-    }
-
-    &.api {
-      right: 5%;
-    }
-  }
-
-  .experience-section {
-    margin-top: $space-8;
-  }
-
-  .recommendations-section {
-    margin-top: $space-6;
-    padding-bottom: $space-8;
+  .testimonial-section-title {
+    margin-bottom: $space-4;
   }
 }

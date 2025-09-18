@@ -21,10 +21,10 @@ interface CardProps {
     variant?: 'default' | 'inModal' | 'openModal' | 'list' ;
 
     /** Where the things inside the card like the tiltle and body will be aligned */
-    childAlignment?: 'child-left' | 'child-right' | 'child-center';
+    childAlignment?: 'child-left' | 'child-right' | 'child-center' | 'none';
 
     /** Where the card itself will be aligned in its surrounding component */
-    selfAlignment?: 'self-left' | 'self-right' | 'self-center';
+    selfAlignment?: 'self-left' | 'self-right' | 'self-center' | 'none';
 
     /** Whether the children in the card will be side by side or on top of each other  */
     childLayoutt?: 'horizontal' | 'vertical';

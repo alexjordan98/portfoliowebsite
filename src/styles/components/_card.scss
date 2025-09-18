@@ -84,9 +84,7 @@
 // VARIANT STYLES
 // =============================================================================
 
-// Default variant (no additional styles needed - base styles apply)
 .card-default {
-  // Inherits base card styles
 }
 
 // Card inside a modal
@@ -165,6 +163,11 @@
   }
 }
 
+.card-child-none {
+  * {
+    text-align: unset;
+  }
+}
 // =============================================================================
 // SELF ALIGNMENT STYLES
 // =============================================================================
@@ -182,6 +185,9 @@
 .card-self-right {
   margin-left: auto;
   margin-right: 0;
+}
+
+.card-self-none {
 }
 
 // =============================================================================

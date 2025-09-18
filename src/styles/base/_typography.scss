@@ -104,8 +104,8 @@ h6.title {
 .title-card {
   font-size: $font-size-lg;
   font-weight: $font-weight-medium;
-  color: $text-primary;
-  margin: 0 0 $space-2;
+  color: $primary-dark;
+  margin-bottom: $space-3 !important;
   line-height: $line-height-tight;
 }
 
@@ -197,7 +197,7 @@ h6.title {
 .text-card {
   font-size: $font-size-sm;
   color: $text-secondary;
-  line-height: $line-height-normal;
+  line-height: $line-height-relaxed;
   margin: $space-2 0;
 }
 
