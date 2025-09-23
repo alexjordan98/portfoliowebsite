@@ -2,7 +2,6 @@
 import React from 'react';
 import Title from '@/components/Title';
 import Paragraph from '@/components/Paragraph';
-import TLDRCircle from '@/components/TLDRCircle';
 import SiteButton from '@/components/SiteButton';
 import DisplayImage from '@/components/DisplayImage';
 import NumberedList from '@/components/NumberedList';
@@ -12,7 +11,6 @@ import enemiesBefore from '@/images/enemies-before.png';
 import enemiesDefeated from '@/images/enemies-defeated.png'
 import lookingAtComputer from '@/images/looking-at-computer.png';
 
-import TestimonialCard from '@/components/TestimonialCard';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Container from '@/components/Container';
@@ -23,11 +21,11 @@ import AnimatedSection from '@/components/AnimatedSection';
 export default function HomePage() {
 
   const obstaclesList = [
-    "Debugging complex issues that seem to have no clear source",
-    "Designing scalable architecture without over-engineering",
-    "Managing technical debt while delivering new features",
-    "Coordinating with cross-functional teams and stakeholders",
-    "Staying current with rapidly evolving technologies"
+    "Debugging complex issues",
+    "Designing scalable architecture",
+    "Understanding Older Code",
+    "Estimating Task Duration",
+    "Avoiding Overengineering"
   ];
 
   const experienceCards = [
@@ -53,7 +51,7 @@ export default function HomePage() {
     }
   ];
 
-    const testimonials = [
+  const testimonials = [
     {
       name: "Sarah Johnson",
       testimonial: "Working with this developer was an absolute pleasure. The attention to detail and problem-solving skills were exceptional. Our project was delivered on time and exceeded expectations."
@@ -85,7 +83,6 @@ export default function HomePage() {
             align='center'
             underlined={true}
           />
-
           <Container
             size="full"
             childLayout="horizontal"
@@ -320,6 +317,7 @@ export default function HomePage() {
                   size="xl"
                   align="left"
                   variant='card'
+                  listIndexType="decimal"
                 />
               </Card>
             </AnimatedSection>
@@ -433,52 +431,52 @@ export default function HomePage() {
           </Container>
         </Section>
       </AnimatedSection>
-
-          <Section
-      spacing="lg"
-      contained={true}
-      containerSize="xl"
-      childAlignment="child-center"
-    >
-      <Title
-        text="Testimonials"
-        level={2}
-        align="center"
-        className="testimonial-section-title"
-      />
-
-      <Container
-        size="full"
-        childLayout="horizontal"
+      <Section
+        spacing="lg"
+        contained={true}
+        containerSize="xl"
         childAlignment="child-center"
-        className="testimonial-cards-container"
       >
-        {testimonials.map((testimonial, index) => (
-          <Card
-            key={index}
-            size="sm"
-            variant="default"
-            className="testimonial-card"
-          >
-            <Paragraph
-              text={`"${testimonial.testimonial}"`}
-              size="base"
-              variant="card"
-              align="center"
-              className="testimonial-quote"
-            />
-            <Title
-              text={testimonial.name}
-              level={4}
-              variant="card"
-              align="center"
-              className="testimonial-author"
-            />
-          </Card>
-        ))}
-      </Container>
-    </Section>
-    <Footer />
+        <Title
+          text="Testimonials"
+          level={1}
+          align="center"
+          className="testimonial-section-title"
+          shadow={true}
+          underlined={true}
+        />
+        <Container
+          size="full"
+          childLayout="horizontal"
+          childAlignment="child-center"
+          className="testimonial-cards-container"
+        >
+          {testimonials.map((testimonial, index) => (
+            <Card
+              key={index}
+              size="sm"
+              variant="default"
+              className="testimonial-card"
+            >
+              <Paragraph
+                text={`"${testimonial.testimonial}"`}
+                size="base"
+                variant="card"
+                align="center"
+                className="testimonial-quote"
+              />
+              <Title
+                text={testimonial.name}
+                level={4}
+                variant="card"
+                align="center"
+                className="testimonial-author"
+              />
+            </Card>
+          ))}
+        </Container>
+      </Section>
+      <Footer />
     </main>
   );
 }

@@ -47,7 +47,7 @@ interface NumberedListProps {
     className?: string;
 
     /** Title text for the numbered list */
-    title: string;
+    title?: string;
 
     /** Configuration props for the title styling */
     titleProps?: TitleProps;
@@ -57,6 +57,10 @@ interface NumberedListProps {
 
     /** Starting number for the list */
     startNumber?: number;
+
+    //** type of list, ie disc (bullets), circle (hollow circle), decimal for ints,
+    // lower alpha for letters etc and none */
+    listIndexType?: string;
 
     /** Typography size variant for list items */
     size?: 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl';
@@ -72,6 +76,9 @@ interface NumberedListProps {
 
     /** Whether text should be selectable */
     selectable?: boolean;
+
+    //** whether the list has its own title */
+    hasTitle?: boolean;
 
     /** Click handler for interactive list */
     onClick?: () => void;
@@ -124,16 +131,19 @@ interface NumberedListProps {
 export default function NumberedList({
     id,
     className = '',
+    title,
+    titleProps = {},
+    items,
+    startNumber = 1,
+    listIndexType = 'disc',
     size = 'base',
     variant = 'default',
     align = 'left',
     shadow = false,
     selectable = true,
-    onClick,
-    title,
-    titleProps = {},
-    items,
-    startNumber = 1
+    hasTitle = true,
+    onClick
+
 }: NumberedListProps) {
     const listClasses = [
         size !== 'base' ? `text-${size}` : '',
@@ -152,8 +162,6 @@ export default function NumberedList({
         }
     };
 
-    console.log(titleProps)
-
     return (
         <div
             id={id}
@@ -162,20 +170,22 @@ export default function NumberedList({
             tabIndex={onClick ? 0 : undefined}
             role={onClick ? 'button' : undefined}
         >
-            <div className="numbered-list-titles">
-                <Title
-                    text={title}
-                    level={titleProps.level || 3}
-                    variant={titleProps.variant || 'default'}
-                    align={titleProps.align || 'left'}
-                    shadow={titleProps.shadow || false}
-                    id={titleProps.id}
-                    className={titleProps.className}
-                />
-            </div>
+            {hasTitle &&
+                <div className="numbered-list-titles">
+                    <Title
+                        text={title || ""}
+                        level={titleProps.level || 3}
+                        variant={titleProps.variant || 'default'}
+                        align={titleProps.align || 'left'}
+                        shadow={titleProps.shadow || false}
+                        id={titleProps.id}
+                        className={titleProps.className}
+                    />
+                </div>
+            }
             <ol
                 className={"numbered-list-indices " + listClasses}
-                style={{ listStyleType: 'decimal' }}
+                style={{ listStyleType: listIndexType}}
                 start={startNumber}
             >
                 {items.map((item, index) => (
