@@ -130,12 +130,16 @@
 
 .resume-section-animation-card {
     display: flex;
-    flex: 5;
+    flex: 3;
 }
 
 .resume-section-animation-svg {
     display: flex;
     flex: 1;
+}
+
+.resume-section-card {
+  min-width: 100% !important;
 }
 
 @keyframes gentle-float {
