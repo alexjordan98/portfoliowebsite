@@ -40,6 +40,9 @@ interface ResumeSectionProps {
 
   //** name for link */
   linkName?: string;
+
+  //** Onclick for button */
+  linkOnClick?: () => void;
 }
 
 /**
@@ -74,7 +77,8 @@ export default function ResumeSection({
   animationDelay = 0,
   hasLink = false,
   linkDestination = '',
-  linkName = ''
+  linkName = '',
+  linkOnClick
 }: ResumeSectionProps) {
   return (
     <AnimatedSection animation="fadeUp" delay={animationDelay}>
@@ -125,6 +129,7 @@ export default function ResumeSection({
                   variant='card'
                   destination={linkDestination}
                   size='sm'
+                  onClick={linkOnClick}
                 />
               }
 
