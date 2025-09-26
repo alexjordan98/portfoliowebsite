@@ -121,6 +121,7 @@ export default function HomePage() {
                 size="md"
                 className="intro-resume-button"
                 variant="card"
+                destination='/resume'
               />
             </Card>
 
