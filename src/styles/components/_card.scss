@@ -146,6 +146,53 @@
   }
 }
 
+.card-circle {
+  background: linear-gradient(135deg, rgba($accent, 0.8), rgba($accent-light, 0.6));
+  border-radius: $radius-full;
+  border: 2px solid rgba($accent, 0.4);
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 150px;
+  max-width: 200px;
+  box-shadow: 0 4px 16px rgba($accent, 0.3);
+  color: $text-inverse;
+
+  &:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 8px 24px rgba($accent, 0.4);
+    border-color: rgba($accent-dark, 0.6);
+    background: linear-gradient(135deg, rgba($accent-dark, 0.9), rgba($accent, 0.7));
+  }
+
+  * {
+    text-align: center !important;
+    color: $text-inverse !important;
+  }
+
+  &.card-sm {
+    min-height: 100px;
+    max-width: 120px;
+  }
+
+  &.card-md {
+    min-height: 150px;
+    max-width: 180px;
+  }
+
+  &.card-lg {
+    min-height: 200px;
+    max-width: 240px;
+  }
+
+  &.card-xl {
+    min-height: 250px;
+    max-width: 300px;
+  }
+}
+
 // =============================================================================
 // CHILD ALIGNMENT STYLES
 // =============================================================================

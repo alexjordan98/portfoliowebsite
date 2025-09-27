@@ -73,7 +73,7 @@ export default function Navbar({
   const defaultItems: NavItem[] = [
     { label: 'Home', href: '/' },
     { label: 'Resume', href: '/resume' },
-    { label: 'How the Site was Created', href: '/how-the-site-was-created' },
+    { label: 'How the Site was Created', href: '/how-to' },
     { label: 'Internet Tracking', href: '/internet-tracking' },
     { label: 'Contact', href: '/contact' }
   ];
