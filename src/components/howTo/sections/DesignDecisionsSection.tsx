@@ -24,34 +24,36 @@ export default function DesignDecisionsSection() {
     return (
         <AnimatedSection animation="fadeUp" delay={300}>
             <Container
-                className="light-green-container"
+                className="design-decisions-container"
                 size="full"
                 childLayout="vertical"
                 childAlignment="child-center"
             >
                 <div className="design-decisions-layout">
                     <div className="design-decisions-content">
-                        <Title
-                            text="Design Decisions"
-                            level={2}
-                            align="left"
-                            underlined={true}
-                        />
+                        <div className="title-how-to">
+                            <Title
+                                text="Design Decisions"
+                                level={2}
+                                align="center"
+                                underlined={true}
+                            />
+                        </div>
                         <Paragraph
                             text="From the beginning, I wanted this site to feel approachable and modern without being overwhelming. The design choices reflect that balance."
-                            size="lg"
+                            size="xl"
                             align="left"
                         />
                         <NumberedList
                             items={designDecisions}
                             listIndexType="disc"
-                            size="lg"
+                            size="xl"
                             align="left"
                             hasTitle={false}
                         />
                         <Paragraph
                             text="In short, the design isn't just about looks — it's about readability, maintainability, and showing that I can think about user experience at the same time as technical structure."
-                            size="lg"
+                            size="xl"
                             align="left"
                         />
                     </div>

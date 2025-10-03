@@ -12,8 +12,8 @@
 
 .light-green-container {
   border: 2px solid rgba($primary, 0.2);
-  border-radius: $radius-xl;
   background-color: rgba($primary-light, 0.2);
+  border-radius: $radius-xl;
   min-height: 40rem;
   width: 70%;
   margin: 0 auto;
@@ -26,12 +26,30 @@
   }
 }
 
+.design-decisions-container {
+  border: 2px solid rgba($primary, 0.2);
+  background-color: rgba($background-card, 0.3);
+  border-radius: $radius-xl;
+  min-height: 40rem;
+  width: 70%;
+  margin: 0 auto;
+  padding: $space-8;
+  margin-top: $space-10;
+
+  &:hover {
+
+
+    border-color: rgba($primary, 0.4);
+    background-color: rgba($background-card, 0.5);
+  }
+}
+
 .how-site-made-main-title {
   margin-top: $space-8;
   margin-bottom: $space-8;
 }
 
-.intro-title-how-to {
+.title-how-to {
   padding-bottom: $space-4;
 }
 
@@ -84,4 +102,27 @@
     max-width: 100%;
     height: auto;
   }
+}
+
+// =============================================================================
+// TECHNOLOGIES USED SECTION
+// =============================================================================
+
+
+.technologies-used-section-outline {
+  border: 2px solid rgba($primary, 0.2);
+  background-color: rgba($primary-light, 0.2);
+  border-radius: $radius-xl;
+  margin-bottom: $space-8;
+  width: 70%;
+  margin-top: $space-10;
+
+  &:hover {
+    border-color: rgba($primary, 0.3);
+    background-color: rgba($primary-light, 0.5);
+  }
+}
+
+.technologies-used-card {
+  background: rgb(230, 230, 250);
 }

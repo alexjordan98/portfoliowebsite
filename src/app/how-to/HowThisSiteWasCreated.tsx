@@ -4,6 +4,8 @@ import Navbar from '@/components/Navbar';
 import Title from '@/components/Title';
 import IntroductionSection from '@/components/howTo/sections/IntroductionSection';
 import DesignDecisionsSection from '@/components/howTo/sections/DesignDecisionsSection';
+import TechnologiesUsedSection from '@/components/howTo/sections/TechnologiesUsedSection';
+import Footer from '@/components/Footer';
 
 /**
  * Main component for the "How This Site Was Made" page
@@ -14,20 +16,15 @@ import DesignDecisionsSection from '@/components/howTo/sections/DesignDecisionsS
 export default function HowThisSiteWasCreated() {
   return (
     <>
-      <Navbar currentPage='How the Site was Created'/>
+      <Navbar currentPage='How the Site was Created' />
 
       <main className="how-this-site-was-made">
-        <div className="how-site-made-main-title">
-          <Title
-            text="How and Why I Made This Site"
-            level={1}
-            align="center"
-            shadow={true}
-            underlined={true}
-          />
-          </div>
+
         <IntroductionSection />
         <DesignDecisionsSection />
+        <TechnologiesUsedSection />
+
+        <Footer />
 
       </main>
     </>

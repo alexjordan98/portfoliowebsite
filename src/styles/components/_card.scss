@@ -75,7 +75,7 @@
 
 .card-xl {
   padding: $space-8;
-  max-width: 50rem;
+  max-width: 800px;
   border-radius: $radius-xl;
   font-size: $font-size-xl;
 }
@@ -147,7 +147,7 @@
 }
 
 .card-circle {
-  background: linear-gradient(135deg, rgba($accent, 0.8), rgba($accent-light, 0.6));
+  background:  rgba($accent, 0.6);
   border-radius: $radius-full;
   border: 2px solid rgba($accent, 0.4);
   aspect-ratio: 1;
@@ -173,23 +173,23 @@
   }
 
   &.card-sm {
-    min-height: 100px;
-    max-width: 120px;
+    min-height: 10rem;
+    max-width: 10rem;
   }
 
   &.card-md {
-    min-height: 150px;
-    max-width: 180px;
+    min-height: 15rem;
+    max-width: 15rem;
   }
 
   &.card-lg {
-    min-height: 200px;
-    max-width: 240px;
+    min-height:20rem;
+    min-width: 20rem;
   }
 
   &.card-xl {
-    min-height: 250px;
-    max-width: 300px;
+    min-height: 25rem;
+    min-width: 25rem;
   }
 }
 

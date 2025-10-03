@@ -18,7 +18,7 @@ export default function IntroductionSection() {
         childLayout="vertical"
         childAlignment="child-center"
       >
-        <div className="intro-title-how-to">
+        <div className="title-how-to">
           <Title
             text="Introduction"
             level={2}
