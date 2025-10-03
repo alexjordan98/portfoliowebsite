@@ -18,7 +18,7 @@ interface CardProps {
     size?: 'sm' | 'md' | 'lg' | 'xl';
 
     /** Card style variant - affects background and styling */
-    variant?: 'default' | 'inModal' | 'openModal' | 'list' | 'resume';
+    variant?: 'default' | 'inModal' | 'openModal' | 'list' | 'resume' | 'circle';
 
     /** Where the things inside the card like the tiltle and body will be aligned */
     childAlignment?: 'child-left' | 'child-right' | 'child-center' | 'none';

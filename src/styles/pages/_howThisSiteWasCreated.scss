@@ -1,0 +1,128 @@
+@import "../variables";
+
+/**
+ * How This Site Was Created Page Styles
+ *
+ * Styles specific to the HowThisSiteWasCreated component and its sections.
+ */
+
+// =============================================================================
+// Intro section
+// =============================================================================
+
+.light-green-container {
+  border: 2px solid rgba($primary, 0.2);
+  background-color: rgba($primary-light, 0.2);
+  border-radius: $radius-xl;
+  min-height: 40rem;
+  width: 70%;
+  margin: 0 auto;
+  padding: $space-8;
+  margin-top: $space-10;
+
+  &:hover {
+    border-color: rgba($primary, 0.3);
+    background-color: rgba($primary-light, 0.5);
+  }
+}
+
+.design-decisions-container {
+  border: 2px solid rgba($primary, 0.2);
+  background-color: rgba($background-card, 0.3);
+  border-radius: $radius-xl;
+  min-height: 40rem;
+  width: 70%;
+  margin: 0 auto;
+  padding: $space-8;
+  margin-top: $space-10;
+
+  &:hover {
+
+
+    border-color: rgba($primary, 0.4);
+    background-color: rgba($background-card, 0.5);
+  }
+}
+
+.how-site-made-main-title {
+  margin-top: $space-8;
+  margin-bottom: $space-8;
+}
+
+.title-how-to {
+  padding-bottom: $space-4;
+}
+
+// =============================================================================
+// DESIGN DECISIONS SECTION
+// =============================================================================
+
+.design-decisions-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: $space-8;
+
+  @media (max-width: $breakpoint-lg) {
+    flex-direction: column;
+    gap: $space-6;
+  }
+}
+
+.design-decisions-content {
+  flex: 2;
+
+  @media (max-width: $breakpoint-lg) {
+    flex: 1;
+  }
+}
+
+.design-decisions-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: $breakpoint-lg) {
+    order: -1;
+    margin-bottom: $space-4;
+  }
+}
+
+.design-hero-image {
+  border-radius: $radius-lg;
+  box-shadow: 0 8px 24px rgba($shadow-medium, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba($shadow-medium, 0.4);
+  }
+
+  @media (max-width: $breakpoint-md) {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+// =============================================================================
+// TECHNOLOGIES USED SECTION
+// =============================================================================
+
+
+.technologies-used-section-outline {
+  border: 2px solid rgba($primary, 0.2);
+  background-color: rgba($primary-light, 0.2);
+  border-radius: $radius-xl;
+  margin-bottom: $space-8;
+  width: 70%;
+  margin-top: $space-10;
+
+  &:hover {
+    border-color: rgba($primary, 0.3);
+    background-color: rgba($primary-light, 0.5);
+  }
+}
+
+.technologies-used-card {
+  background: rgb(230, 230, 250);
+}
