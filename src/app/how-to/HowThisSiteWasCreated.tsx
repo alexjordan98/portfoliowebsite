@@ -6,6 +6,9 @@ import IntroductionSection from '@/components/howTo/sections/IntroductionSection
 import DesignDecisionsSection from '@/components/howTo/sections/DesignDecisionsSection';
 import TechnologiesUsedSection from '@/components/howTo/sections/TechnologiesUsedSection';
 import Footer from '@/components/Footer';
+import FileStructureSection from '@/components/howTo/sections/FileStructureSection';
+import HowItConnectsSection from '@/components/howTo/sections/HowItConnectsSection';
+import ConclusionSection from '@/components/howTo/sections/ConclusionSection';
 
 /**
  * Main component for the "How This Site Was Made" page
@@ -23,6 +26,9 @@ export default function HowThisSiteWasCreated() {
         <IntroductionSection />
         <DesignDecisionsSection />
         <TechnologiesUsedSection />
+        <FileStructureSection />
+        <HowItConnectsSection />
+        <ConclusionSection />
 
         <Footer />
 

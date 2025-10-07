@@ -14,17 +14,32 @@ import Container from '@/components/Container';
  */
 export default function DesignDecisionsSection() {
     const designDecisions = [
-        "Soft color palette: I leaned into softer tones rather than harsh contrasts. This makes the site easier to read, creates a calmer mood, and avoids the sterile \"corporate\" look.",
-        "Card-based layout: Each section is wrapped in a card, giving the content its own container. This makes information modular and scannable — visitors can easily jump between projects, jobs, or skills without being buried in text.",
-        "Tabs on the Resume page: Instead of cramming everything into a single scroll, I split the content into tabs (Education, Jobs, Projects, Startups). It keeps things clean, interactive, and more aligned with how people actually explore resumes.",
-        "Animations on scroll: Subtle transitions as sections appear keep the site feeling alive and polished without distracting from the content.",
-        "Component reusability: I designed with React components so the same building blocks (like cards, buttons, or titles) could be reused across pages. This keeps the look consistent and makes the codebase much easier to maintain."
+        {
+            boldPrefix: "Soft color palette:",
+            text: " I leaned into softer tones rather than harsh contrasts. This makes the site easier to read, creates a calmer mood, and avoids the sterile \"corporate\" look."
+        },
+        {
+            boldPrefix: "Card-based layout:",
+            text: " Each section is wrapped in a card, giving the content its own container. This makes information modular and scannable — visitors can easily jump between projects, jobs, or skills without being buried in text."
+        },
+        {
+            boldPrefix: "Tabs on the Resume page:",
+            text: " Instead of cramming everything into a single scroll, I split the content into tabs (Education, Jobs, Projects, Startups). It keeps things clean, interactive, and more aligned with how people actually explore resumes."
+        },
+        {
+            boldPrefix: "Animations on scroll:",
+            text: " Subtle transitions as sections appear keep the site feeling alive and polished without distracting from the content."
+        },
+        {
+            boldPrefix: "Component reusability:",
+            text: " I designed with React components so the same building blocks (like cards, buttons, or titles) could be reused across pages. This keeps the look consistent and makes the codebase much easier to maintain."
+        }
     ];
 
     return (
         <AnimatedSection animation="fadeUp" delay={300}>
             <Container
-                className="design-decisions-container"
+                className="pink-container"
                 size="full"
                 childLayout="vertical"
                 childAlignment="child-center"

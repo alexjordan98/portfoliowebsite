@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 
 /**
  * Paragraph component props interface
@@ -113,7 +114,7 @@ export default function Paragraph({
       tabIndex={onClick ? 0 : undefined}
       role={onClick ? 'button' : undefined}
     >
-      {text}
+      <ReactMarkdown>{text}</ReactMarkdown>
     </div>
   );
 }

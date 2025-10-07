@@ -7,7 +7,7 @@
  */
 
 // =============================================================================
-// Intro section
+// Intro section and containers
 // =============================================================================
 
 .light-green-container {
@@ -15,10 +15,12 @@
   background-color: rgba($primary-light, 0.2);
   border-radius: $radius-xl;
   min-height: 40rem;
-  width: 70%;
+  width: 90%;
+  max-width: 100%;
   margin: 0 auto;
   padding: $space-8;
   margin-top: $space-10;
+  overflow-x: auto;
 
   &:hover {
     border-color: rgba($primary, 0.3);
@@ -26,12 +28,12 @@
   }
 }
 
-.design-decisions-container {
+.pink-container {
   border: 2px solid rgba($primary, 0.2);
   background-color: rgba($background-card, 0.3);
   border-radius: $radius-xl;
   min-height: 40rem;
-  width: 70%;
+  width: 90%;
   margin: 0 auto;
   padding: $space-8;
   margin-top: $space-10;
@@ -51,6 +53,19 @@
 
 .title-how-to {
   padding-bottom: $space-4;
+}
+
+.how-connects-practice {
+  border: 2px solid rgba($primary, 0.2);
+  border-radius: $radius-xl;
+  background-color: rgba($background-card, 0.8);
+  margin-bottom: $space-8;
+  padding: $space-8;
+
+  &:hover {
+    border-color: rgba($primary, 0.4);
+    background-color: rgba($background-card, 0.9);
+  }
 }
 
 // =============================================================================
@@ -114,7 +129,7 @@
   background-color: rgba($primary-light, 0.2);
   border-radius: $radius-xl;
   margin-bottom: $space-8;
-  width: 70%;
+  width: 90%;
   margin-top: $space-10;
 
   &:hover {
@@ -123,6 +138,244 @@
   }
 }
 
-.technologies-used-card {
-  background: rgb(230, 230, 250);
+// =============================================================================
+// FILE STRUCTURE SECTION
+// =============================================================================
+
+.file-structure-layout {
+  display: flex;
+  gap: $space-8;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: $space-8;
+
+  @media (max-width: $breakpoint-lg) {
+    flex-direction: column;
+    gap: $space-6;
+    align-items: center;
+  }
+}
+
+.file-structure-svg-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  svg {
+    height: auto;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-8px);
+      animation: floatUpDown 3s ease-in-out infinite;
+    }
+  }
+
+  @media (max-width: $breakpoint-lg) {
+    order: 2;
+    flex: none;
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+.file-structure-content {
+  flex: 3;
+  width: 100%;
+
+  @media (max-width: $breakpoint-lg) {
+    order: 1;
+  }
+}
+
+.file-structure-cards-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-6;
+  width: 100%;
+
+  @media (max-width: $breakpoint-lg) {
+    grid-template-columns: 1fr;
+    gap: $space-4;
+  }
+}
+
+// =============================================================================
+// FLOATING ANIMATION FOR SVG
+// =============================================================================
+
+@keyframes floatUpDown {
+  0%, 100% {
+    transform: translateY(-8px);
+  }
+  50% {
+    transform: translateY(-16px);
+  }
+}
+
+// =============================================================================
+// HOW IT ALL CONNECTS SECTION
+// =============================================================================
+
+.how-connects-split {
+  display: flex;
+  gap: $space-8;
+  align-items: center;
+
+  @media (max-width: $breakpoint-lg) {
+    flex-direction: column;
+    gap: $space-6;
+  }
+}
+
+.how-connects-text {
+  flex: 1;
+
+  @media (max-width: $breakpoint-lg) {
+    order: 2;
+  }
+}
+
+.restaurant-flow-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+
+  > div {
+    flex-shrink: 0;
+  }
+}
+// =============================================================================
+// CIRCULAR FLOW DIAGRAM
+// =============================================================================
+
+.circular-flow-diagram {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  height: 700px;
+  margin: $space-10 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  margin-bottom: 150px;
+
+  @media (max-width: $breakpoint-lg) {
+    height: 650px;
+    max-width: 700px;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    height: 550px;
+    max-width: 500px;
+  }
+}
+
+.flow-card-wrapper {
+  position: absolute;
+}
+
+// Position cards in a circle
+.flow-position-1 {
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.flow-position-2 {
+  top: 15%;
+  right: -10%;
+}
+
+.flow-position-3 {
+  bottom: -18%;
+  right: 5%;
+}
+
+.flow-position-4 {
+  bottom: -18%;
+  left: 5%;
+}
+
+.flow-position-5 {
+  top: 15%;
+  left: -10%;
+}
+
+// Arrows connecting the cards
+.flow-arrow {
+  position: absolute;
+  z-index: 5;
+  animation: arrowPulse 2s ease-in-out infinite;
+
+  @media (max-width: $breakpoint-md) {
+    font-size: $font-size-3xl;
+  }
+}
+
+.arrow-1 {
+  bottom: -25%;
+  right: -20%;
+}
+
+.arrow-2 {
+  top: 63%;
+  right: 60%;
+}
+
+.arrow-3 {
+  bottom: 0;
+  left: -40%;
+}
+
+.arrow-4 {
+  top: -60%;
+  left: 15%;
+}
+
+.arrow-5 {
+  top: -30%;
+  right: -20%;
+}
+
+
+@keyframes arrowPulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+.flow-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 32px rgba($accent, 0.4);
+  }
+}
+
+.long-paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: $space-6;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  p {
+    line-height: $line-height-relaxed;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    gap: $space-4;
+  }
 }

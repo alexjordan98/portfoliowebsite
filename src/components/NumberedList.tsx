@@ -33,11 +33,13 @@ interface ListItem {
 
     /** Optional array of sub-items */
     subItems?: string[];
+
+    /** Optional bold prefix text */
+    boldPrefix?: string;
 }
 
 /**
  * NumberedList component props interface
- * Enhanced with Paragraph component props for consistent styling
  */
 interface NumberedListProps {
     /** HTML id attribute */
@@ -185,7 +187,7 @@ export default function NumberedList({
             }
             <ol
                 className={"numbered-list-indices " + listClasses}
-                style={{ listStyleType: listIndexType}}
+                style={{ listStyleType: listIndexType }}
                 start={startNumber}
             >
                 {items.map((item, index) => (
@@ -193,7 +195,14 @@ export default function NumberedList({
                         className="numbered-list-item"
                         key={index}
                     >
-                        {typeof item === 'string' ? item : item.text}
+                        {typeof item === 'string' ? (
+                            item
+                        ) : (
+                            <>
+                                {item.boldPrefix && <strong className="list-item-bold">{item.boldPrefix}</strong>}
+                                {item.text}
+                            </>
+                        )}
                         {typeof item === 'object' && item.subItems && (
                             <ol
                                 className={"numbered-list-indices " + listClasses}
