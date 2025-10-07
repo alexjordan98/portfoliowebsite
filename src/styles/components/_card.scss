@@ -147,7 +147,7 @@
 }
 
 .card-circle {
-  background:  rgba($accent, 0.6);
+  background: rgb(230, 230, 250);
   border-radius: $radius-full;
   border: 2px solid rgba($accent, 0.4);
   aspect-ratio: 1;
@@ -158,18 +158,12 @@
   min-height: 150px;
   max-width: 200px;
   box-shadow: 0 4px 16px rgba($accent, 0.3);
-  color: $text-inverse;
+  flex-direction: column;
 
   &:hover {
     transform: translateY(-4px) scale(1.02);
     box-shadow: 0 8px 24px rgba($accent, 0.4);
     border-color: rgba($accent-dark, 0.6);
-    background: linear-gradient(135deg, rgba($accent-dark, 0.9), rgba($accent, 0.7));
-  }
-
-  * {
-    text-align: center !important;
-    color: $text-inverse !important;
   }
 
   &.card-sm {
@@ -191,6 +185,10 @@
     min-height: 25rem;
     min-width: 25rem;
   }
+}
+
+.lavender-card {
+  background: rgb(230, 230, 250);
 }
 
 // =============================================================================

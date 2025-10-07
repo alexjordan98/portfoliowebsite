@@ -56,13 +56,12 @@ export default function TechnologiesUsedSection() {
             size="xl"
             align="center"
           />
-
           <div className="technologies-carousel-container">
             <CardCarousel
               cardVariant="default"
               size="lg"
               items={technologyItems}
-              cardClassName='technologies-used-card'
+              cardClassName='lavender-card'
             />
           </div>
 
