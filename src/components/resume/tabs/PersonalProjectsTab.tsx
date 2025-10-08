@@ -68,7 +68,7 @@ export default function PersonalProjectsTab({ className = '' }: PersonalProjects
         hasLink={true}
         linkDestination=""
         linkName="View Paper pdf"
-        linkOnClick={() => window.open('/Global-Justice-Climate-Change-Paper.pdf', '_blank')}
+        linkOnClick={() => window.open('/Global-Justice-Climate-Change-Paper.pdf', '_blank', 'noopener, noreferrer')}
       />
     </div>
   );
