@@ -31,7 +31,7 @@ export default function FullTimeJobsTab({ className = '' }: FullTimeJobsTabProps
         variant="default"
         size="xl"
         text="Download Resume PDF"
-        onClick={() => window.open('/2025-George-Jordan-Resume.pdf', '_blank')}
+        onClick={() => window.open('/2025-George-Jordan-Resume.pdf', '_blank', 'noopener, noreferrer')}
       />
       <ResumeSection
         title="Head of Frontend Development"
