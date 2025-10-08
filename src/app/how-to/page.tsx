@@ -7,7 +7,7 @@ import HowThisSiteWasCreated from './HowThisSiteWasCreated';
  * "How This Site Was Made" content. It provides the routing
  * endpoint and renders the main HowThisSiteWasCreated component.
  *
- * @returns JSX element rendering the complete how-to page
+ * @returns TSX element rendering the complete how-to page
  */
 export default function HowToPage() {
   return <HowThisSiteWasCreated />;

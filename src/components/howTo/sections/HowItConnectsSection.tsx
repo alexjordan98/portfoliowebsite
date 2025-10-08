@@ -12,7 +12,7 @@ import ArrowSVG from '../svgs/ArrowSVG';
 /**
  * How It All Connects section component for the "How This Site Was Made" page
  *
- * @returns JSX element containing the how it connects section
+ * @returns TSX element containing the how it connects section
  */
 export default function HowItConnectsSection() {
   const practicalSteps = [

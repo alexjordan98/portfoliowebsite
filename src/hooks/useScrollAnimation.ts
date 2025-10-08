@@ -29,7 +29,7 @@ interface ScrollAnimationOptions {
  */
 interface ScrollAnimationResult {
   /** Ref to attach to the element to be animated */
-  ref: React.RefObject<HTMLElement>;
+  ref: React.RefObject<HTMLElement | null>;
 
   /** Whether the element is currently in view and should be animated */
   inView: boolean;

@@ -15,7 +15,7 @@ import AnimatedSection from '@/components/AnimatedSection';
  * Uses the pink-container for visual distinction as the final section,
  * with text-only content for a clean, professional ending.
  *
- * @returns JSX element containing the conclusion section
+ * @returns TSX element containing the conclusion section
  */
 export default function ConclusionSection() {
   return (
@@ -43,7 +43,7 @@ export default function ConclusionSection() {
           />
 
           <Paragraph
-            text="This explanation is also meant to highlight that I can competently use technologies like React, JSX, Java, and AWS, while applying high-level object-oriented design principles. These are the same tools and approaches used by professional teams every day, and I would like employers to see that I could easily contribute to — or integrate with — any design or engineering team working with this stack."
+            text="This explanation is also meant to highlight that I can competently use technologies like React, TSX, Java, and AWS, while applying high-level object-oriented design principles. These are the same tools and approaches used by professional teams every day, and I would like employers to see that I could easily contribute to — or integrate with — any design or engineering team working with this stack."
             size="xl"
             align="left"
           />

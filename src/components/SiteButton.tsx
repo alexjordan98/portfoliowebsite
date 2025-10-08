@@ -77,7 +77,7 @@ interface SiteButtonProps {
  * ```
  *
  * @param props - SiteButton component props
- * @returns JSX element representing a styled button or link
+ * @returns TSX element representing a styled button or link
  */
 export default function SiteButton({
   id,
