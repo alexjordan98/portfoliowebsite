@@ -139,7 +139,8 @@
 }
 
 .resume-section-card {
-  min-width: 100% !important;
+  width: 100%;
+  max-width: 100%;
 }
 
 @keyframes gentle-float {
@@ -239,19 +240,40 @@
   }
 }
 
+// =============================================================================
+// Resume Section Responsive
+// =============================================================================
+
 @media (max-width: $breakpoint-lg) {
   .resume-section-content {
     flex-direction: column;
     gap: $space-4;
   }
 
-  .resume-section-card {
+  .resume-section-animation-card {
+    width: 100%;
     max-width: 100%;
-    flex: none;
+  }
+
+  .resume-section-card {
+    width: 100%;
+    max-width: 100%;
   }
 
   .resume-section-svg {
     flex: none;
     max-width: 250px;
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .resume-section-card {
+    padding: $space-5;
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .resume-section-card {
+    padding: $space-4;
   }
 }
