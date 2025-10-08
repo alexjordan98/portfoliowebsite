@@ -53,16 +53,16 @@ export default function HomePage() {
 
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      testimonial: "Working with this developer was an absolute pleasure. The attention to detail and problem-solving skills were exceptional. Our project was delivered on time and exceeded expectations."
+      name: "Jon DiBiasio, my manager at Fenway Health",
+      testimonial: "A valuable asset to a fast-paced environment with learning opportunities."
     },
     {
-      name: "Michael Chen",
-      testimonial: "Incredible technical expertise combined with excellent communication. The code quality was outstanding and the final product was exactly what we envisioned. Highly recommended!"
+      name: "Robin Jain, my partner at Azhar Apparel",
+      testimonial: "Super fun and I hope we can establish another business together in the future!"
     },
     {
-      name: "Emily Rodriguez",
-      testimonial: "Professional, reliable, and innovative. This developer brought creative solutions to complex problems and was always available for questions. A true pleasure to work with."
+      name: "Mom",
+      testimonial: "Great guy, 10/10 would reccomend"
     }
   ];
 
