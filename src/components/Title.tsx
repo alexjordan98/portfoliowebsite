@@ -52,7 +52,7 @@ interface TitleProps {
  * ```
  *
  * @param props - Title component props
- * @returns JSX element representing a semantic heading with proper typography
+ * @returns TSX element representing a semantic heading with proper typography
  */
 export default function Title({
   id,
@@ -65,7 +65,7 @@ export default function Title({
   shadow = false,
   onClick,
 }: TitleProps) {
-  const HeadingTag = `h${level}` as keyof JSX.IntrinsicElements;
+  const HeadingTag = `h${level}` as React.ElementType;;
 
   const titleClasses = [
     'title',

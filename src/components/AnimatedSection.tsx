@@ -35,7 +35,7 @@ interface AnimatedSectionProps {
   className?: string;
 
   /** HTML element tag to use as wrapper */
-  as?: keyof JSX.IntrinsicElements;
+  as?:  React.ElementType;
 
   /** Additional inline styles */
   style?: React.CSSProperties;
@@ -73,7 +73,7 @@ interface AnimatedSectionProps {
  * ```
  *
  * @param props - AnimatedSection component props
- * @returns JSX element with scroll-triggered animation applied
+ * @returns TSX element with scroll-triggered animation applied
  */
 export default function AnimatedSection({
   children,

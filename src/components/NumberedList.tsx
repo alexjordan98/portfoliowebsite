@@ -128,7 +128,7 @@ interface NumberedListProps {
  * ```
  *
  * @param props - NumberedList component props
- * @returns JSX element representing a styled numbered list with title
+ * @returns TSX element representing a styled numbered list with title
  */
 export default function NumberedList({
     id,

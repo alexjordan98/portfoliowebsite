@@ -70,7 +70,7 @@ interface ParagraphProps {
  * ```
  *
  * @param props - Paragraph component props
- * @returns JSX element representing styled text content
+ * @returns TSX element representing styled text content
  */
 export default function Paragraph({
   id,

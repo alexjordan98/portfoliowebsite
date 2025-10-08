@@ -7,7 +7,7 @@ import Container from '@/components/Container';
 /**
  * Introduction section component for the "How This Site Was Made" page
  *
- * @returns JSX element containing the introduction content
+ * @returns TSX element containing the introduction content
  */
 export default function IntroductionSection() {
   return (

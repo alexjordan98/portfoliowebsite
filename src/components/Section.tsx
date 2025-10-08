@@ -62,7 +62,7 @@ interface SectionProps {
  * ```
  *
  * @param props - Section component props
- * @returns JSX element representing a styled section wrapper
+ * @returns TSX element representing a styled section wrapper
  */
 export default function Section({
     id,

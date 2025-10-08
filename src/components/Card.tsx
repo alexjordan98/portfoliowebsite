@@ -50,7 +50,7 @@ interface CardProps {
  * ```
  *
  * @param props - Card component props
- * @returns JSX element representing a styled card container
+ * @returns TSX element representing a styled card container
  */
 export default function Card({
     id,

@@ -14,7 +14,7 @@ import ConclusionSection from '@/components/howTo/sections/ConclusionSection';
  * Main component for the "How This Site Was Made" page
  *
  *
- * @returns JSX element containing the complete how-to page layout
+ * @returns TSX element containing the complete how-to page layout
  */
 export default function HowThisSiteWasCreated() {
   return (

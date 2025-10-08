@@ -10,7 +10,7 @@ import FileTreeSVG from '@/components/howTo/svgs/FileTreeSVG';
 /**
  * File Structure section component for the "How This Site Was Made" page
  *
- * @returns JSX element containing the file structure section
+ * @returns TSX element containing the file structure section
  */
 export default function FileStructureSection() {
     const frontendItems = [
