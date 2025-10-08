@@ -13,7 +13,7 @@ import ArrowSVG from './ArrowSVG';
  * @param {number} [props.width=400] - Width of the SVG
  * @param {number} [props.height=300] - Height of the SVG
  * @param {string} [props.className] - Additional CSS classes
- * @returns {JSX.Element} Menu SVG component
+ * @returns {TSX.Element} Menu SVG component
  */
 const Menu = ({ width = 400, height = 300, className = '' }) => (
   <svg
@@ -47,49 +47,11 @@ const Menu = ({ width = 400, height = 300, className = '' }) => (
 );
 
 /**
- * Arrow component for connecting diagram elements.
- * Creates a simple black SVG arrow pointing right.
- *
- * @param {Object} props - Component props
- * @param {number} props.width - Width of the arrow container
- * @param {number} props.height - Height of the arrow container
- * @param {string} [props.className] - Additional CSS classes
- * @returns {JSX.Element} Arrow SVG component
- */
-const Arrow = ({ width, height, className = '' }) => {
-  const centerY = height / 2;
-  const arrowSize = 12;
-
-  return (
-    <svg
-      width={width}
-      height={height}
-      viewBox={`0 0 ${width} ${height}`}
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-    >
-      <line
-        x1="0"
-        y1={centerY}
-        x2={width - arrowSize}
-        y2={centerY}
-        stroke="#000000"
-        strokeWidth="2"
-      />
-      <polygon
-        points={`${width - arrowSize},${centerY - 6} ${width},${centerY} ${width - arrowSize},${centerY + 6}`}
-        fill="#000000"
-      />
-    </svg>
-  );
-};;
-
-/**
  * Main flow diagram component showing the restaurant-to-software metaphor.
  * Displays Menu (Frontend) → Kitchen (Backend) → Pantry (Database) → Building (AWS)
  * with connecting arrows between each stage.
  *
- * @returns {JSX.Element} Complete flow diagram with all components
+ * @returns {TSX.Element} Complete flow diagram with all components
  */
 const RestaurantFlowSVG = () => {
   return (

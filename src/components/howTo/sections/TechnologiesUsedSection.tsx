@@ -8,7 +8,7 @@ import Section from '@/components/Section';
 /**
  * Technologies Used section component for the "How This Site Was Made" page
  *
- * @returns JSX element containing the technologies section
+ * @returns TSX element containing the technologies section
  */
 export default function TechnologiesUsedSection() {
   const technologyItems = [

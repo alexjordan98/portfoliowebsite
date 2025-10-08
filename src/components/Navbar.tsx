@@ -55,7 +55,7 @@ interface NavbarProps {
  * ```
  *
  * @param props - Navbar component props
- * @returns JSX element representing a navigation bar
+ * @returns TSX element representing a navigation bar
  */
 export default function Navbar({
   id,

@@ -8,7 +8,7 @@
  * @param {number} [props.thickness=2] - Thickness of the arrow line in pixels
  * @param {number} [props.rotation=90] - Rotation angle in degrees (0=up, 90=right, 180=down, 270=left)
  * @param {string} [props.className] - Additional CSS classes
- * @returns {JSX.Element} Arrow SVG component
+ * @returns {TSX.Element} Arrow SVG component
  */
 const ArrowSVG = ({
   width = 200,

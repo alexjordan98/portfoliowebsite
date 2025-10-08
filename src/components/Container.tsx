@@ -43,7 +43,7 @@ interface ContainerProps {
  * ```
  *
  * @param props - Container component props
- * @returns JSX element representing a styled container wrapper
+ * @returns TSX element representing a styled container wrapper
  */
 export default function Container({
     id,

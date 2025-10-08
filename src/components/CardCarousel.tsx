@@ -63,7 +63,7 @@ interface CardCarouselProps {
  * ```
  *
  * @param props - CardCarousel component props
- * @returns JSX element representing an interactive card carousel
+ * @returns TSX element representing an interactive card carousel
  */
 export default function CardCarousel({
   id,

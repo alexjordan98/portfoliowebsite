@@ -10,7 +10,7 @@ import Container from '@/components/Container';
 /**
  * Design Decisions section component for the "How This Site Was Made" page
  *
- * @returns JSX element containing the design decisions content with split layout
+ * @returns TSX element containing the design decisions content with split layout
  */
 export default function DesignDecisionsSection() {
     const designDecisions = [
