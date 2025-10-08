@@ -13,7 +13,7 @@ export default function Footer() {
         </Link>
       </div>
       <div className="footer-copyright">
-        © 2025 jordanSoftwareDev.com
+        © 2025 JordanTheSoftwareDeveloper.com
       </div>
     </footer>
   );

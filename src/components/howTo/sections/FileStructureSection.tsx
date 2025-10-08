@@ -86,7 +86,6 @@ export default function FileStructureSection() {
                     >
                         <FileTreeSVG />
                     </AnimatedSection>
-
                     <div className="file-structure-content">
                         <div className="file-structure-cards-row">
                             <AnimatedSection animation="fadeUp" delay={700}>

@@ -2,6 +2,7 @@
 import React from 'react';
 import ResumeSection from '../ResumeSection';
 import WorkingSVG from '../svgs/WorkingSvg';
+import SiteButton from '@/components/SiteButton';
 
 /**
  * FullTimeJobsTab component props interface
@@ -25,6 +26,13 @@ interface FullTimeJobsTabProps {
 export default function FullTimeJobsTab({ className = '' }: FullTimeJobsTabProps) {
   return (
     <div className={`full-time-jobs-tab ${className}`}>
+      <SiteButton
+        className="download-resume-button"
+        variant="default"
+        size="xl"
+        text="Download Resume PDF"
+        onClick={() => window.open('/2025-George-Jordan-Resume.pdf', '_blank')}
+      />
       <ResumeSection
         title="Head of Frontend Development"
         companyName="Anteros Bio, REMOTE"
@@ -41,7 +49,7 @@ export default function FullTimeJobsTab({ className = '' }: FullTimeJobsTabProps
       />
 
       <ResumeSection
-        title="Full Stack Web Developerr"
+        title="Full Stack Web Developer"
         companyName="CABEM Technologies, REMOTE"
         tenureLength="May 2021 – August 2024"
         jobDescription={[

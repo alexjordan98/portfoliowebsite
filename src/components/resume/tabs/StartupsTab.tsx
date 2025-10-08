@@ -38,7 +38,7 @@ export default function StartupsTab({ className = '' }: StartupsTabProps) {
 
       <ResumeSection
         title="Head Developer"
-        companyName="Yogh"
+        companyName="Yogh, REMOTE"
         tenureLength="December 2022 - June 2023"
         jobDescription={[
           "Yogh is a small startup I founded with some friends that aimed to create a social network for university students who wanted to join clubs at their schools / connect with people at similar clubs in other schools",

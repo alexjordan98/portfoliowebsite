@@ -33,12 +33,6 @@ interface NavbarProps {
 /**
  * Simple navigation bar component for clean, modern site navigation
  *
- * Provides a clean navigation experience with active state highlighting.
- * Works with existing navbar SCSS styling and supports both modern items
- * array and backward compatible currentPage prop.
- *
- * Compatible with styles/components/_navbar.scss classes
- *
  * @example
  * ```tsx
  * // Basic navbar with items array
@@ -69,12 +63,11 @@ export default function Navbar({
   currentPage,
   items = []
 }: NavbarProps) {
-  // Default navigation items if none provided
   const defaultItems: NavItem[] = [
     { label: 'Home', href: '/' },
     { label: 'Resume', href: '/resume' },
     { label: 'How the Site was Created', href: '/how-to' },
-    { label: 'Internet Tracking', href: '/internet-tracking' },
+    //{ label: 'Internet Tracking', href: '/internet-tracking' },
     { label: 'Contact', href: '/contact' }
   ];
 

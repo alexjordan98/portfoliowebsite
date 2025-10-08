@@ -33,7 +33,7 @@ export default function PersonalProjectsTab({ className = '' }: PersonalProjects
         svgComponent={<WorkingSVG />}
         animationDelay={0}
         hasLink={true}
-        linkDestination="/howTo"
+        linkDestination="/how-to"
         linkName="How This Site was Created"
       />
       <ResumeSection

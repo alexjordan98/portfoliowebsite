@@ -98,8 +98,8 @@
   align-items: center;
 
   @media (max-width: $breakpoint-lg) {
-    order: -1;
     margin-bottom: $space-4;
+    width: 100%;
   }
 }
 
@@ -144,6 +144,7 @@
 
 .file-structure-layout {
   display: flex;
+  flex-wrap: wrap;
   gap: $space-8;
   align-items: flex-start;
   width: 100%;
@@ -266,18 +267,26 @@
   margin-bottom: 150px;
 
   @media (max-width: $breakpoint-lg) {
-    height: 650px;
-    max-width: 700px;
-  }
-
-  @media (max-width: $breakpoint-md) {
-    height: 550px;
-    max-width: 500px;
+    height: auto;
+    flex-direction: column;
+    gap: $space-6;
+    margin-top: $space-8;
+    margin-bottom: $space-8;
+    position: static;
   }
 }
 
 .flow-card-wrapper {
   position: absolute;
+
+    @media (max-width: $breakpoint-lg) {
+    position: relative;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+  }
 }
 
 // Position cards in a circle
@@ -307,14 +316,25 @@
   left: -10%;
 }
 
+@media (max-width: $breakpoint-lg) {
+  .flow-position-1,
+  .flow-position-2,
+  .flow-position-3,
+  .flow-position-4,
+  .flow-position-5 {
+    position: static;
+    transform: none;
+  }
+}
+
 // Arrows connecting the cards
 .flow-arrow {
   position: absolute;
   z-index: 5;
   animation: arrowPulse 2s ease-in-out infinite;
 
-  @media (max-width: $breakpoint-md) {
-    font-size: $font-size-3xl;
+  @media (max-width: $breakpoint-lg) {
+    display: none;
   }
 }
 
@@ -361,6 +381,26 @@
   &:hover {
     transform: scale(1.05);
     box-shadow: 0 12px 32px rgba($accent, 0.4);
+  }
+}
+
+.flow-card-title {
+  @media (max-width: $breakpoint-md) {
+    font-size: $font-size-base;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    font-size: $font-size-sm;
+  }
+}
+
+.flow-card-text {
+  @media (max-width: $breakpoint-md) {
+    font-size: $font-size-sm;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    font-size: $font-size-xs;
   }
 }
 
