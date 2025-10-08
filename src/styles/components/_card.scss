@@ -177,13 +177,23 @@
   }
 
   &.card-lg {
-    min-height:20rem;
+    min-height: 20rem;
     min-width: 20rem;
   }
 
   &.card-xl {
     min-height: 25rem;
     min-width: 25rem;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    min-height: 12rem;
+    min-width: 12rem;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    min-height: 10rem;
+    min-width: 10rem;
   }
 }
 
@@ -274,50 +284,50 @@
 // =============================================================================
 
 @media (max-width: $breakpoint-md) {
-  .card {
+  .card:not(.card-circle) {
     max-width: none;
     margin: 0 $space-2;
   }
 
-  .card-sm {
+  .card-sm:not(.card-circle) {
     max-width: none;
     padding: $space-2;
   }
 
-  .card-md {
+  .card-md:not(.card-circle) {
     max-width: none;
     padding: $space-3;
   }
 
-  .card-lg {
+  .card-lg:not(.card-circle) {
     max-width: none;
     padding: $space-4;
   }
 
-  .card-xl {
+  .card-xl:not(.card-circle) {
     max-width: none;
     padding: $space-6;
   }
 
   // Force vertical layout on mobile for horizontal cards
-  .card-horizontal {
+  .card-horizontal:not(.card-circle) {
     flex-direction: column;
     align-items: stretch;
   }
 }
 
 @media (max-width: $breakpoint-sm) {
-  .card {
+  .card:not(.card-circle) {
     border-radius: $radius-md;
   }
 
-  .card-sm,
-  .card-md {
+  .card-sm:not(.card-circle),
+  .card-md:not(.card-circle) {
     border-radius: $radius-sm;
   }
 
-  .card-lg,
-  .card-xl {
+  .card-lg:not(.card-circle),
+  .card-xl:not(.card-circle) {
     border-radius: $radius-md;
   }
 }
