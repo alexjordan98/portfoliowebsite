@@ -37,7 +37,7 @@ export default function DesignDecisionsSection() {
     ];
 
     return (
-        <AnimatedSection animation="fadeUp" delay={300}>
+        <AnimatedSection animation="fadeUp" delay={100}>
             <Container
                 className="pink-container"
                 size="full"

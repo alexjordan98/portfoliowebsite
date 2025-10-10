@@ -35,7 +35,7 @@ export default function TechnologiesUsedSection() {
   ];
 
   return (
-    <AnimatedSection animation="fadeUp" delay={400}>
+    <AnimatedSection animation="fadeUp" delay={200}>
       <Section
         spacing="lg"
         contained={true}

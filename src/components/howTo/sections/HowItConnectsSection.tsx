@@ -85,7 +85,7 @@ export default function HowItConnectsSection() {
           <RestaurantFlowSVG />
         </div>
       </AnimatedSection>
-      <AnimatedSection animation="fadeUp" delay={900}>
+      <AnimatedSection animation="fadeUp" delay={650}>
         <section className="how-connects-practice">
           <div className="title-how-to">
             <Title

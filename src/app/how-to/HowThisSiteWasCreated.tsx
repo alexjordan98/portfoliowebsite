@@ -29,7 +29,6 @@ export default function HowThisSiteWasCreated() {
         <FileStructureSection />
         <HowItConnectsSection />
         <ConclusionSection />
-
         <Footer />
 
       </main>
