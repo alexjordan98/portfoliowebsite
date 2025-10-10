@@ -89,7 +89,7 @@ export default function EducationTab() {
                                 variant="card"
                             />
                             <Paragraph
-                                text="Theory of computation was the most interesting computer science class that I took.
+                                text="Theory of computation was the most interesting Computer Science class that I took.
                                                 We learned how to define Turing Machines and how all software can be described as one."
                                 size="sm"
                                 variant="card"
@@ -109,9 +109,9 @@ export default function EducationTab() {
                                 variant="card"
                             />
                             <Paragraph
-                                text="In algoriths we learned the most commonly used algorithms that cpmputer scientists
+                                text="In Algorithms we learned the most commonly used algorithms that cpmputer scientists
                                              need to solve problems like binary search, marge sort, graph/tree alorithms and
-                                             dijkstra's algorithm"
+                                             Dijkstra's algorithm"
                                 size="sm"
                                 variant="card"
                                 align="center"
@@ -130,8 +130,8 @@ export default function EducationTab() {
                                 variant="card"
                             />
                             <Paragraph
-                                text="This was my capstone philosophy class, in it we had to write a paper on a global justice
-                                    topic, I wrote mine about Climate change and countries' obligations to reduce emittions."
+                                text="This was my capstone philosophy class, in it we had to write a paper on a Global Justice
+                                    topic. I wrote mine about Climate Change and countries' obligations to reduce emissions."
                                 size="sm"
                                 variant="card"
                                 align="center"
@@ -196,7 +196,7 @@ export default function EducationTab() {
                                 selfAlignment="self-left"
                             >
                                 <Title
-                                    text="IB prepared me to tackle rigorous university ciricula, and to think critically.
+                                    text="IB prepared me to tackle rigorous university ciricula, and taught me to think critically.
                                      IB History especially taught me to always pay attention to people's sources."
                                     level={5}
                                     align="center"
@@ -212,7 +212,7 @@ export default function EducationTab() {
                             >
                                 <Title
                                     text="I learned how to get along with people from all over the world and made deep
-                                     / lasting friendships that cut through significant cultutral differences."
+                                     / lasting friendships that cut through cultutral differences."
                                     level={5}
                                     align="center"
                                     variant="card"
