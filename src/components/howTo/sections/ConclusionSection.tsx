@@ -19,7 +19,7 @@ import AnimatedSection from '@/components/AnimatedSection';
  */
 export default function ConclusionSection() {
   return (
-    <AnimatedSection animation="fadeUp" delay={1100}>
+    <AnimatedSection animation="fadeUp" delay={600}>
       <Container
         size="full"
         childLayout="vertical"

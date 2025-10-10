@@ -56,7 +56,7 @@ export default function FileStructureSection() {
     ];
 
     return (
-        <AnimatedSection animation="fadeUp" delay={500}>
+        <AnimatedSection animation="fadeUp" delay={300}>
             <Container
                 size="full"
                 childLayout="vertical"
@@ -81,14 +81,14 @@ export default function FileStructureSection() {
                 <div className="file-structure-layout">
                     <AnimatedSection
                         animation="fadeRight"
-                        delay={600}
+                        delay={400}
                         className="file-structure-svg-container"
                     >
                         <FileTreeSVG />
                     </AnimatedSection>
                     <div className="file-structure-content">
                         <div className="file-structure-cards-row">
-                            <AnimatedSection animation="fadeUp" delay={700}>
+                            <AnimatedSection animation="fadeUp" delay={500}>
                                 <Card
                                     variant="default"
                                     size="lg"
@@ -116,7 +116,7 @@ export default function FileStructureSection() {
                                 </Card>
                             </AnimatedSection>
 
-                            <AnimatedSection animation="fadeUp" delay={800}>
+                            <AnimatedSection animation="fadeUp" delay={550}>
                                 <Card
                                     variant="default"
                                     size="lg"
