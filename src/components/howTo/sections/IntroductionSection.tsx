@@ -11,7 +11,7 @@ import Container from '@/components/Container';
  */
 export default function IntroductionSection() {
   return (
-    <AnimatedSection animation="fadeUp" delay={200}>
+    <AnimatedSection animation="fadeUp" delay={0}>
       <Container
         className="light-green-container"
         size="full"
