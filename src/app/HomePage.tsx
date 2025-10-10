@@ -31,7 +31,7 @@ export default function HomePage() {
   const experienceCards = [
     {
       title: "Debugging",
-      content: "Use breakpoints, logging, and isolate code blocks to narrow down the problem area quickly. also always test your code to avoid debugging!!"
+      content: "Use breakpoints, logging, and isolate code blocks to narrow down the problem area quickly. Also always test your code!!"
     },
     {
       title: "Designing Scalable Architecture",
@@ -57,13 +57,14 @@ export default function HomePage() {
       testimonial: "A valuable asset to a fast-paced environment with learning opportunities."
     },
     {
-      name: "Robin Jain, my partner at Azhar Apparel",
-      testimonial: "Super fun and I hope we can establish another business together in the future!"
+      name: "Denisa Kim, CEO of Anteros Bio",
+      testimonial: "George has been instrumental in building our product from the ground up — architecting both the backend and frontend, hosting on AWS, and formalizing our overall development process."
     },
     {
-      name: "Mom",
-      testimonial: "Great guy, 10/10 would reccomend"
+      name: "Robin Jain, my partner at Azhar Apparel",
+      testimonial: "Super fun and I hope we can establish another business together in the future!"
     }
+
   ];
 
   return (
@@ -107,16 +108,21 @@ export default function HomePage() {
                 shadow={true}
               />
               <Paragraph
-                text="Hi. I my name is George Jordan. I am an American Software developer based out of Washington DC, who focuses on full stack website development."
+                text="Hi, my name is George Jordan. I am an American Software developer based out of Washington DC, who focuses on full stack website development."
                 size="xl"
                 variant="card"
               />
               <Paragraph
-                text="I made this website to showcase my skills, but also a how-to for anyone who wants to learn some web development."
+                text="I made this website from scratch to showcase my skills, but also a how-to for anyone who wants to learn some web development."
                 size="xl"
                 variant="card"
               />
-              <SiteButton
+              <Paragraph
+                text="I used Typescript, React, and Node for the frondend; Java with springboot for the backend, and postgress for the Database.
+                       The site is being hosted on AWS servers."
+                size="xl"
+                variant="card"
+              />              <SiteButton
                 text="Go to Detailed Resume"
                 size="md"
                 className="intro-resume-button"

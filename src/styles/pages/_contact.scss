@@ -1,0 +1,136 @@
+@import "../variables";
+
+// =============================================================================
+// CONTACT FORM CONTAINER
+// =============================================================================
+
+.contact-form-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: $space-8 $space-4;
+}
+
+.contact-form-header {
+  margin-bottom: $space-8;
+  text-align: center;
+}
+
+.contact-form-subtitle {
+  margin-top: $space-8 !important;
+  line-height: $line-height-relaxed !important;
+  max-width: 700px;
+}
+
+// =============================================================================
+// FORM STYLES
+// =============================================================================
+
+.contact-form {
+  background-color: $background-card;
+  padding: $space-8;
+  border-radius: $radius-xl;
+  box-shadow: 0 4px 16px rgba($shadow-light, 0.1);
+  border: 1px solid $border-light;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 6px 20px rgba($shadow-light, 0.15);
+    transform: translateY(-2px);
+  }
+}
+
+// =============================================================================
+// SUBMIT BUTTON CONTAINER
+// =============================================================================
+
+.contact-form-submit {
+  display: flex;
+  justify-content: center;
+  margin-top: $space-6;
+}
+
+// =============================================================================
+// STATUS MESSAGES
+// =============================================================================
+
+.contact-form-success,
+.contact-form-error {
+  padding: $space-4;
+  border-radius: $radius-md;
+  margin-bottom: $space-4;
+  font-family: $font-body;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+
+  p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: $space-2;
+  }
+}
+
+.contact-form-success {
+  background-color: rgba($success, 0.1);
+  border: 2px solid $success;
+  color: darken($success, 10%);
+}
+
+.contact-form-error {
+  background-color: rgba($error, 0.1);
+  border: 2px solid $error;
+  color: darken($error, 10%);
+}
+
+// =============================================================================
+// RESPONSIVE STYLES
+// =============================================================================
+
+@media (max-width: $breakpoint-md) {
+  .contact-form-container {
+    padding: $space-6 $space-3;
+  }
+
+  .contact-form {
+    padding: $space-6 $space-4;
+  }
+
+  .contact-form-subtitle {
+    font-size: $font-size-base;
+  }
+
+  .contact-form-header {
+    margin-bottom: $space-6;
+  }
+
+  .contact-form-submit {
+    margin-top: $space-4;
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .contact-form {
+    padding: $space-4 $space-3;
+  }
+
+  .contact-form-container {
+    padding: $space-4 $space-2;
+  }
+}
+
+// =============================================================================
+// RECAPTCHA STYLES
+// =============================================================================
+
+.recaptcha-container {
+  display: flex;
+  justify-content: center;
+  margin: $space-6 0;
+}
+
+@media (max-width: $breakpoint-sm) {
+  .recaptcha-container {
+    transform: scale(0.85);
+    transform-origin: center;
+  }
+}

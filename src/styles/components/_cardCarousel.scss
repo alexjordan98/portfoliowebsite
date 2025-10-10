@@ -258,6 +258,13 @@
   }
 }
 
+/**
+ * Card Carousel Responsive Styles Fix
+ *
+ * Ensures carousel cards, titles, and text scale proportionally
+ * below 500px to prevent overflow and text clipping.
+ */
+
 @media (max-width: $breakpoint-md) {
   .card-carousel {
     padding: $space-6 $space-4;
@@ -273,7 +280,6 @@
   }
 
   .carousel-card {
-
     &.carousel-card-left,
     &.carousel-card-right {
       transform: translateX(0) scale(0.7);
@@ -286,6 +292,14 @@
   .card-carousel-xl {
     min-height: 400px;
     padding: $space-8 $space-4;
+  }
+
+  .carousel-card-title {
+    font-size: $font-size-lg;
+  }
+
+  .carousel-card-text {
+    font-size: $font-size-sm;
   }
 }
 
@@ -310,4 +324,263 @@
       height: 22px;
     }
   }
+
+  .carousel-card-title {
+    font-size: $font-size-base;
+  }
+
+  .carousel-card-text {
+    font-size: $font-size-xs;
+  }
+}
+
+/**
+ * Critical fix: Below 500px viewport
+ * Makes cards fluid and scales all text content
+ */
+@media (max-width: 500px) {
+  .card-carousel {
+    padding: $space-4 $space-2;
+    max-height: 400px;
+  }
+
+  .carousel-card {
+    .card-sm {
+      height: auto;
+      width: min(220px, 85vw);
+      min-height: 200px;
+    }
+
+    .card-md {
+      height: auto;
+      width: min(260px, 85vw);
+      min-height: 240px;
+    }
+
+    .card-lg {
+      height: auto;
+      width: min(350px, 85vw);
+      min-height: 300px;
+    }
+
+    .card-xl {
+      height: auto;
+      width: min(450px, 85vw);
+      min-height: 400px;
+    }
+  }
+
+  .carousel-card-title {
+    font-size: $font-size-sm;
+    margin-bottom: $space-1;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
+  .carousel-card-text {
+    font-size: $font-size-xs;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
+  .carousel-arrow-left {
+    left: $space-1;
+    transform: translateX(-250px);
+
+    &:hover {
+      transform: translateX(-250px) scale(1.1);
+    }
+
+    &:active {
+      transform: translateX(-250px) scale(0.95);
+    }
+  }
+
+  .carousel-arrow-right {
+    right: $space-1;
+    transform: translateX(250px);
+
+    &:hover {
+      transform: translateX(250px) scale(1.1);
+    }
+
+    &:active {
+      transform: translateX(250px) scale(0.95);
+    }
+  }
+
+  .card-carousel-sm {
+    min-height: 180px;
+    padding: $space-4 $space-2;
+  }
+
+  .card-carousel-md {
+    min-height: 220px;
+  }
+
+  .card-carousel-lg,
+  .card-carousel-xl {
+    padding: $space-6 $space-2;
+  }
+}
+
+@media (max-width: 420px) {
+  .card-carousel {
+    padding: $space-3 $space-1;
+    max-height: 380px;
+  }
+
+  .carousel-card {
+    .card-sm {
+      width: min(200px, 90vw);
+      min-height: 180px;
+      padding: $space-3;
+    }
+
+    .card-md {
+      width: min(240px, 90vw);
+      min-height: 210px;
+      padding: $space-3;
+    }
+
+    .card-lg {
+      width: min(300px, 90vw);
+      min-height: 260px;
+      padding: $space-4;
+    }
+
+    .card-xl {
+      width: min(380px, 90vw);
+      min-height: 340px;
+      padding: $space-5;
+    }
+  }
+
+  .carousel-card-title {
+    font-size: $font-size-xs;
+    line-height: $line-height-tight;
+  }
+
+  .carousel-card-text {
+    font-size: 0.7rem;
+    line-height: $line-height-normal;
+  }
+
+  .carousel-arrow {
+    width: 36px;
+    height: 36px;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  .carousel-arrow-left {
+    transform: translateX(-180px);
+
+    &:hover {
+      transform: translateX(-180px) scale(1.1);
+    }
+
+    &:active {
+      transform: translateX(-180px) scale(0.95);
+    }
+  }
+
+  .carousel-arrow-right {
+    transform: translateX(180px);
+
+    &:hover {
+      transform: translateX(180px) scale(1.1);
+    }
+
+    &:active {
+      transform: translateX(180px) scale(0.95);
+    }
+  }
+}
+
+/**
+ * Minimum viewport (320px and below)
+ * Final scaling to prevent overflow
+ */
+@media (max-width: 320px) {
+  .card-carousel {
+    padding: $space-2 $space-1;
+    min-height: 200px;
+  }
+
+  .carousel-card {
+    .card-sm {
+      width: min(180px, 95vw);
+      min-height: 160px;
+      padding: $space-2;
+    }
+
+    .card-md {
+      width: min(210px, 95vw);
+      min-height: 190px;
+      padding: $space-2;
+    }
+
+    .card-lg {
+      width: min(260px, 95vw);
+      min-height: 230px;
+      padding: $space-3;
+    }
+
+    .card-xl {
+      width: min(320px, 95vw);
+      min-height: 300px;
+      padding: $space-4;
+    }
+  }
+
+  .carousel-card-title {
+    font-size: 0.7rem;
+    line-height: 1.1;
+    margin-bottom: $space-1;
+  }
+
+  .carousel-card-text {
+    font-size: 0.65rem;
+    line-height: 1.3;
+  }
+
+  .carousel-arrow {
+    width: 32px;
+    height: 32px;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  .carousel-arrow-left {
+    transform: translateX(-150px);
+
+    &:hover {
+      transform: translateX(-150px) scale(1.05);
+    }
+  }
+
+  .carousel-arrow-right {
+    transform: translateX(150px);
+
+    &:hover {
+      transform: translateX(150px) scale(1.05);
+    }
+  }
+}
+
+.carousel-card-title,
+.carousel-card-text {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 0 $space-1;
 }
