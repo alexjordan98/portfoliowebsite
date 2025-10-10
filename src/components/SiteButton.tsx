@@ -103,7 +103,6 @@ export default function SiteButton({
         id={id}
         onClick={onClick}
         disabled={disabled || loading}
-        autoFocus
         aria-label={text}
       >
         <span className="modal-opener-icon">+</span>
@@ -139,7 +138,6 @@ export default function SiteButton({
         rel={isExternal ? 'noopener noreferrer' : undefined}
         onClick={onClick}
         onKeyDown={handleKeyDown}
-        autoFocus
         aria-disabled={disabled}
       >
         {iconBefore && <span className="button-icon-before">{iconBefore}</span>}
@@ -162,7 +160,6 @@ export default function SiteButton({
       onClick={onClick}
       onKeyDown={handleKeyDown}
       disabled={disabled || loading}
-      autoFocus
       type={type}
     >
       {iconBefore && <span className="button-icon-before">{iconBefore}</span>}

@@ -200,7 +200,7 @@ export default function HomePage() {
                             variant="card"
                           />
                           <Paragraph
-                            text="Frontend I build responsive, secure, and modern web interfaces using
+                            text="I build responsive, secure, and modern web interfaces using
                                   cutting-edge frameworks like React-Next.js and React Native, optimizing
                                   for performance, accessibility, and user experience across devices.
                                   Languages I use include React, Next.js, React Native, Tailwind, SCSS,
