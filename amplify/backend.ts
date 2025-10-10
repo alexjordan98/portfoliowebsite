@@ -11,6 +11,7 @@ const backend = defineBackend({
 const getAllowedOrigins = () => {
   const origins = [
     'http://localhost:3000',
+    'https://jordanthesoftwaredeveloper.com',
     'https://www.jordanthesoftwaredeveloper.com'
   ];
 

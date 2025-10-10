@@ -112,7 +112,7 @@ export default function ContactForm() {
     setSubmitStatus('idle');
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_CONTACT_FORM_API_URL}/contact`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_CONTACT_FORM_API_URL}contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
