@@ -66,7 +66,7 @@ const RestaurantFlowSVG = () => {
           <Menu height={300} width={340} />
         </div>
         <div style={{ paddingRight: "20px" }}>
-          <ArrowSVG width={80} height={300} thickness={10}/>
+          <ArrowSVG className="restaurant-arrow" width={80} height={300} thickness={10} />
         </div>
         <div>
           <Title
@@ -77,7 +77,7 @@ const RestaurantFlowSVG = () => {
           <StoveSVG height={300} width={190} />
         </div>
         <div style={{ paddingLeft: "20px" }}>
-          <ArrowSVG width={80} height={300} thickness={10}/>
+          <ArrowSVG className="restaurant-arrow" width={80} height={300} thickness={10} />
         </div>
         <div>
           <Title
@@ -87,8 +87,7 @@ const RestaurantFlowSVG = () => {
           />
           <PantrySVG height={300} width={190} />
         </div>
-
-        <ArrowSVG width={80} height={300} thickness={10}/>
+        <ArrowSVG className="restaurant-arrow" width={80} height={300} thickness={10} />
         <div>
           <Title
             text="Building (AWS)"

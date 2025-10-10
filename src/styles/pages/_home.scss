@@ -227,14 +227,6 @@
 
   .stack-header {
     margin-bottom: $space-8;
-
-    .title:first-child {
-      font-size: 2.5rem;
-    }
-
-    .title:last-child {
-      font-size: 1.5rem;
-    }
   }
 
   .stack-layout {
@@ -245,6 +237,10 @@
     .stack-hero-image {
       max-width: 300px;
     }
+  }
+
+  .stack-row {
+    flex-direction: column;
   }
 
   .stack-card {
@@ -340,6 +336,8 @@
 
   .experience-image {
     max-width: 350px;
+    width: 100%;
+    height: auto;
   }
 
   .experience-cards-row {
@@ -347,8 +345,16 @@
     justify-content: center;
   }
 
+  .experience-section-card-animation {
+    width: 100%;
+    max-width: 350px;
+  }
+
   .experience-section-card {
-    width: 280px;
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    min-height: 300px;
   }
 }
 
@@ -356,25 +362,39 @@
   .experience-section-outline {
     margin-bottom: $space-6;
     border-radius: $radius-lg;
+    padding: $space-2;
   }
 
   .experience-image {
     max-width: 300px;
+    width: 100%;
   }
 
   .experience-cards-row {
     flex-direction: column;
     align-items: center;
+    gap: $space-3;
+  }
+
+  .experience-section-card-animation {
+    width: 100%;
+    max-width: 300px;
   }
 
   .experience-section-card {
     width: 100%;
-    max-width: 350px;
+    max-width: 300px;
   }
 
   .experience-image-section,
   .experience-content-section {
     padding: $space-3;
+    width: 100%;
+  }
+
+  .container-horizontal {
+    flex-direction: column;
+    align-items: stretch;
   }
 }
 
@@ -383,14 +403,17 @@
     margin-bottom: $space-4;
     border-radius: $radius-md;
     border-width: 1px;
+    padding: $space-2;
   }
 
   .experience-image {
-    max-width: 250px;
+    max-width: min(250px, 90vw);
+    width: 100%;
   }
 
   .experience-cards-grid {
     margin-top: $space-4;
+    width: 100%;
   }
 
   .experience-cards-row {
@@ -398,8 +421,77 @@
     margin-bottom: $space-3;
   }
 
+  .experience-section-card-animation {
+    width: 100%;
+    max-width: min(280px, 90vw);
+  }
+
   .experience-section-card {
+    width: 100%;
     max-width: none;
+    padding: $space-4;
+  }
+
+  .experience-image-section,
+  .experience-content-section {
+    padding: $space-2;
+  }
+}
+
+@media (max-width: 420px) {
+  .experience-section-outline {
+    padding: $space-1;
+    margin-left: $space-2;
+    margin-right: $space-2;
+  }
+
+  .experience-image {
+    max-width: min(220px, 85vw);
+    width: 100%;
+  }
+
+  .experience-section-card-animation {
+    width: 100%;
+    max-width: min(100%, 85vw);
+  }
+
+  .experience-section-card {
+    width: 100%;
+    padding: $space-3;
+  }
+
+  .experience-image-section,
+  .experience-content-section {
+    padding: $space-1;
+  }
+}
+
+@media (max-width: 320px) {
+  .experience-section-outline {
+    padding: $space-1;
+    margin-left: $space-1;
+    margin-right: $space-1;
+  }
+
+  .experience-image {
+    max-width: min(180px, 80vw);
+    width: 100%;
+  }
+
+  .experience-section-card-animation {
+    width: 100%;
+    max-width: min(100%, 80vw);
+  }
+
+  .experience-section-card {
+    width: 100%;
+    padding: $space-2;
+    min-height: auto;
+  }
+
+  .experience-image-section,
+  .experience-content-section {
+    padding: $space-1;
   }
 }
 

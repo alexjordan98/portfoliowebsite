@@ -31,7 +31,7 @@ export default function HomePage() {
   const experienceCards = [
     {
       title: "Debugging",
-      content: "Use breakpoints, logging, and isolate code blocks to narrow down the problem area quickly. also always test your code to avoid debugging!!"
+      content: "Use breakpoints, logging, and isolate code blocks to narrow down the problem area quickly. Also always test your code!!"
     },
     {
       title: "Designing Scalable Architecture",

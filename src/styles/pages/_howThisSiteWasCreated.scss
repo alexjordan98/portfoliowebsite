@@ -327,7 +327,12 @@
   }
 }
 
-// Arrows connecting the cards
+.restaurant-arrow {
+  @media(max-width: $breakpoint-lg) {
+    display: none;
+  }
+}
+
 .flow-arrow {
   position: absolute;
   z-index: 5;
