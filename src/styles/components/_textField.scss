@@ -1,0 +1,139 @@
+@import "../variables";
+
+// =============================================================================
+// BASE TEXT FIELD STYLES
+// =============================================================================
+
+.text-field {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+  margin-bottom: $space-4;
+  width: 100%;
+}
+
+.text-field-label {
+  font-family: $font-heading;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-medium;
+  color: $text-primary;
+  display: flex;
+  align-items: center;
+  gap: $space-1;
+}
+
+.text-field-required {
+  color: $error;
+  font-size: $font-size-lg;
+}
+
+// =============================================================================
+// INPUT STYLES
+// =============================================================================
+
+.text-field-input {
+  font-family: $font-body;
+  font-size: $font-size-base;
+  color: $text-primary;
+  background-color: $background-card;
+  border: 2px solid $border-dark;
+  border-radius: $radius-md;
+  padding: $space-3 $space-4;
+  transition: all 0.2s ease;
+  width: 100%;
+
+  &::placeholder {
+    color: $text-muted;
+  }
+
+  &:hover:not(:disabled) {
+    border-color: rgb(0, 0, 0);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $primary;
+    box-shadow: 0 0 0 3px rgba($primary, 0.1);
+  }
+
+  &:disabled {
+    background-color: rgba($text-muted, 0.1);
+    color: $text-muted;
+    cursor: not-allowed;
+  }
+}
+
+// =============================================================================
+// VARIANT STYLES
+// =============================================================================
+
+.text-field-input-small {
+  height: 48px;
+}
+
+.text-field-input-large {
+  min-height: 150px;
+  resize: vertical;
+  line-height: $line-height-relaxed;
+}
+
+// =============================================================================
+// ERROR STATE
+// =============================================================================
+
+.text-field-error {
+  .text-field-input {
+    border-color: $error;
+
+    &:focus {
+      border-color: $error;
+      box-shadow: 0 0 0 3px rgba($error, 0.1);
+    }
+  }
+
+  .text-field-label {
+    color: $error;
+  }
+}
+
+.text-field-error-message {
+  font-size: $font-size-sm;
+  color: $error;
+  margin-top: $space-1;
+  display: block;
+}
+
+// =============================================================================
+// DISABLED STATE
+// =============================================================================
+
+.text-field-disabled {
+  opacity: 0.6;
+
+  .text-field-label {
+    color: $text-muted;
+  }
+}
+
+// =============================================================================
+// RESPONSIVE STYLES
+// =============================================================================
+
+@media (max-width: $breakpoint-md) {
+  .text-field-label {
+    font-size: $font-size-base;
+  }
+
+  .text-field-input {
+    font-size: $font-size-sm;
+    padding: $space-2 $space-3;
+  }
+
+  .text-field-input-small {
+    height: 44px;
+  }
+
+  .text-field-input-large {
+    min-height: 120px;
+  }
+}

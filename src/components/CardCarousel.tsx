@@ -41,12 +41,6 @@ interface CardCarouselProps {
 /**
  * CardCarousel component for displaying cards in a 2D carousel layout
  *
- * Creates an interactive carousel where cards are stacked on the left and right
- * sides of the current centered card. Users can navigate through cards using
- * arrow buttons on either side of the current card.
- *
- * Compatible with Card.tsx component and CardCarousel.scss styles.
- *
  * @example
  * ```tsx
  * const carouselItems = [
@@ -76,6 +70,8 @@ export default function CardCarousel({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [cardOffset, setCardOffset] = useState(0);
   const displayCards = Array(9).fill(null);
+  const [touchStart, setTouchStart] = useState<number>(0);
+  const [touchEnd, setTouchEnd] = useState<number>(0);
 
   const handlePrevious = () => {
     setCurrentIndex((prevIndex) =>
@@ -98,6 +94,30 @@ export default function CardCarousel({
     if (event.key === 'Enter' || event.key === ' ') {
       event.preventDefault();
       action === 'prev' ? handlePrevious() : handleNext();
+    }
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    const minSwipeDistance = 75;
+    const swipeDistance = touchStart - touchEnd;
+
+    if (Math.abs(swipeDistance) < minSwipeDistance) {
+      return;
+    }
+
+    if (swipeDistance > 0) {
+      handleNext();
+    } else {
+      handlePrevious();
     }
   };
 
@@ -141,7 +161,12 @@ export default function CardCarousel({
         </svg>
       </button>
 
-      <div className="carousel-cards-container">
+      <div
+        className="carousel-cards-container"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
         {displayCards.map((_, index) => {
           const position = getCardPosition(index);
           const cardClasses = `carousel-card carousel-card-${position}`;
@@ -156,7 +181,7 @@ export default function CardCarousel({
                 childAlignment="child-center"
                 selfAlignment="self-center"
                 childLayoutt="vertical"
-                className={ cardClassName}
+                className={cardClassName}
               >
                 {isCenter && currentItem && (
                   <>

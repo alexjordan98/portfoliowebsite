@@ -48,13 +48,11 @@ export default function HowItConnectsSection() {
       case 2:
         return 180;
       case 3:
-         return 225;
+        return 225;
       case 4:
-         return 315;
+        return 315;
     }
   }
-
-
 
   return (
     <Container
@@ -89,7 +87,6 @@ export default function HowItConnectsSection() {
       </AnimatedSection>
       <AnimatedSection animation="fadeUp" delay={900}>
         <section className="how-connects-practice">
-
           <div className="title-how-to">
             <Title
               text="How It Works in Practice"
@@ -102,7 +99,7 @@ export default function HowItConnectsSection() {
           <div className="circular-flow-diagram">
             {practicalSteps.map((step, index) => (
               <div
-                key={index+1}
+                key={index + 1}
                 className={`flow-card-wrapper flow-position-${index + 1}`}
               >
                 <Card
@@ -125,7 +122,7 @@ export default function HowItConnectsSection() {
                     align="center"
                   />
                 </Card>
-                <ArrowSVG className={`flow-arrow arrow-${index + 1}`} width={80} height={300} thickness={7} rotation={getArrowAngle(index)}/>
+                <ArrowSVG className={`flow-arrow arrow-${index + 1}`} width={80} height={300} thickness={7} rotation={getArrowAngle(index)} />
               </div>
             ))}
           </div>

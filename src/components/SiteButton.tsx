@@ -20,6 +20,9 @@ interface SiteButtonProps {
   /** Modern button variant with warm professional styling */
   variant?: 'default' | 'card' | 'modal-opener' | 'link';
 
+  /** Button type attribute */
+  type?: 'button' | 'submit' | 'reset';
+
   /** Button size variant */
   size?: 'sm' | 'md' | 'lg' | 'xl';
 
@@ -41,11 +44,6 @@ interface SiteButtonProps {
 
 /**
  * SiteButton component to provide consistent buttons throughout the project
- *
- * Compatible with styles/components/_button.scss classes:
- * - .site-button (base styles)
- * - .button-sm, .button-lg, .button-xl (size variants)
- * - .button-card, .button-link (variant styles)
  *
  * @example
  * ```tsx
@@ -85,6 +83,7 @@ export default function SiteButton({
   text,
   destination,
   variant = 'default',
+  type = 'button',
   size = 'md',
   disabled = false,
   loading = false,
@@ -92,7 +91,6 @@ export default function SiteButton({
   iconAfter,
   onClick,
 }: SiteButtonProps) {
-  // Modal opener renders as small circular button
   if (variant === 'modal-opener') {
     return (
       <button
@@ -129,7 +127,6 @@ export default function SiteButton({
     }
   };
 
-  // Render as link if destination is provided
   if (destination) {
     const isExternal = destination.startsWith('http') || destination.startsWith('//');
 
@@ -158,7 +155,6 @@ export default function SiteButton({
     );
   }
 
-  // Render as button
   return (
     <button
       className={buttonClasses}
@@ -167,7 +163,7 @@ export default function SiteButton({
       onKeyDown={handleKeyDown}
       disabled={disabled || loading}
       autoFocus
-      type="button"
+      type={type}
     >
       {iconBefore && <span className="button-icon-before">{iconBefore}</span>}
       {loading ? (

@@ -110,12 +110,12 @@
 // Mobile responsive lists
 @media (max-width: $breakpoint-md) {
   .numbered-list-indices {
-    font-size: $font-size-xl;
+    font-size: $font-size-base;
     padding-left: $space-4;
   }
 
   .numbered-list-item {
-    font-size: $font-size-xl;
+    font-size: $font-size-sm;
     margin-bottom: $space-2;
   }
 
@@ -124,7 +124,7 @@
     padding-left: $space-2;
 
     .numbered-list-item {
-      font-size: $font-size-base;
+      font-size: $font-size-sm;
     }
   }
 
@@ -136,5 +136,27 @@
   .definition-list {
     grid-template-columns: 1fr;
     gap: $space-1;
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .numbered-list-indices {
+    font-size: $font-size-sm;
+    padding-left: $space-3;
+  }
+
+  .numbered-list-item {
+    font-size: $font-size-xs;
+    margin-bottom: $space-2;
+    line-height: $line-height-normal;
+  }
+
+  .sub-items {
+    margin-left: $space-1;
+    padding-left: $space-2;
+
+    .numbered-list-item {
+      font-size: $font-size-xs;
+    }
   }
 }
