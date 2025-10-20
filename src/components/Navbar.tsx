@@ -67,6 +67,7 @@ export default function Navbar({
     { label: 'Home', href: '/' },
     { label: 'Resume', href: '/resume' },
     { label: 'How the Site was Created', href: '/how-to' },
+    { label: 'Skills', href: '/skills' },
     //{ label: 'Internet Tracking', href: '/internet-tracking' },
     { label: 'Contact', href: '/contact' }
   ];

@@ -152,8 +152,9 @@ export const SkillsBubble: React.FC<SkillsBubbleProps> = (props) => {
                 height: `${size}px`,
                 left: `${xPosition}%`,
                 top: `${yPosition}%`,
-                '--bubble-size': `${size}px`
-            } as React.CSSProperties}
+                '--bubble-size': `${size}px`,
+                '--start-y': `${yPosition}vh`
+            } as React.CSSProperties & { '--bubble-size': string; '--start-y': string }}
         >
             <div className="skills-bubble__arc"></div>
             <span className="skills-bubble__text">{skill}</span>
