@@ -1,4 +1,4 @@
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080/api';
+const API_BASE_URL = process.env.NEXT_PUBLIC_BEANSTALK_API_URL;
 
 /**
  * Skill interface matching the backend entity
@@ -50,7 +50,7 @@ async function apiRequest<T>(
   options: RequestInit = {}
 ): Promise<ApiResponse<T>> {
   const url = `${API_BASE_URL}${endpoint}`;
-  
+
   const config: RequestInit = {
     headers: {
       'Content-Type': 'application/json',
@@ -84,7 +84,7 @@ async function apiRequest<T>(
     if (error instanceof ApiError) {
       throw error;
     }
-    
+
     // Network or other errors
     throw new ApiError(
       `Network error: ${error instanceof Error ? error.message : 'Unknown error'}`,
@@ -95,10 +95,10 @@ async function apiRequest<T>(
 
 /**
  * Get all skills from the backend
- * 
+ *
  * @returns Promise<Skill[]> Array of all skills
  * @throws {ApiError} When the API request fails
- * 
+ *
  * @example
  * ```typescript
  * try {
@@ -118,7 +118,7 @@ export async function getAllSkills(): Promise<Skill[]> {
 
 /**
  * Health check function to test API connectivity
- * 
+ *
  * @returns Promise<boolean> True if API is healthy
  */
 export async function checkApiHealth(): Promise<boolean> {
