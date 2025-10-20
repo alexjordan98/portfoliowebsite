@@ -58,3 +58,5 @@ src/.env.local
 .amplify
 amplify_outputs*
 amplifyconfiguration*
+
+backend/.ebextensions/*

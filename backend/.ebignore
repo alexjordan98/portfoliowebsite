@@ -1,0 +1,14 @@
+.gradle/
+build/
+!build/libs/*.jar
+.env
+*.log
+.git/
+.idea/
+*.iml
+.vscode/
+bin/
+out/
+.DS_Store
+scripts/
+src/test/
