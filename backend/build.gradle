@@ -60,3 +60,12 @@ task generateDocs(type: Javadoc) {
     classpath = configurations.compileClasspath
     destinationDir = file("$buildDir/docs/javadoc")
 }
+
+bootJar {
+    enabled = true
+    archiveFileName = 'portfolio-backend.jar'
+}
+
+jar {
+    enabled = false
+}

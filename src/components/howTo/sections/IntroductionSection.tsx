@@ -33,7 +33,7 @@ export default function IntroductionSection() {
             text="A lot of people asked me why I chose to build this site from scratch. When I set out to build this site,
                 I could have gone the easy route — spun up a template on GoDaddy or Wix, clicked a few buttons, and called it
                 a day. But that wasn't the point. I wanted something more than just a digital business card. I wanted a project
-                 that would not only showcase who I am, but also demonstrate that I can design, structure, and deploy a complete
+                 that would showcase who I am, as well as demonstrate that I can design, structure, and deploy a complete
                  full-stack application from scratch."
             size="xl"
             align="left"
