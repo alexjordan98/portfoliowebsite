@@ -53,6 +53,8 @@ export default function FullTimeJobsTab({ className = '' }: FullTimeJobsTabProps
         tenureLength="September 2024 – May 2025"
         jobDescription={[
           "Designed and developed the official website for a boutique B&B in Nairobi Kenya called Kongoni House using Wix, integrating the HotelRunner extension to enable direct online bookings and synchronize external channels (Booking.com, Expedia)",
+          "Implemented SEO optimizations within Wix, improving the property’s visibility across search engines and travel directories",
+          "Set up and managed the property’s Google Workspace for email, created its Google Maps business listing, and ran Google Ads campaigns to drive traffic and bookings",
           "Configured booking and payment workflows to streamline guest reservations through the site",
           "Trained on-site staff remotely to manage reservations, transactions, and channel manager operations through the integrated Wix dashboard",
           "Provided post-launch support and handled technical troubleshooting to ensure uptime and ease of use",
