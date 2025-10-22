@@ -51,7 +51,7 @@ export default function PersonalProjectsTab({ className = '' }: PersonalProjects
         svgComponent={<WorkingSVG />}
         animationDelay={100}
         hasLink={true}
-        linkDestination="https://github.com/alexjordan98/Roth-Reinfocement-Project-Alex-and-Shefali"
+        linkDestination={process.env.NEXT_PUBLIC_ROTH_GITHUB}
         linkName="Model's Github Repository"
       />
       <ResumeSection
