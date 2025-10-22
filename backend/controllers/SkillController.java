@@ -17,26 +17,25 @@ import java.util.Optional;
  * REST Controller for Skill entity
  * Provides HTTP endpoints for skill-related operations
  * Designed to be consumed by Next.js frontend for portfolio website
- * 
+ *
  * @author George Jordan
  * @version 1.0
  * @since 2024-12-15
  */
 @RestController
-@RequestMapping("/api/skills")
-@CrossOrigin(origins = {"http://localhost:3000", "https://your-frontend-domain.vercel.app"})
+@RequestMapping("/skills")
 public class SkillController {
-    
+
     private final SkillService skillService;
-    
+
     @Autowired
     public SkillController(SkillService skillService) {
         this.skillService = skillService;
     }
-    
+
     /**
      * Get all skills
-     * 
+     *
      * @return ResponseEntity containing list of all skills
      */
     @GetMapping
@@ -49,10 +48,10 @@ public class SkillController {
             return createErrorResponse("Failed to retrieve skills", e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-    
+
     /**
      * Get skill by ID
-     * 
+     *
      * @param id The skill ID to retrieve
      * @return ResponseEntity containing the skill if found, 404 if not found
      */
@@ -70,10 +69,10 @@ public class SkillController {
             return createErrorResponse("Failed to retrieve skill", e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-    
+
     /**
      * Get skills by category
-     * 
+     *
      * @param category The category to filter by
      * @return ResponseEntity containing list of skills in the category
      */
@@ -87,10 +86,10 @@ public class SkillController {
             return createErrorResponse("Failed to retrieve skills by category", e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-    
+
     /**
      * Get skills for bubble display (frontend physics component)
-     * 
+     *
      * @param minProficiency Minimum proficiency level (optional, defaults to 1)
      * @return ResponseEntity containing skills suitable for bubble visualization
      */
@@ -105,10 +104,10 @@ public class SkillController {
             return createErrorResponse("Failed to retrieve bubble skills", e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-    
+
     /**
      * Get skills ordered by proficiency level
-     * 
+     *
      * @return ResponseEntity containing skills sorted by proficiency and name
      */
     @GetMapping("/ordered")
@@ -121,10 +120,10 @@ public class SkillController {
             return createErrorResponse("Failed to retrieve ordered skills", e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-    
+
     /**
      * Get all distinct skill categories
-     * 
+     *
      * @return ResponseEntity containing list of unique categories
      */
     @GetMapping("/categories")
@@ -137,10 +136,10 @@ public class SkillController {
             return createErrorResponse("Failed to retrieve categories", e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-    
+
     /**
      * Get top N skills by proficiency
-     * 
+     *
      * @param limit Maximum number of skills to return (optional, defaults to 10)
      * @return ResponseEntity containing top skills
      */
@@ -155,10 +154,10 @@ public class SkillController {
             return createErrorResponse("Failed to retrieve top skills", e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-    
+
     /**
      * Search skills by name
-     * 
+     *
      * @param name Search term for skill names
      * @return ResponseEntity containing matching skills
      */
@@ -172,10 +171,10 @@ public class SkillController {
             return createErrorResponse("Failed to search skills", e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-    
+
     /**
      * Get skill statistics grouped by category
-     * 
+     *
      * @return ResponseEntity containing category statistics
      */
     @GetMapping("/stats")
@@ -188,10 +187,10 @@ public class SkillController {
             return createErrorResponse("Failed to retrieve skill statistics", e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-    
+
     /**
      * Create a new skill (Admin endpoint)
-     * 
+     *
      * @param skill The skill object to create
      * @return ResponseEntity containing the created skill
      */
@@ -207,10 +206,10 @@ public class SkillController {
             return createErrorResponse("Failed to create skill", e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-    
+
     /**
      * Update an existing skill (Admin endpoint)
-     * 
+     *
      * @param id The ID of the skill to update
      * @param skill The updated skill data
      * @return ResponseEntity containing the updated skill
@@ -227,10 +226,10 @@ public class SkillController {
             return createErrorResponse("Failed to update skill", e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-    
+
     /**
      * Delete a skill (Admin endpoint)
-     * 
+     *
      * @param id The ID of the skill to delete
      * @return ResponseEntity confirming deletion
      */
@@ -249,10 +248,10 @@ public class SkillController {
             return createErrorResponse("Failed to delete skill", e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-    
+
     /**
      * Check if skill exists by ID
-     * 
+     *
      * @param id The skill ID to check
      * @return ResponseEntity containing existence status
      */
@@ -269,10 +268,10 @@ public class SkillController {
             return createErrorResponse("Failed to check skill existence", e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-    
+
     /**
      * Health check endpoint
-     * 
+     *
      * @return ResponseEntity confirming API is operational
      */
     @GetMapping("/health")
@@ -284,10 +283,10 @@ public class SkillController {
         response.put("timestamp", System.currentTimeMillis());
         return ResponseEntity.ok(response);
     }
-    
+
     /**
      * Create standardized success response format
-     * 
+     *
      * @param data The data to include in response
      * @param count Number of items returned
      * @return Map containing standardized success response
@@ -300,10 +299,10 @@ public class SkillController {
         response.put("timestamp", System.currentTimeMillis());
         return response;
     }
-    
+
     /**
      * Create standardized error response format
-     * 
+     *
      * @param error Main error message
      * @param details Detailed error information
      * @param status HTTP status for the error

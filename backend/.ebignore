@@ -1,6 +1,8 @@
 .gradle/
-build/
-!build/libs/*.jar
+build/classes/
+build/generated/
+build/resources/
+build/tmp/
 .env
 *.log
 .git/
