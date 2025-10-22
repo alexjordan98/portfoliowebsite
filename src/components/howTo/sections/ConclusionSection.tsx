@@ -49,13 +49,13 @@ export default function ConclusionSection() {
           />
 
           <Paragraph
-            text="At the same time, I wanted this site to serve a bigger purpose: to make the process of building software less intimidating. By breaking down the architecture into clear sections and metaphors, I've tried to show that these systems aren't magic boxes — they're just organized layers of logic, data, and design. Anyone can learn this with the right guidance, and as developers we should be doing a better job explaining how things work."
+            text="At the same time, I wanted this site to serve a bigger purpose: to make the process of building software less intimidating. By breaking down the architecture into clear sections and metaphors, I've tried to show that these systems aren't magic boxes — they're just organized layers of logic, data, and design. Anyone can learn this with the right guidance, and as developers we should be doing a better job explaining how things work. I would like this site to act as a roadmap for anyone making their own project — helping beginners see not just the what, but the how to think like an engineer."
             size="xl"
             align="left"
           />
 
           <Paragraph
-            text="Finally, my aim is for this page to give a sense of the kind of architectural thinking necessary for a lead engineer. That means I could step into a role as a team lead, or independently create and maintain a website for a smaller company end-to-end. I would also like this site to act as a roadmap for anyone making their own project — helping beginners see not just the what, but the how to think like an engineer."
+            text="Finally, my aim is for this page to give a sense of the kind of architectural thinking necessary for a lead engineer. That means I could step into a role as a team lead, or independently create and maintain a website for a smaller company end-to-end."
             size="xl"
             align="left"
           />

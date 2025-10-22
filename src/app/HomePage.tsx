@@ -31,7 +31,7 @@ export default function HomePage() {
   const experienceCards = [
     {
       title: "Debugging",
-      content: "Use breakpoints, logging, and isolate code blocks to narrow down the problem area quickly. Also always test your code!!"
+      content: "Use breakpoints, logging, and isolate code blocks to narrow down the problem area quickly. Always test your code!!"
     },
     {
       title: "Designing Scalable Architecture",
@@ -223,7 +223,7 @@ export default function HomePage() {
                           />
                           <Paragraph
                             text="I develop scalable and secure backend services that comply with modern
-                                  cybersecurity standards, with a focus on maintainability and integration
+                                  cybersecurity standards, with a focus on maintenance and integration
                                   with complex systems. Tools I use include Java, PHP, Python, Go, .NET,
                                    and containerized services on AWS EC2."
                             variant='card'

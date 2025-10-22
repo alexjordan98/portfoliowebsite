@@ -47,7 +47,22 @@ export default function FullTimeJobsTab({ className = '' }: FullTimeJobsTabProps
         svgComponent={<WorkingSVG />}
         animationDelay={0}
       />
-
+      <ResumeSection
+        title="Freelance Web Developer"
+        companyName="Kongoni House LLC - Nairobi, Kenya (Remote)"
+        tenureLength="September 2024 – May 2025"
+        jobDescription={[
+          "Designed and developed the official website for a boutique B&B in Nairobi Kenya called Kongoni House using Wix, integrating the HotelRunner extension to enable direct online bookings and synchronize external channels (Booking.com, Expedia)",
+          "Configured booking and payment workflows to streamline guest reservations through the site",
+          "Trained on-site staff remotely to manage reservations, transactions, and channel manager operations through the integrated Wix dashboard",
+          "Provided post-launch support and handled technical troubleshooting to ensure uptime and ease of use",
+        ]}
+        svgComponent={<WorkingSVG />}
+        animationDelay={0}
+        hasLink={true}
+        linkDestination={process.env.NEXT_PUBLIC_KONGONI}
+        linkName="Hotel's Website"
+      />
       <ResumeSection
         title="Full Stack Web Developer"
         companyName="CABEM Technologies, REMOTE"
