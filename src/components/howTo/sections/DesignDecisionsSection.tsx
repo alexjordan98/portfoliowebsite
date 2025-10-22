@@ -67,7 +67,7 @@ export default function DesignDecisionsSection() {
                             hasTitle={false}
                         />
                         <Paragraph
-                            text="In short, the design isn't just about looks — it's about readability, maintainability, and showing that I can think about user experience at the same time as technical structure."
+                            text="In short, the design isn't just about looks — it's about readability, maintenance, and showing that I can think about user experience at the same time as technical structure."
                             size="xl"
                             align="left"
                         />
