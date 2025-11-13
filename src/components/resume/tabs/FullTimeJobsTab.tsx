@@ -38,9 +38,9 @@ export default function FullTimeJobsTab({ className = '' }: FullTimeJobsTabProps
         companyName="Anteros Bio, REMOTE"
         tenureLength="April 2025 – Present"
         jobDescription={[
-          "Architected a new client-facing application using TypeScript and React to support Anterosbio’s genomics platform",
+          "Architected a new client-facing application using TypeScript with React for the frontend, and Java with Maven for the back-end to support Anterosbio’s genomics platform",
           "Established CI/CD pipelines and environment workflows leveraging AWS Amplify to automate builds, testing, and deployments",
-          "Structured DynamoDB schema and data access patterns to support scalable NoSQL data interactions within the application",
+          "Migrated DynamoDB data into a PostgreSQL schema and built a Java-based RESTful API (Java + Maven) deployed on AWS Elastic Beanstalk to support the new backend architecture",
           "Directed frontend development practices, setting code standards, component patterns, and Git branching strategies for the team",
           "Collaborated with cross-functional scientists and product stakeholders to translate complex requirements into intuitive user interfaces",
         ]}
