@@ -108,7 +108,7 @@ export default function HomePage() {
                 shadow={true}
               />
               <Paragraph
-                text="Hi, my name is George Jordan. I am an American Software developer based out of Washington DC, who focuses on full stack website development."
+                text="Hi, my name is George Jordan. I am a US-based Software engineer, who focuses on full stack website development."
                 size="xl"
                 variant="card"
               />

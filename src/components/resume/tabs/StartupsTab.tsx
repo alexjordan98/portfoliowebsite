@@ -29,6 +29,8 @@ export default function StartupsTab({ className = '' }: StartupsTabProps) {
         jobDescription={[
           "Azhar Apparel is the name of an ecommerce clothing startup that I started with a fellow student using Northeastern’s business incubator called IDEA",
           "Designed the company’s Shopify webpage with one of my partners utilizing agile development methodology (HTML, liquid, CSS)",
+          "Implemented SEO and keyword optimization within Shopify and across social media platforms to improve visibility and organic reach",
+          "Set up and maintained the brand’s Google Workspace accounts, Google Analytics, and Google Ads campaigns to track engagement and drive sales",
           "Created a Facebook and Instagram (azhar_apparel_store) Store and helped develop a marketing strategy",
           "Sourced the clothes from Kenya and dealt with supply chain"
         ]}

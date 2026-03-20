@@ -38,10 +38,10 @@ export default function PersonalProjectsTab({ className = '' }: PersonalProjects
       />
       <ResumeSection
         title="Roth Reinforcement Learning Model"
-        companyName="Ethics and Evolutionary Games (EEG) Class At Northeastern"
-        tenureLength="September 2020 - Devember 2020"
+        companyName="Ethics and Evolutionary Games (EEG) Class"
+        tenureLength=""
         jobDescription={[
-          'As described by the university, EEG was a class that "surveys the basic ideas and principles from evolutionary game theory and how they can be applied to philosophical questions about ethical and social norms". It was very interesting',
+          'EEG was a class that "surveys the basic ideas and principles from evolutionary game theory and how they can be applied to philosophical questions about ethical and social norms". It was very interesting',
           "Roth Reinfocement is essentially a type of Algorithm used commonly in game theory to model how people learn from experience. Basically if a strategy works, someone will be more likely to use it again",
           "For my final project in this class, I built a Python simulation tool with a Tkinter UI to model Roth reinforcement learning in repeated games",
           "It implements dynamic payoff matrices and player weights to study how strategies evolve under reinforcement rules",
