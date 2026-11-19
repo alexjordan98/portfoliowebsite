@@ -116,7 +116,13 @@ describe('custom games', () => {
   it('classifies cells by efficiency and equality', () => {
     expect(classifyCustomCell(DEFAULT_CUSTOM_SPEC, 0, 0)).toBe('good');
     expect(classifyCustomCell(DEFAULT_CUSTOM_SPEC, 1, 1)).toBe('meager');
-    expect(classifyCustomCell(PRISONERS_DILEMMA, 1, 0)).toBe('unfair');
+    const dilemma = {
+      strategies: PRISONERS_DILEMMA.rowLabels,
+      rowPayoffs: PRISONERS_DILEMMA.rowPayoffs,
+      colPayoffs: PRISONERS_DILEMMA.colPayoffs,
+    };
+    expect(classifyCustomCell(dilemma, 1, 0)).toBe('unfair');
+    expect(classifyCustomCell(dilemma, 1, 1)).toBe('meager');
   });
 
   it('accepts payoffs only from 0 to 10', () => {
