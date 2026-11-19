@@ -16,7 +16,7 @@ java {
 sourceSets {
     main {
         java {
-            srcDirs = ['src/main/java', 'controllers', 'services', 'core']
+            srcDirs = ['src/main/java', 'controllers', 'services', 'core', 'config']
         }
     }
 }
