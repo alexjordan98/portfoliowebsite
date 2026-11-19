@@ -31,12 +31,29 @@ export default function FullTimeJobsTab({ className = '' }: FullTimeJobsTabProps
         variant="default"
         size="xl"
         text="Download Resume PDF"
-        onClick={() => window.open('/2025-George-Jordan-Resume.pdf', '_blank', 'noopener, noreferrer')}
+        onClick={() => window.open('/2026-George-Jordan-Resume.pdf', '_blank', 'noopener, noreferrer')}
+      />
+      <ResumeSection
+        title="Lead Software Architect"
+        companyName="Mettle Works, Upper Marlboro, MD"
+        tenureLength="March 2026 – Present"
+        jobDescription={[
+          "Architected and built a new internal operations platform for a behavioral health practice, turning an early prototype into a production system that manages group therapy programs, insurance tracking, and day-to-day office operations",
+          "Grew the platform to roughly 150K lines of TypeScript across a React/Vite front end and TypeScript backend services",
+          "Led the migration from Railway to Microsoft Azure, moving hosting and backend services onto the company's existing Microsoft environment",
+          "Integrated Microsoft Entra ID single sign-on so staff log in with their company Microsoft accounts",
+          "Built an in-app call center on Twilio, giving staff calling directly inside the platform",
+          "Designed an AI-driven development pipeline: a team of Claude coding agents builds features, interns run QA testing, and I hold final review and approval before anything ships",
+          "Stood up the full engineering foundation from scratch, including CI/CD, environments, branching strategy, and release approval gates",
+          "Leading development of a consumer mindfulness and guided breathing app for the company's clients",
+        ]}
+        svgComponent={<WorkingSVG />}
+        animationDelay={0}
       />
       <ResumeSection
         title="Head of Frontend Development"
         companyName="Anteros Bio, REMOTE"
-        tenureLength="April 2025 – Present"
+        tenureLength="April 2025 – Present (contract since March 2026)"
         jobDescription={[
           "Architected a new client-facing application using TypeScript with React for the frontend, and Java with Maven for the back-end to support Anterosbio’s genomics platform",
           "Established CI/CD pipelines and environment workflows leveraging AWS Amplify to automate builds, testing, and deployments",
