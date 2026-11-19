@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"controllers", "services", "core", "com.gajordanportfolio"})
+@ComponentScan(basePackages = {"controllers", "services", "core", "config", "com.gajordanportfolio"})
 @EntityScan(basePackages = {"core.entities"})
 @EnableJpaRepositories(basePackages = {"core.repositories"})
 public class PortfolioBackendApplication {
