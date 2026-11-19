@@ -18,6 +18,13 @@ jobs:
   frontend:
     name: Frontend build
     runs-on: ubuntu-latest
+    env:
+      NEXT_PUBLIC_API_URL: http://localhost:8080
+      NEXT_PUBLIC_RECAPTCHA_SITE_KEY: ci-placeholder
+      NEXT_PUBLIC_LINKEDIN: https://example.com
+      NEXT_PUBLIC_GITHUB: https://example.com
+      NEXT_PUBLIC_ROTH_GITHUB: https://example.com
+      NEXT_PUBLIC_KONGONI: https://example.com
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
