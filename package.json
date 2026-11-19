@@ -6,13 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "sandbox": "npx ampx sandbox",
-    "sandbox:delete": "npx ampx sandbox delete"
+    "lint": "next lint"
   },
   "dependencies": {
     "@aws-sdk/client-sesv2": "^3.1172.0",
-    "aws-amplify": "^6.15.7",
     "html-react-parser": "^5.2.6",
     "next": "15.2.4",
     "react": "^19.0.0",
@@ -22,18 +19,15 @@
     "sass": "^1.89.1"
   },
   "devDependencies": {
-    "@aws-amplify/backend": "^1.16.1",
-    "@aws-amplify/backend-cli": "^1.8.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/react-google-recaptcha": "^2.1.9",
-    "aws-cdk-lib": "^2.204.0",
-    "constructs": "^10.4.2",
-    "esbuild": "^0.25.10",
     "tailwindcss": "^4",
-    "tsx": "^4.20.6",
     "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }

@@ -32,6 +32,7 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
 
 # vercel
 .vercel
@@ -45,6 +46,7 @@ backend/.env
 src/.env.local
 .env
 *.env
+!.env.example
 
 # Only ignore if they contain actual secrets
 # backend/src/main/resources/application-prod.properties
@@ -53,10 +55,5 @@ src/.env.local
 .vscode/
 .idea/
 *.iml
-
-# amplify
-.amplify
-amplify_outputs*
-amplifyconfiguration*
 
 backend/.ebextensions/*
