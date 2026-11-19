@@ -11,6 +11,7 @@
     "sandbox:delete": "npx ampx sandbox delete"
   },
   "dependencies": {
+    "@aws-sdk/client-sesv2": "^3.1172.0",
     "aws-amplify": "^6.15.7",
     "html-react-parser": "^5.2.6",
     "next": "15.2.4",
