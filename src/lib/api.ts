@@ -1,4 +1,4 @@
-const API_BASE_URL = process.env.NEXT_PUBLIC_BEANSTALK_API_URL;
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
 /**
  * Skill interface matching the backend entity

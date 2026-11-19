@@ -8,22 +8,82 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * CORS filter to handle cross-origin requests.
  * Processes all requests including OPTIONS preflight requests.
+ * <p>
+ * Allowed origins are read from the comma-separated {@code ALLOWED_ORIGINS}
+ * environment variable. When it is unset or blank, the production
+ * {@code jordanthesoftwaredeveloper.com} origins are used.
+ * {@code http://localhost:3000} is always allowed for local development.
  *
  * @author George Jordan
- * @version 1.0
+ * @version 1.1
  * @since 2025-10-22
  */
 @Component
 @Order(Ordered.HIGHEST_PRECEDENCE)
 public class CorsFilter implements Filter {
 
+    /** Origin used by the Next.js dev server; always allowed. */
+    static final String LOCAL_DEV_ORIGIN = "http://localhost:3000";
+
+    /** Origins used when {@code ALLOWED_ORIGINS} is not set. */
+    static final List<String> DEFAULT_ORIGINS = List.of(
+            "https://jordanthesoftwaredeveloper.com",
+            "https://www.jordanthesoftwaredeveloper.com");
+
+    private final Set<String> allowedOrigins;
+
+    /**
+     * Creates the filter using the {@code ALLOWED_ORIGINS} environment variable.
+     */
+    public CorsFilter() {
+        this(System.getenv("ALLOWED_ORIGINS"));
+    }
+
+    /**
+     * Creates the filter from an explicit comma-separated origin list.
+     *
+     * @param allowedOriginsCsv comma-separated origins, or {@code null}/blank to use the defaults
+     */
+    CorsFilter(String allowedOriginsCsv) {
+        this.allowedOrigins = parseOrigins(allowedOriginsCsv);
+    }
+
+    /**
+     * Builds the set of allowed origins from a comma-separated list.
+     * Entries are trimmed, trailing slashes are removed and empty entries are ignored.
+     * The local development origin is always included.
+     *
+     * @param csv comma-separated origins, or {@code null}/blank to use the defaults
+     * @return the immutable set of allowed origins
+     */
+    static Set<String> parseOrigins(String csv) {
+        Set<String> origins = new LinkedHashSet<>();
+        if (csv == null || csv.isBlank()) {
+            origins.addAll(DEFAULT_ORIGINS);
+        } else {
+            origins.addAll(Arrays.stream(csv.split(","))
+                    .map(String::trim)
+                    .map(o -> o.endsWith("/") ? o.substring(0, o.length() - 1) : o)
+                    .filter(o -> !o.isEmpty())
+                    .collect(Collectors.toList()));
+        }
+        origins.add(LOCAL_DEV_ORIGIN);
+        return Set.copyOf(origins);
+    }
+
     /**
      * Handles CORS for all requests.
-     * Explicitly handles OPTIONS preflight requests with 200 response.
+     * Adds CORS headers when the request's {@code Origin} is allowed and
+     * answers OPTIONS preflight requests directly with a 200 response.
      *
      * @param req the servlet request
      * @param res the servlet response
@@ -40,26 +100,16 @@ public class CorsFilter implements Filter {
 
         String origin = request.getHeader("Origin");
 
-        // Get allowed origins from environment variables
-        String urlWithWww = System.getenv("APPLICATION_URL_WITH_WWW");
-        String urlWithoutWww = System.getenv("APPLICATION_URL_WITHOUT_WWW");
-
-        // Check if origin is allowed
-        if (origin != null && (
-                origin.equals(urlWithWww) ||
-                origin.equals(urlWithoutWww) ||
-                origin.equals("http://localhost:3000") ||
-                origin.equals("https://www.jordanthesoftwaredeveloper.com") ||
-                origin.equals("https://jordanthesoftwaredeveloper.com"))) {
-
+        if (origin != null && allowedOrigins.contains(origin)) {
             response.setHeader("Access-Control-Allow-Origin", origin);
             response.setHeader("Access-Control-Allow-Credentials", "true");
             response.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-            response.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With");
+            response.setHeader("Access-Control-Allow-Headers",
+                    "Content-Type, Authorization, X-Requested-With, " + AdminApiKeyFilter.HEADER_NAME);
             response.setHeader("Access-Control-Max-Age", "3600");
+            response.addHeader("Vary", "Origin");
         }
 
-        // Handle OPTIONS preflight request
         if ("OPTIONS".equalsIgnoreCase(request.getMethod())) {
             response.setStatus(HttpServletResponse.SC_OK);
             return;
