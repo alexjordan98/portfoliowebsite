@@ -12,11 +12,11 @@
     "@aws-sdk/client-sesv2": "^3.1172.0",
     "html-react-parser": "^5.2.6",
     "next": "^15.5.29",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
     "react-google-recaptcha": "^3.1.0",
     "react-markdown": "^10.1.0",
-    "sass": "^1.89.1"
+    "sass": "^1.108.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
