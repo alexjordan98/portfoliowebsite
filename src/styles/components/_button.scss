@@ -1,5 +1,10 @@
 @import "../variables";
 
+// Thickness of each hamburger bar; matches the navbar's active-link underline.
+$menu-toggle-bar-height: 2px;
+// Distance between bar centers, used to fold the outer bars into an X.
+$menu-toggle-bar-offset: calc(#{$space-1} + #{$menu-toggle-bar-height});
+
 /**
  * SiteButton Component Styles
  *
@@ -148,6 +153,48 @@
   }
 }
 
+.site-button.button-menu-toggle {
+  flex-direction: column;
+  gap: $space-1;
+  width: $space-12;
+  height: $space-12;
+  padding: 0;
+  background-color: transparent;
+  border-color: transparent;
+  color: $text-primary;
+
+  &:hover:not(.button-disabled):not(.button-loading) {
+    background-color: transparent;
+    border-color: transparent;
+    color: $primary;
+    transform: none;
+    box-shadow: none;
+  }
+
+  .menu-toggle-bar {
+    display: block;
+    width: $space-6;
+    height: $menu-toggle-bar-height;
+    background-color: currentColor;
+    border-radius: $radius-sm;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  &[aria-expanded="true"] {
+    .menu-toggle-bar:nth-child(1) {
+      transform: translateY($menu-toggle-bar-offset) rotate(45deg);
+    }
+
+    .menu-toggle-bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle-bar:nth-child(3) {
+      transform: translateY(calc(-1 * #{$menu-toggle-bar-offset})) rotate(-45deg);
+    }
+  }
+}
+
 .button-modal-opener {
   width: 32px;
   height: 32px;
@@ -293,6 +340,10 @@
 
   .button-modal-opener:hover {
     transform: none;
+  }
+
+  .button-menu-toggle .menu-toggle-bar {
+    transition: none;
   }
 
   .spinner {

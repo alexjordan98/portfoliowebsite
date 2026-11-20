@@ -18,7 +18,7 @@ interface SiteButtonProps {
   destination?: string;
 
   /** Modern button variant with warm professional styling */
-  variant?: 'default' | 'card' | 'modal-opener' | 'link';
+  variant?: 'default' | 'card' | 'modal-opener' | 'link' | 'menu-toggle';
 
   /** Button type attribute */
   type?: 'button' | 'submit' | 'reset';
@@ -40,6 +40,15 @@ interface SiteButtonProps {
 
   /** Click handler */
   onClick?: () => void;
+
+  /** Whether the element this button controls is open (menu-toggle variant) */
+  ariaExpanded?: boolean;
+
+  /** Id of the element this button controls (menu-toggle variant) */
+  ariaControls?: string;
+
+  /** Ref to the rendered button (menu-toggle variant), e.g. to return focus to it */
+  ref?: React.Ref<HTMLButtonElement>;
 }
 
 /**
@@ -72,6 +81,15 @@ interface SiteButtonProps {
  *   variant="modal-opener"
  *   onClick={openModal}
  * />
+ *
+ * // Menu toggle (renders as a three-bar icon that turns into an X when expanded)
+ * <SiteButton
+ *   text="Open menu"
+ *   variant="menu-toggle"
+ *   ariaExpanded={isOpen}
+ *   ariaControls="nav-list"
+ *   onClick={toggleMenu}
+ * />
  * ```
  *
  * @param props - SiteButton component props
@@ -90,7 +108,30 @@ export default function SiteButton({
   iconBefore,
   iconAfter,
   onClick,
+  ariaExpanded,
+  ariaControls,
+  ref,
 }: SiteButtonProps) {
+  if (variant === 'menu-toggle') {
+    return (
+      <button
+        ref={ref}
+        className={['site-button', 'button-menu-toggle', className].filter(Boolean).join(' ')}
+        id={id}
+        type="button"
+        onClick={onClick}
+        disabled={disabled}
+        aria-label={text}
+        aria-expanded={ariaExpanded}
+        aria-controls={ariaControls}
+      >
+        <span className="menu-toggle-bar" aria-hidden="true" />
+        <span className="menu-toggle-bar" aria-hidden="true" />
+        <span className="menu-toggle-bar" aria-hidden="true" />
+      </button>
+    );
+  }
+
   if (variant === 'modal-opener') {
     return (
       <button
