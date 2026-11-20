@@ -43,6 +43,12 @@ interface ResumeSectionProps {
 
   //** Onclick for button */
   linkOnClick?: () => void;
+
+  /** Optional second link shown next to the first (e.g. a live demo) */
+  secondaryLinkDestination?: string;
+
+  /** Text for the optional second link */
+  secondaryLinkName?: string;
 }
 
 /**
@@ -78,7 +84,9 @@ export default function ResumeSection({
   hasLink = false,
   linkDestination = '',
   linkName = '',
-  linkOnClick
+  linkOnClick,
+  secondaryLinkDestination,
+  secondaryLinkName
 }: ResumeSectionProps) {
   return (
     <AnimatedSection animation="fadeUp" delay={animationDelay}>
@@ -124,13 +132,23 @@ export default function ResumeSection({
                 align="left"
               />
               {hasLink &&
-                <SiteButton
-                  text={linkName}
-                  variant='card'
-                  destination={linkDestination}
-                  size='sm'
-                  onClick={linkOnClick}
-                />
+                <div className="resume-section-links">
+                  <SiteButton
+                    text={linkName}
+                    variant='card'
+                    destination={linkDestination}
+                    size='sm'
+                    onClick={linkOnClick}
+                  />
+                  {secondaryLinkDestination && secondaryLinkName &&
+                    <SiteButton
+                      text={secondaryLinkName}
+                      variant='card'
+                      destination={secondaryLinkDestination}
+                      size='sm'
+                    />
+                  }
+                </div>
               }
 
             </Card>
