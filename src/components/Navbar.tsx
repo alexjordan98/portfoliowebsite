@@ -1,4 +1,7 @@
-import React from 'react';
+'use client';
+
+import React, { useCallback, useEffect, useId, useRef, useState } from 'react';
+import SiteButton from './SiteButton';
 
 /**
  * Navigation item interface
@@ -31,7 +34,28 @@ interface NavbarProps {
 }
 
 /**
- * Simple navigation bar component for clean, modern site navigation
+ * Closes the mobile menu when Escape is pressed while it is open, returning focus to the toggle.
+ *
+ * @param isOpen - Whether the menu is open
+ * @param close - Closes the menu
+ * @param toggleRef - Toggle button that receives focus after closing
+ */
+function useCloseOnEscape(isOpen: boolean, close: () => void, toggleRef: React.RefObject<HTMLButtonElement | null>): void {
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== 'Escape') return;
+      close();
+      toggleRef.current?.focus();
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, close, toggleRef]);
+}
+
+/**
+ * Simple navigation bar component for clean, modern site navigation.
+ * Below the medium breakpoint the links collapse behind a hamburger toggle.
  *
  * @example
  * ```tsx
@@ -74,6 +98,11 @@ export default function Navbar({
   ];
 
   const navigationItems = items.length > 0 ? items : defaultItems;
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleRef = useRef<HTMLButtonElement>(null);
+  const listId = `${useId()}-nav-list`;
+  const closeMenu = useCallback(() => setIsOpen(false), []);
+  useCloseOnEscape(isOpen, closeMenu, toggleRef);
 
   const navbarClasses = [
     'navbar',
@@ -93,6 +122,7 @@ export default function Navbar({
         href={item.href}
         className={linkClasses}
         aria-current={isActive ? 'page' : undefined}
+        onClick={closeMenu}
       >
         {item.icon && (
           <span className="nav-icon" aria-hidden="true">
@@ -108,7 +138,16 @@ export default function Navbar({
 
   return (
     <nav className={navbarClasses} role="navigation" aria-label="Main navigation" id={id}>
-      <ul className="nav-list">
+      <SiteButton
+        ref={toggleRef}
+        className="nav-menu-toggle"
+        variant="menu-toggle"
+        text={isOpen ? 'Close menu' : 'Open menu'}
+        ariaExpanded={isOpen}
+        ariaControls={listId}
+        onClick={() => setIsOpen((open) => !open)}
+      />
+      <ul id={listId} className={['nav-list', isOpen ? '' : 'nav-mobile-hidden'].filter(Boolean).join(' ')}>
         {navigationItems.map((item, index) => (
           <li key={index} className="nav-item">
             <NavLink item={item} />

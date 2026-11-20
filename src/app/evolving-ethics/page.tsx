@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export default function EvolvingEthics() {
   return (
     <div>
-      <Navbar currentPage="Evolving Ethics" />
+      <Navbar currentPage="Evolutionary Ethics" />
       <EvolvingEthicsPage />
       <Footer />
     </div>
