@@ -22,6 +22,30 @@ $text-secondary: #374151; // slate gray
 $text-muted:     #6B7280; // cool gray
 $text-inverse:   #FFFFFF; // for buttons/dark backgrounds
 
+// Warm Surface Colors (Evolving Ethics)
+$surface-card:        #FFFDF8; // warm white card
+$surface-card-border: #EADFCB; // card hairline
+$surface-sand:        #F3E9D6; // sand panel / pill track
+$surface-sand-light:  #F7EFDF; // table cells and chart wells
+$surface-sand-line:   #E6D9C1; // dividers on sand
+$surface-teal-tint:   #E3F1EF; // teal wash
+$surface-teal-line:   #BFD9D6; // outlined teal buttons
+$surface-teal-soft:   #A9DCD6; // kicker on dark teal
+$surface-plum-tint:   #EFE8F2; // plum wash
+$accent-deep:         #5A4866; // plum text on plum wash
+$text-muted-strong:   #4B5563; // muted text that passes contrast on cream
+$text-faint:          #8A8A8E; // separators
+
+// Outcome Tone Colors
+$tone-good:   $primary;
+$tone-unfair: $accent;
+$tone-meager: #9C8F78;
+$tone-bad:    #A2483A;
+
+// Data Series Colors
+$series-third: #B5651D; // amber, third strategy line
+$heat-low:     #F6EEDD; // bottom of the heat scale
+
 // Border Colors
 $border-light: #E0E0E0;
 $border-medium: #BDBDBD;
@@ -44,6 +68,7 @@ $info: #2196F3;
 $font-heading: 'Jua', sans-serif;
 $font-body: 'Inter', sans-serif;
 $font-mono: 'Monaco', 'Menlo', monospace;
+$font-mono-display: 'JetBrains Mono', monospace;
 
 // alert colors
 $success: #10b981;

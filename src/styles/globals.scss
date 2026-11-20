@@ -1,7 +1,7 @@
 @import "variables";
 
 // Google Fonts Import
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Jua&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Jua&display=swap');
 
 // Import all component and page styles
 @import "base/reset";
@@ -24,6 +24,7 @@
 @import "pages/howThisSiteWasCreated";
 @import "pages/contact";
 @import "pages/skillsPage";
+@import "pages/evolvingEthics";
 @import "utilities/spacing";
 @import "utilities/colors";
 @import "utilities/responsive";
