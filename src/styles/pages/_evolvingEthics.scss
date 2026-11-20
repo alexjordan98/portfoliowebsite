@@ -1,0 +1,1083 @@
+@import "../variables";
+
+/**
+ * Evolving Ethics Page Styles
+ *
+ * Roth–Erev simulator page. Layout collapses through flex-wrap and auto-fit grids,
+ * so no breakpoint overrides are needed: the phone design keeps the desktop type scale.
+ */
+
+// =============================================================================
+// PAGE-LOCAL SCALE
+// Sizes the design uses that fall between the shared tokens.
+// =============================================================================
+
+$ethics-max-width: 1200px;
+$ethics-section-gap: 7rem;
+$ethics-hero-gap: 3.5rem;
+$ethics-hero-top: 4.5rem;
+$ethics-gap-sm: 0.375rem;
+$ethics-gap-md: 0.625rem;
+$ethics-gap-lg: 1.125rem;
+$ethics-gap-xl: 1.75rem;
+$ethics-card-padding: 1.75rem;
+
+$ethics-radius-card: 1.75rem;
+$ethics-radius-panel: 1.125rem;
+$ethics-radius-cell: 0.75rem;
+$ethics-radius-tile: 0.625rem;
+$ethics-radius-swatch: 0.375rem;
+$ethics-radius-pill: 999px;
+
+$ethics-text-13: 0.8125rem;
+$ethics-text-15: 0.9375rem;
+$ethics-text-17: 1.0625rem;
+$ethics-text-19: 1.1875rem;
+$ethics-text-23: 1.4375rem;
+$ethics-text-26: 1.625rem;
+$ethics-text-40: 2.5rem;
+
+$ethics-control-height: 2.75rem;
+$ethics-control-height-lg: 3rem;
+$ethics-play-min-width: 7rem;
+$ethics-border-width: 1.5px;
+$ethics-focus-width: 3px;
+$ethics-heat-label-width: 4.875rem;
+$ethics-heat-cell-max: 8.75rem;
+$ethics-chart-height: 5.5rem;
+
+$ethics-shadow-hero: 0 1px 2px rgba($text-primary, 0.04), 0 24px 48px -24px rgba($primary-dark, 0.28);
+$ethics-shadow-raised: 0 24px 48px -28px rgba($primary-dark, 0.25);
+$ethics-shadow-tab: 0 1px 2px rgba($text-primary, 0.08), 0 4px 12px -4px rgba($primary-dark, 0.25);
+
+$ethics-heat-gradient: linear-gradient(90deg, $heat-low, $primary-light 45%, $primary 75%, $primary-dark);
+
+// =============================================================================
+// PAGE FRAME
+// =============================================================================
+
+.ethics-page {
+  background: $background;
+  color: $text-primary;
+  font-family: $font-body;
+  font-size: $font-size-base;
+  line-height: $line-height-relaxed;
+  padding-bottom: $space-24;
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: revert;
+  }
+
+  a {
+    color: $primary-dark;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible {
+    outline: $ethics-focus-width solid $primary-light;
+    outline-offset: 2px;
+  }
+
+  strong {
+    font-weight: $font-weight-bold;
+  }
+}
+
+.ethics-page__inner {
+  max-width: $ethics-max-width;
+  margin: 0 auto;
+  padding: 0 $space-6;
+  display: flex;
+  flex-direction: column;
+  gap: $ethics-section-gap;
+}
+
+.ethics-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+// =============================================================================
+// SHARED TEXT AND CARDS
+// =============================================================================
+
+.ethics-kicker {
+  font-size: $ethics-text-13;
+  font-weight: $font-weight-semibold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $primary-dark;
+}
+
+.ethics-heading {
+  font-family: $font-heading;
+  font-weight: $font-weight-normal;
+  font-size: $ethics-text-40;
+  line-height: 1.15;
+}
+
+.ethics-intro-text {
+  font-size: $ethics-text-17;
+  color: $text-secondary;
+}
+
+.ethics-body-text {
+  color: $text-secondary;
+}
+
+.ethics-text--row {
+  color: $primary;
+}
+
+.ethics-text--col {
+  color: $accent;
+}
+
+.ethics-card {
+  background: $surface-card;
+  border: 1px solid $surface-card-border;
+  border-radius: $ethics-radius-card;
+  padding: $ethics-card-padding;
+}
+
+.ethics-card--raised {
+  box-shadow: $ethics-shadow-raised;
+}
+
+.ethics-section {
+  display: flex;
+  flex-direction: column;
+  gap: $ethics-gap-xl;
+}
+
+.ethics-section--roomy {
+  gap: $space-8;
+}
+
+.ethics-section__header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-4;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.ethics-section__intro {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+  max-width: 680px;
+}
+
+.ethics-section__intro--narrow {
+  max-width: 640px;
+}
+
+.ethics-section__intro--wide {
+  max-width: 720px;
+}
+
+.ethics-section__header .ethics-section__intro--wide {
+  max-width: 680px;
+}
+
+// =============================================================================
+// BUTTONS AND INPUTS
+// =============================================================================
+
+.ethics-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: $ethics-control-height;
+  padding: 0 $ethics-gap-lg;
+  border: 0;
+  border-radius: $ethics-radius-pill;
+  font-family: inherit;
+  font-size: $ethics-text-15;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-relaxed;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.ethics-page .ethics-button--primary {
+  background: $primary;
+  color: $text-inverse;
+  padding: 0 $space-5;
+
+  &:hover {
+    background: $primary-dark;
+    color: $text-inverse;
+  }
+}
+
+.ethics-page .ethics-button--outline {
+  border: $ethics-border-width solid $primary;
+  background: transparent;
+  color: $primary-dark;
+  padding: 0 $space-5;
+
+  &:hover {
+    background: $surface-teal-tint;
+    color: $primary-dark;
+  }
+}
+
+.ethics-button--soft {
+  border: $ethics-border-width solid $surface-teal-line;
+  background: $surface-card;
+  color: $primary-dark;
+
+  &:hover {
+    background: $surface-teal-tint;
+  }
+}
+
+.ethics-button--tab {
+  background: transparent;
+  color: $text-secondary;
+
+  &[aria-pressed="true"] {
+    background: $surface-card;
+    color: $primary-dark;
+    box-shadow: $ethics-shadow-tab;
+  }
+
+  &[aria-pressed="false"]:hover {
+    color: $primary-dark;
+  }
+}
+
+.ethics-page .ethics-button--lg {
+  min-height: $ethics-control-height-lg;
+  padding: 0 $space-6;
+  font-size: $font-size-base;
+}
+
+.ethics-button--wide {
+  min-width: $ethics-play-min-width;
+}
+
+.ethics-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-2;
+  background: $surface-sand;
+  border-radius: $ethics-radius-pill;
+  padding: $ethics-gap-sm;
+}
+
+.ethics-picker--small .ethics-button {
+  min-height: $ethics-control-height;
+  padding: 0 $space-4;
+}
+
+.ethics-slider {
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+}
+
+.ethics-slider__head {
+  display: flex;
+  justify-content: space-between;
+  gap: $space-3;
+}
+
+.ethics-slider__label--setting {
+  font-weight: $font-weight-semibold;
+  font-size: $ethics-text-15;
+}
+
+.ethics-slider__label--scrub {
+  font-size: $ethics-text-13;
+  font-weight: $font-weight-semibold;
+  color: $text-muted-strong;
+}
+
+.ethics-slider__value {
+  font-family: $font-mono-display;
+  font-size: $font-size-sm;
+  color: $text-secondary;
+}
+
+.ethics-slider__input {
+  accent-color: $primary;
+  width: 100%;
+  height: $ethics-gap-xl;
+  margin: 0;
+}
+
+.ethics-slider__helper {
+  font-size: $ethics-text-13;
+  color: $text-muted-strong;
+}
+
+.ethics-input {
+  font-family: $font-body;
+  font-size: $font-size-sm;
+  color: $text-primary;
+  background: $surface-card;
+  border: 1px solid $surface-card-border;
+  border-radius: $ethics-radius-tile;
+  min-height: $ethics-control-height;
+  padding: 0 $space-3;
+  min-width: 0;
+}
+
+.ethics-input--payoff {
+  width: $space-8;
+  padding: 0;
+  text-align: center;
+  font-family: $font-mono-display;
+  font-weight: $font-weight-medium;
+}
+
+.ethics-input--row {
+  color: $primary;
+}
+
+.ethics-input--col {
+  color: $accent;
+}
+
+.ethics-input--invalid {
+  border-color: $tone-bad;
+  border-width: 2px;
+}
+
+// =============================================================================
+// HERO
+// =============================================================================
+
+.ethics-hero {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $ethics-hero-gap;
+  align-items: center;
+  padding-top: $ethics-hero-top;
+}
+
+.ethics-hero__copy {
+  flex: 1 1 420px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: $space-6;
+}
+
+.ethics-hero__title {
+  font-family: $font-heading;
+  font-weight: $font-weight-normal;
+  font-size: $font-size-5xl;
+  line-height: 1.05;
+}
+
+.ethics-hero__lede {
+  font-size: $ethics-text-19;
+  line-height: 1.65;
+  color: $text-secondary;
+  max-width: 560px;
+}
+
+.ethics-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-3;
+  padding-top: $space-2;
+}
+
+.ethics-hero__figure {
+  flex: 1 1 380px;
+  min-width: 0;
+  margin: 0;
+  background: $surface-card;
+  border: 1px solid $surface-card-border;
+  border-radius: $ethics-radius-card;
+  padding: $ethics-card-padding;
+  box-shadow: $ethics-shadow-hero;
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
+}
+
+.ethics-hero__snapshots {
+  display: flex;
+  gap: $space-4;
+  justify-content: space-between;
+}
+
+.ethics-hero__snapshot {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: $ethics-gap-md;
+}
+
+.ethics-hero__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: $space-1;
+}
+
+.ethics-hero__cell {
+  aspect-ratio: 1;
+  border-radius: $ethics-radius-swatch;
+}
+
+.ethics-hero__snapshot-label {
+  font-size: $ethics-text-13;
+  font-weight: $font-weight-semibold;
+  color: $text-secondary;
+  text-align: center;
+}
+
+.ethics-hero__caption {
+  font-size: $font-size-sm;
+  line-height: 1.55;
+  color: $text-muted-strong;
+
+  strong {
+    color: $text-primary;
+  }
+}
+
+// =============================================================================
+// HOW IT WORKS
+// =============================================================================
+
+.ethics-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: $space-5;
+}
+
+.ethics-step {
+  border-radius: $radius-xl;
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+}
+
+.ethics-step__number {
+  display: inline-flex;
+  width: $space-10;
+  height: $space-10;
+  border-radius: $ethics-radius-pill;
+  background: $surface-teal-tint;
+  color: $primary-dark;
+  font-weight: $font-weight-bold;
+  align-items: center;
+  justify-content: center;
+}
+
+.ethics-step__title {
+  font-size: $ethics-text-19;
+  font-weight: $font-weight-semibold;
+}
+
+.ethics-formula {
+  align-self: flex-start;
+  font-family: $font-mono-display;
+  font-size: $ethics-text-15;
+  color: $primary-dark;
+  background: $surface-teal-tint;
+  border-radius: $ethics-radius-cell;
+  padding: $space-3 $ethics-gap-lg;
+}
+
+// =============================================================================
+// SIMULATOR
+// =============================================================================
+
+.ethics-sim {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-6;
+  align-items: stretch;
+}
+
+.ethics-sim__settings {
+  flex: 1 1 320px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: $space-6;
+}
+
+.ethics-sim__game {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+}
+
+.ethics-sim__game-name {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+}
+
+.ethics-sim__game-desc {
+  color: $text-secondary;
+  font-size: $ethics-text-15;
+}
+
+.ethics-sim__sliders {
+  display: flex;
+  flex-direction: column;
+  gap: $ethics-gap-lg;
+}
+
+.ethics-sim__run {
+  flex: 2 1 520px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: $space-6;
+}
+
+.ethics-sim__results {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $ethics-gap-xl;
+}
+
+.ethics-sim__side {
+  flex: 1 1 240px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: $ethics-gap-lg;
+}
+
+.ethics-payoffs {
+  display: flex;
+  flex-direction: column;
+  gap: $ethics-gap-md;
+}
+
+.ethics-payoffs__legend {
+  font-size: $ethics-text-13;
+  font-weight: $font-weight-semibold;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $text-muted-strong;
+}
+
+.ethics-payoffs__scroll {
+  overflow-x: auto;
+}
+
+.ethics-payoffs__table {
+  border-collapse: separate;
+  border-spacing: $space-1;
+  font-size: $font-size-sm;
+  width: 100%;
+}
+
+.ethics-payoffs__corner {
+  padding: 0;
+}
+
+.ethics-payoffs__col-head {
+  padding: $space-1 $ethics-gap-sm;
+  font-weight: $font-weight-semibold;
+  color: $accent;
+  text-align: center;
+}
+
+.ethics-payoffs__row-head {
+  padding: $space-1 $space-2 $space-1 0;
+  font-weight: $font-weight-semibold;
+  color: $primary;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.ethics-payoffs__cell {
+  background: $surface-sand-light;
+  border-radius: $ethics-radius-tile;
+  padding: $space-2 $ethics-gap-sm;
+  text-align: center;
+  font-family: $font-mono-display;
+  font-weight: $font-weight-medium;
+}
+
+.ethics-payoffs__cell--edit {
+  padding: $space-1;
+  white-space: nowrap;
+
+  .ethics-payoffs__comma {
+    padding: 0 2px;
+  }
+}
+
+.ethics-payoffs__comma {
+  color: $text-faint;
+}
+
+.ethics-custom__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-3;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ethics-custom__names {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-2;
+  min-width: 0;
+
+  .ethics-input {
+    flex: 1 1 6rem;
+  }
+}
+
+.ethics-custom__label {
+  width: 100%;
+  margin-bottom: $space-1;
+  font-size: $ethics-text-13;
+  font-weight: $font-weight-semibold;
+  color: $text-muted-strong;
+}
+
+.ethics-custom__error {
+  min-height: 1.3em;
+  font-size: $ethics-text-13;
+  font-weight: $font-weight-semibold;
+  color: $tone-bad;
+}
+
+.ethics-playback {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-3;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ethics-playback__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-2;
+}
+
+.ethics-playback__round {
+  font-family: $font-mono-display;
+  font-size: $font-size-sm;
+  color: $text-secondary;
+
+  strong {
+    color: $text-primary;
+  }
+}
+
+// =============================================================================
+// HEATMAP
+// =============================================================================
+
+.ethics-heatmap {
+  flex: 1 1 280px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: $ethics-gap-md;
+}
+
+.ethics-heatmap__grid {
+  display: flex;
+  flex-direction: column;
+  gap: $ethics-gap-sm;
+}
+
+.ethics-heatmap__col-heads {
+  display: flex;
+  gap: $ethics-gap-sm;
+  padding-left: calc(#{$ethics-heat-label-width} + #{$ethics-gap-sm});
+}
+
+.ethics-heatmap__col-head {
+  flex: 1 1 0;
+  min-width: 0;
+  text-align: center;
+  font-size: $ethics-text-13;
+  font-weight: $font-weight-semibold;
+  color: $accent;
+}
+
+.ethics-heatmap__row {
+  display: flex;
+  gap: $ethics-gap-sm;
+  align-items: stretch;
+}
+
+.ethics-heatmap__row-head {
+  width: $ethics-heat-label-width;
+  flex: 0 0 $ethics-heat-label-width;
+  align-self: center;
+  font-size: $ethics-text-13;
+  font-weight: $font-weight-semibold;
+  color: $primary;
+  text-align: right;
+}
+
+.ethics-heatmap__cell {
+  flex: 1 1 0;
+  min-width: 0;
+  aspect-ratio: 1;
+  max-height: $ethics-heat-cell-max;
+  border-radius: $ethics-radius-cell;
+  color: $text-primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $font-mono-display;
+  font-size: $ethics-text-15;
+  font-weight: $font-weight-medium;
+  outline-offset: 2px;
+}
+
+.ethics-heatmap__cell--light {
+  color: $text-inverse;
+}
+
+.ethics-heatmap__cell--top {
+  outline: 2px solid $text-primary;
+}
+
+.ethics-heatmap__legend {
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+  padding-left: calc(#{$ethics-heat-label-width} + #{$ethics-gap-sm});
+  font-size: $font-size-xs;
+  color: $text-muted-strong;
+}
+
+.ethics-heatmap__scale {
+  flex: 1 1 auto;
+  height: $space-2;
+  border-radius: $ethics-radius-pill;
+  background: $ethics-heat-gradient;
+}
+
+// =============================================================================
+// RUN CAPTION AND CHARTS
+// =============================================================================
+
+.ethics-caption {
+  border-radius: $ethics-radius-panel;
+  padding: $space-4 $ethics-gap-lg;
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+  background: $surface-sand;
+}
+
+.ethics-caption__kicker {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $text-muted-strong;
+}
+
+.ethics-caption__text {
+  font-size: $ethics-text-17;
+  font-weight: $font-weight-semibold;
+  color: $text-primary;
+  line-height: 1.35;
+}
+
+.ethics-caption--settled {
+  background: $surface-teal-tint;
+
+  .ethics-caption__kicker {
+    color: $primary-dark;
+  }
+}
+
+.ethics-caption--leaning {
+  background: $surface-plum-tint;
+
+  .ethics-caption__kicker {
+    color: $accent-deep;
+  }
+}
+
+.ethics-chart {
+  display: flex;
+  flex-direction: column;
+  gap: $ethics-gap-sm;
+}
+
+.ethics-chart__title {
+  font-size: $ethics-text-13;
+  font-weight: $font-weight-semibold;
+}
+
+.ethics-chart__plot {
+  width: 100%;
+  height: $ethics-chart-height;
+  display: block;
+  background: $surface-sand-light;
+  border-radius: $ethics-radius-tile;
+}
+
+.ethics-chart__midline {
+  stroke: $surface-sand-line;
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.ethics-chart__line {
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.ethics-chart__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-3;
+}
+
+.ethics-chart__legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: $ethics-gap-sm;
+  font-size: $ethics-text-13;
+  color: $text-secondary;
+}
+
+.ethics-chart__swatch {
+  width: 14px;
+  height: 3px;
+  border-radius: 2px;
+}
+
+$ethics-series: (0: $primary, 1: $accent, 2: $series-third);
+
+@each $index, $color in $ethics-series {
+  polyline.ethics-series--#{$index} {
+    stroke: $color;
+  }
+
+  span.ethics-series--#{$index} {
+    background: $color;
+  }
+}
+
+// =============================================================================
+// ENSEMBLE AND INSIGHT
+// =============================================================================
+
+.ethics-ensemble {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-6;
+  align-items: stretch;
+}
+
+.ethics-ensemble__bars {
+  flex: 3 1 480px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+  transition: opacity 0.2s ease;
+
+  &[aria-busy="true"] {
+    opacity: 0.6;
+  }
+}
+
+.ethics-ensemble__list {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+}
+
+.ethics-bar {
+  display: flex;
+  flex-direction: column;
+  gap: $ethics-gap-sm;
+}
+
+.ethics-bar__head {
+  display: flex;
+  justify-content: space-between;
+  gap: $space-3;
+  font-size: $ethics-text-15;
+}
+
+.ethics-bar__label {
+  font-weight: $font-weight-semibold;
+}
+
+.ethics-bar__value {
+  font-family: $font-mono-display;
+  color: $text-secondary;
+}
+
+.ethics-bar__track {
+  height: 14px;
+  border-radius: $ethics-radius-pill;
+  background: $surface-sand;
+  overflow: hidden;
+}
+
+.ethics-bar__fill {
+  height: 100%;
+  border-radius: $ethics-radius-pill;
+}
+
+.ethics-ensemble__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-4;
+  padding-top: $space-1;
+  font-size: $ethics-text-13;
+  color: $text-muted-strong;
+}
+
+.ethics-ensemble__legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: $ethics-gap-sm;
+}
+
+.ethics-ensemble__swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+}
+
+$ethics-tones: (good: $tone-good, unfair: $tone-unfair, meager: $tone-meager, bad: $tone-bad);
+
+@each $tone, $color in $ethics-tones {
+  .ethics-tone--#{$tone} {
+    background: $color;
+  }
+}
+
+.ethics-insight {
+  flex: 2 1 300px;
+  min-width: 0;
+  background: $primary-dark;
+  color: $text-inverse;
+  border-radius: $ethics-radius-card;
+  padding: $space-8;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.ethics-insight__kicker {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $surface-teal-soft;
+}
+
+.ethics-insight__headline {
+  font-family: $font-heading;
+  font-size: $ethics-text-26;
+  line-height: 1.25;
+}
+
+.ethics-insight__body {
+  font-size: $font-size-base;
+  line-height: 1.65;
+  color: $surface-teal-tint;
+}
+
+// =============================================================================
+// TAKEAWAYS, LIMITS AND SOURCE LINK
+// =============================================================================
+
+.ethics-takeaways {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: $space-5;
+}
+
+.ethics-takeaway {
+  border-radius: $radius-xl;
+  display: flex;
+  flex-direction: column;
+  gap: $ethics-gap-md;
+}
+
+.ethics-takeaway__title {
+  font-family: $font-heading;
+  font-weight: $font-weight-normal;
+  font-size: $ethics-text-23;
+  line-height: 1.25;
+  color: $primary-dark;
+}
+
+.ethics-limits {
+  background: $surface-sand;
+  border-radius: $radius-xl;
+  padding: $ethics-card-padding $space-8;
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-8;
+}
+
+.ethics-limits__column {
+  flex: 1 1 320px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+}
+
+.ethics-limits__title {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+}
+
+.ethics-source {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-4;
+  align-items: center;
+  justify-content: flex-end;
+  border-top: 1px solid $surface-sand-line;
+  padding-top: $ethics-card-padding;
+}
+
+.ethics-source__link {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-2;
+  min-height: $ethics-control-height;
+  font-weight: $font-weight-semibold;
+  text-decoration: underline;
+}
+
+.ethics-source__icon {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}

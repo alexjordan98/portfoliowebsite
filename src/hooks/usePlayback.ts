@@ -64,9 +64,10 @@ export function usePlayback(totalRounds: number, initialRound: number = totalRou
     let frame = 0;
     let last = performance.now();
     const tick = (now: number) => {
-      if (now - last >= TICK_MS) {
-        last = now;
-        const next = Math.min(totalRounds, roundRef.current + stepSize);
+      const ticks = Math.floor((now - last) / TICK_MS);
+      if (ticks > 0) {
+        last += ticks * TICK_MS;
+        const next = Math.min(totalRounds, roundRef.current + stepSize * ticks);
         setRound(next);
         if (next >= totalRounds) {
           setIsPlaying(false);

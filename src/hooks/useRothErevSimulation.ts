@@ -3,11 +3,11 @@
 import { useDeferredValue, useEffect, useMemo, useRef, useState, startTransition } from 'react';
 import { runEnsemble } from '@/lib/rothErev/ensemble';
 import type { EnsembleRequest, EnsembleResponse } from '@/lib/rothErev/ensemble.worker';
+import { DEFAULT_WORLDS } from '@/lib/rothErev/settings';
 import { simulateRun } from '@/lib/rothErev/simulate';
 import type { EnsembleResult, GameDefinition, RunHistory, SimulationParams } from '@/lib/rothErev/types';
 
-/** Number of worlds in the ensemble unless the caller asks for another count. */
-export const DEFAULT_WORLDS = 200;
+export { DEFAULT_WORLDS };
 
 /**
  * Inputs for {@link useRothErevSimulation}.
@@ -21,6 +21,8 @@ export interface RothErevSimulationOptions {
   ensembleSeed: number;
   /** Number of ensemble worlds. Defaults to {@link DEFAULT_WORLDS}. */
   worlds?: number;
+  /** Ensemble already computed for the initial inputs (e.g. at build time); skips recomputing it on mount. */
+  initialEnsemble?: EnsembleResult | null;
 }
 
 /**
@@ -31,6 +33,8 @@ export interface RothErevSimulation {
   history: RunHistory;
   /** Latest ensemble tallies, or null until the first ensemble finishes. */
   ensemble: EnsembleResult | null;
+  /** Game the latest ensemble was computed for (may lag behind `game` while pending). */
+  ensembleGame: GameDefinition | null;
   /** True while a newer ensemble is still being computed. */
   ensemblePending: boolean;
 }
@@ -64,6 +68,7 @@ export function useRothErevSimulation({
   params,
   ensembleSeed,
   worlds = DEFAULT_WORLDS,
+  initialEnsemble = null,
 }: RothErevSimulationOptions): RothErevSimulation {
   const { rounds, forgetting, mistakes, seed } = params;
 
@@ -78,8 +83,9 @@ export function useRothErevSimulation({
   );
   const deferredRequest = useDeferredValue(request);
 
-  const [ensemble, setEnsemble] = useState<EnsembleResult | null>(null);
-  const [completedRequest, setCompletedRequest] = useState<typeof request | null>(null);
+  const initialRequest = useRef(request);
+  const [ensemble, setEnsemble] = useState<EnsembleResult | null>(initialEnsemble);
+  const [completedRequest, setCompletedRequest] = useState<typeof request | null>(initialEnsemble ? request : null);
   const workerRef = useRef<Worker | null>(null);
   const latestId = useRef(0);
 
@@ -94,6 +100,7 @@ export function useRothErevSimulation({
 
   useEffect(() => {
     const id = ++latestId.current;
+    if (initialEnsemble && deferredRequest === initialRequest.current) return;
     const worker = workerRef.current;
     if (!worker) {
       startTransition(() => {
@@ -111,7 +118,7 @@ export function useRothErevSimulation({
     const message: EnsembleRequest = { id, ...deferredRequest };
     worker.postMessage(message);
     return () => worker.removeEventListener('message', onMessage);
-  }, [deferredRequest]);
+  }, [deferredRequest, initialEnsemble]);
 
-  return { history, ensemble, ensemblePending: completedRequest !== request };
+  return { history, ensemble, ensembleGame: completedRequest?.game ?? null, ensemblePending: completedRequest !== request };
 }
