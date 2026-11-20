@@ -55,6 +55,16 @@ function useOnChange(key: string, onChange: () => void): void {
 }
 
 /**
+ * Game name as it reads in the ensemble heading ("… worlds of Stag Hunt").
+ *
+ * @param game - Game the ensemble ran
+ * @returns The preset's name, or "your custom game" for the Custom tab
+ */
+function headingGameName(game: GameDefinition): string {
+  return game.id === CUSTOM_GAME_ID ? 'your custom game' : game.name;
+}
+
+/**
  * The interactive part of the page: the "Run a world" simulator and the "Now run 200 worlds"
  * ensemble. Any change to the game or dials restarts the run from round 0.
  *
@@ -189,6 +199,7 @@ export default function EthicsSimulator({ initialEnsemble }: EthicsSimulatorProp
       <EnsembleResults
         bars={bars}
         worlds={DEFAULT_WORLDS}
+        gameName={headingGameName(ensembleGame ?? game)}
         pending={ensemblePending}
         onReroll={() => setEnsembleSeed((s) => s + DEFAULT_WORLDS)}
         aside={<GameInsight game={game} />}

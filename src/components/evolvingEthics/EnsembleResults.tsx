@@ -22,6 +22,8 @@ interface EnsembleResultsProps {
   bars: EnsembleBar[];
   /** Number of worlds in the ensemble. */
   worlds: number;
+  /** Name of the game the bars describe, shown in the heading. */
+  gameName: string;
   /** True while a newer ensemble is computing. */
   pending: boolean;
   /** Reruns the ensemble with new seeds. */
@@ -31,18 +33,18 @@ interface EnsembleResultsProps {
 }
 
 /**
- * "Now run 200 worlds" section: horizontal bars of where many worlds ended, a reroll button
+ * "Now run 200 worlds of …" section: horizontal bars of where many worlds ended, a reroll button
  * and a tone legend.
  *
  * @param props - EnsembleResults props
  * @returns The ensemble section
  */
-export default function EnsembleResults({ bars, worlds, pending, onReroll, aside }: EnsembleResultsProps) {
+export default function EnsembleResults({ bars, worlds, gameName, pending, onReroll, aside }: EnsembleResultsProps) {
   return (
     <section className="ethics-section">
       <div className="ethics-section__header">
         <div className="ethics-section__intro ethics-section__intro--wide">
-          <h2 className="ethics-heading">Now run {worlds} worlds</h2>
+          <h2 className="ethics-heading">Now run {worlds} worlds of {gameName}</h2>
           <p className="ethics-intro-text">
             One run is a story. Many runs show the odds. Same game, same dials, {worlds} different strokes of
             early luck. Here’s where they ended up.
