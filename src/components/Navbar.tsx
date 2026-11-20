@@ -68,6 +68,7 @@ export default function Navbar({
     { label: 'Resume', href: '/resume' },
     { label: 'How the Site was Created', href: '/how-to' },
     { label: 'Skills', href: '/skills' },
+    { label: 'Evolutionary Ethics', href: '/evolving-ethics' },
     //{ label: 'Internet Tracking', href: '/internet-tracking' },
     { label: 'Contact', href: '/contact' }
   ];

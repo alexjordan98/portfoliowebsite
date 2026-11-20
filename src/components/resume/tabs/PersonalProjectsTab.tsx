@@ -53,6 +53,8 @@ export default function PersonalProjectsTab({ className = '' }: PersonalProjects
         hasLink={true}
         linkDestination={process.env.NEXT_PUBLIC_ROTH_GITHUB}
         linkName="Model's Github Repository"
+        secondaryLinkDestination="/evolving-ethics"
+        secondaryLinkName="Try it live"
       />
       <ResumeSection
         title="Global Climate Justice Paper"
