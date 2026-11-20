@@ -3,8 +3,9 @@
 /**
  * Evolving Ethics Page Styles
  *
- * Roth–Erev simulator page. Layout collapses through flex-wrap and auto-fit grids,
- * so no breakpoint overrides are needed: the phone design keeps the desktop type scale.
+ * Roth–Erev simulator page. Layout collapses through flex-wrap and auto-fit grids and the
+ * phone design keeps the desktop type scale. The one breakpoint override is the game picker,
+ * which becomes a two-column grid once its five tabs no longer fit on one line.
  */
 
 // =============================================================================
@@ -1080,4 +1081,23 @@ $ethics-tones: (good: $tone-good, unfair: $tone-unfair, meager: $tone-meager, ba
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+
+@media (max-width: $breakpoint-md) {
+  .ethics-picker--games {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    flex-basis: 100%;
+    border-radius: $radius-xl;
+
+    .ethics-button {
+      padding: 0 $space-2;
+      text-align: center;
+      line-height: $line-height-tight;
+    }
+
+    .ethics-button:last-child:nth-child(odd) {
+      grid-column: 1 / -1;
+    }
+  }
 }
