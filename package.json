@@ -10,8 +10,8 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@aws-sdk/client-sesv2": "^3.1172.0",
-    "html-react-parser": "^6.1.9",
+    "@aws-sdk/client-sesv2": "^3.1175.0",
+    "html-react-parser": "^6.1.10",
     "next": "^15.5.29",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
@@ -27,7 +27,7 @@
     "@types/react-google-recaptcha": "^2.1.9",
     "tailwindcss": "^4",
     "typescript": "^5.9.3",
-    "vitest": "^3.2.4"
+    "vitest": "^3.2.7"
   },
   "engines": {
     "node": ">=20"
